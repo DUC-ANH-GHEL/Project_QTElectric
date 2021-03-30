@@ -1,0 +1,17 @@
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.csprojAssemblyReference.cache
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.frmLogin.resources
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.Properties.Resources.resources
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmCategory.resources
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmCustomer.resources
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmDifferenced.resources
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmOrder.resources
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmType.resources
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmUser.resources
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmValue.resources
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.csproj.GenerateResource.cache
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.csproj.CoreCompileInputs.cache
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\QTElectric.exe.config
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\QTElectric.exe
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\QTElectric.pdb
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.exe
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.pdb
