@@ -15,3 +15,20 @@ D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\QTElectric.exe
 D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\QTElectric.pdb
 D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.exe
 D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.pdb
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\QTElectric.exe.config
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\QTElectric.exe
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\QTElectric.pdb
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.csprojAssemblyReference.cache
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.frmLogin.resources
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.Properties.Resources.resources
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmCategory.resources
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmCustomer.resources
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmDifferenced.resources
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmOrder.resources
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmType.resources
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmUser.resources
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmValue.resources
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.csproj.GenerateResource.cache
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.csproj.CoreCompileInputs.cache
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.exe
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.pdb
