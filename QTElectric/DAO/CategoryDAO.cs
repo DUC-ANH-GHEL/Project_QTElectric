@@ -23,6 +23,7 @@ namespace QTElectric.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { c.cat_name, c.status, c.date_ceate });
             return result;
         }
+
         public DataTable Categories()
         {
             string query = "Get_Category";

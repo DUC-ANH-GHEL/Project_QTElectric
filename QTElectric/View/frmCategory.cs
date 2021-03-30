@@ -19,8 +19,13 @@ namespace QTElectric.View
             InitializeComponent();
             load();
             CenterToScreen();
-        }
 
+        }
+        //bool check = true;
+        //  if (check == false)
+        //    {
+        //        btnCsave.Text = "Sửa";
+        //    }
         private void button2_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn sửa không?", "Sửa", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -31,6 +36,8 @@ namespace QTElectric.View
         }
         public void load()
         {
+
+
             dvgCategory.DataSource = CategoryDAO.Instance.Categories();
         }
         public void AddNew()
@@ -58,15 +65,12 @@ namespace QTElectric.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddNew();
+            txtCid.Text = "";
+            txtCname.Text = "";
+            cbCstatus.Checked = false;
         }
 
-        private void dvgCategory_SelectionChanged(object sender, EventArgs e)
-        {
-            txtCid.Text = dvgCategory.SelectedCells[0].Value.ToString();
-            txtCname.Text = dvgCategory.SelectedCells[1].Value.ToString();
-            cbCstatus.Checked = dvgCategory.SelectedCells[2].Value.ToString().ToLower() == "true";
-        }
+
         public void Update()
         {
             Category c = new Category();
@@ -107,5 +111,20 @@ namespace QTElectric.View
                 Delete();
             }
         }
+
+
+
+        private void dvgCategory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dvgCategory.SelectedRows.Count > 0)
+            {
+                txtCid.Text = dvgCategory.SelectedCells[0].Value.ToString();
+                txtCname.Text = dvgCategory.SelectedCells[1].Value.ToString();
+                cbCstatus.Checked = dvgCategory.SelectedCells[2].Value.ToString() == "True";
+
+            }
+        }
+
+
     }
 }
