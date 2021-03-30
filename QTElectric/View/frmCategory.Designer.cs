@@ -31,7 +31,7 @@ namespace QTElectric.View
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCsave = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.cbCstatus = new System.Windows.Forms.CheckBox();
             this.txtCname = new System.Windows.Forms.TextBox();
@@ -44,14 +44,16 @@ namespace QTElectric.View
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCerror = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtCerror);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnCsave);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cbCstatus);
             this.panel1.Controls.Add(this.txtCname);
@@ -74,17 +76,18 @@ namespace QTElectric.View
             this.button3.TabIndex = 3;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnCsave
             // 
-            this.button2.Location = new System.Drawing.Point(641, 46);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCsave.Location = new System.Drawing.Point(641, 46);
+            this.btnCsave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCsave.Name = "btnCsave";
+            this.btnCsave.Size = new System.Drawing.Size(100, 28);
+            this.btnCsave.TabIndex = 3;
+            this.btnCsave.Text = "Lưu";
+            this.btnCsave.UseVisualStyleBackColor = true;
+            this.btnCsave.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -95,11 +98,12 @@ namespace QTElectric.View
             this.button1.TabIndex = 3;
             this.button1.Text = "Thêm mới";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cbCstatus
             // 
             this.cbCstatus.AutoSize = true;
-            this.cbCstatus.Location = new System.Drawing.Point(100, 86);
+            this.cbCstatus.Location = new System.Drawing.Point(100, 102);
             this.cbCstatus.Margin = new System.Windows.Forms.Padding(4);
             this.cbCstatus.Name = "cbCstatus";
             this.cbCstatus.Size = new System.Drawing.Size(55, 21);
@@ -118,7 +122,7 @@ namespace QTElectric.View
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 86);
+            this.label3.Location = new System.Drawing.Point(5, 102);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 17);
@@ -156,6 +160,9 @@ namespace QTElectric.View
             // 
             // dvgCategory
             // 
+            this.dvgCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -166,8 +173,10 @@ namespace QTElectric.View
             this.dvgCategory.Margin = new System.Windows.Forms.Padding(4);
             this.dvgCategory.Name = "dvgCategory";
             this.dvgCategory.RowHeadersWidth = 51;
+            this.dvgCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgCategory.Size = new System.Drawing.Size(745, 260);
             this.dvgCategory.TabIndex = 1;
+            this.dvgCategory.SelectionChanged += new System.EventHandler(this.dvgCategory_SelectionChanged);
             // 
             // Column1
             // 
@@ -201,6 +210,15 @@ namespace QTElectric.View
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             // 
+            // txtCerror
+            // 
+            this.txtCerror.AutoSize = true;
+            this.txtCerror.ForeColor = System.Drawing.Color.Red;
+            this.txtCerror.Location = new System.Drawing.Point(97, 81);
+            this.txtCerror.Name = "txtCerror";
+            this.txtCerror.Size = new System.Drawing.Size(0, 17);
+            this.txtCerror.TabIndex = 4;
+            // 
             // frmCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -222,7 +240,7 @@ namespace QTElectric.View
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCsave;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox cbCstatus;
         private System.Windows.Forms.TextBox txtCname;
@@ -235,5 +253,6 @@ namespace QTElectric.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label txtCerror;
     }
 }
