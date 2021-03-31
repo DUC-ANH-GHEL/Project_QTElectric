@@ -119,6 +119,7 @@ namespace QTElectric.View
             this.button1.TabIndex = 3;
             this.button1.Text = "Thêm mới";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // chkStatus
             // 
@@ -284,12 +285,13 @@ namespace QTElectric.View
             this.Column8,
             this.Column3,
             this.Column4});
-            this.dvgUser.Location = new System.Drawing.Point(16, 191);
+            this.dvgUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dvgUser.Location = new System.Drawing.Point(0, 0);
             this.dvgUser.Margin = new System.Windows.Forms.Padding(4);
             this.dvgUser.Name = "dvgUser";
             this.dvgUser.RowHeadersWidth = 51;
             this.dvgUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgUser.Size = new System.Drawing.Size(932, 239);
+            this.dvgUser.Size = new System.Drawing.Size(964, 444);
             this.dvgUser.TabIndex = 5;
             this.dvgUser.Click += new System.EventHandler(this.dvgUser_Click);
             // 

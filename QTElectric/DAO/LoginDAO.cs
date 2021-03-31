@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QTElectric.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,15 +17,20 @@ namespace QTElectric.DAO
             private set { instance = value; }
         }
         private LoginDAO() { }
-        public Boolean checkLogin(string userName, string passWord)
+        Login uLogin = null;
+        public Login checkLogin(string userName, string passWord)
         {
             string query = "CheckPass @user_name , @password";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
             if (result.Rows.Count > 0)
             {
-                return true;
+                uLogin = new Login()
+                {
+                    status = (result.Rows[0]["status"].ToString()) == "True" ? true : false
+                };
+                return uLogin;
             }
-            return false;
+            return null;
         }
     }
 }

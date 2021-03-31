@@ -1,5 +1,6 @@
 ﻿using QTElectric.Common;
 using QTElectric.DAO;
+using QTElectric.DTO;
 using QTElectric.Properties;
 using System;
 using System.Collections.Generic;
@@ -41,8 +42,19 @@ namespace QTElectric
             var userName = txtUsername.Text;
             var passWord = txtPassword.Text;
             var login = checkLogin(userName, HashPassword.CreateMD5(passWord));
-            if (login)
+            if (!(login is null))
             {
+                if (login.status) // check trạng thái hoạt động
+                {
+                    frmMain main = new frmMain();
+                    this.Hide();
+                    main.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Account has been deactivated", "Status");
+                }
                 if (cbRemember.Checked)
                 {
                     Settings.Default.Username = userName;
@@ -56,21 +68,18 @@ namespace QTElectric
                     Settings.Default.Remember = false;
                 }
                 Settings.Default.Save();
-                frmMain main = new frmMain();
-                this.Hide();
-                main.ShowDialog();
-                this.Show();
+
             }
             else
             {
-                MessageBox.Show("err");
+                MessageBox.Show("User or Password incorrect");
             }
         }
         public void startFrom()
         {
             Application.Run(new frmSplashScreen());
         }
-        public bool checkLogin(string userName, string passWord)
+        public Login checkLogin(string userName, string passWord)
         {
             return LoginDAO.Instance.checkLogin(userName, passWord);
         }

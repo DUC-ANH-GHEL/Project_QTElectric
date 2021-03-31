@@ -11,7 +11,7 @@ namespace QTElectric.DTO
         public int u_id { get; set; }
         public string user_name { get; set; }
         public string password { get; set; }
-        public char mobile { get; set; }
+        public string mobile { get; set; }
         public string email { get; set; }
         public bool gender { get; set; }
         public string full_name { get; set; }
