@@ -23,10 +23,23 @@ namespace QTElectric.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { c.cat_name, c.status, c.date_ceate });
             return result;
         }
+
         public DataTable Categories()
         {
             string query = "Get_Category";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            return result;
+        }
+        public int UpdateCategory(Category c)
+        {
+            string query = "Update_Category @id , @cat_name , @status , @date_create";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { c.cat_id, c.cat_name, c.status, c.date_ceate });
+            return result;
+        }
+        public int DeleteCategory(int id)
+        {
+            string query = "Delete_Category @id";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
             return result;
         }
     }

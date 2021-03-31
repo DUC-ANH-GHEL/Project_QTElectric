@@ -32,3 +32,4 @@ E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QT
 E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.csproj.CoreCompileInputs.cache
 E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.exe
 E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.pdb
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.frmSplashScreen.resources
