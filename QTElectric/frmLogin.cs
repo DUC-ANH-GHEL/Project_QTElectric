@@ -37,6 +37,9 @@ namespace QTElectric
             //    }
 
             //}
+            Thread.Sleep(5000);
+            frmMain frm = new frmMain();
+            frm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
