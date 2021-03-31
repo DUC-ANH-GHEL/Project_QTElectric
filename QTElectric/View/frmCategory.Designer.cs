@@ -30,6 +30,7 @@ namespace QTElectric.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.txtCerror = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.btnCsave = new System.Windows.Forms.Button();
@@ -45,17 +46,16 @@ namespace QTElectric.View
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.txtCerror);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnCsave);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cbCstatus);
             this.panel1.Controls.Add(this.txtCname);
@@ -68,6 +68,16 @@ namespace QTElectric.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(745, 145);
             this.panel1.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(511, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(100, 31);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Clear";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // txtCerror
             // 
@@ -226,17 +236,6 @@ namespace QTElectric.View
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(521, -1);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -272,6 +271,6 @@ namespace QTElectric.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label txtCerror;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
     }
 }

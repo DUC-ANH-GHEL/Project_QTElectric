@@ -15,6 +15,8 @@ namespace QTElectric
         public frmSplashScreen()
         {
             InitializeComponent();
+            this.TransparencyKey = Color.Turquoise;
+            this.BackColor = Color.Turquoise;
         }
     }
 }

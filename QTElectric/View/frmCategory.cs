@@ -21,11 +21,6 @@ namespace QTElectric.View
             CenterToScreen();
 
         }
-        //bool check = true;
-        //  if (check == false)
-        //    {
-        //        btnCsave.Text = "Sửa";
-        //    }
         private void button2_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn sửa không?", "Sửa", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -36,8 +31,6 @@ namespace QTElectric.View
         }
         public void load()
         {
-
-
             dvgCategory.DataSource = CategoryDAO.Instance.Categories();
         }
         public void AddNew()
@@ -55,7 +48,6 @@ namespace QTElectric.View
                 int result = CategoryDAO.Instance.InsertCategory(c);
                 if (result > 0)
                 {
-
                     MessageBox.Show("Insert Success");
                     load();
                     txtCname.Text = "";
@@ -65,9 +57,7 @@ namespace QTElectric.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtCid.Text = "";
-            txtCname.Text = "";
-            cbCstatus.Checked = false;
+            AddNew();
         }
 
 
@@ -125,6 +115,11 @@ namespace QTElectric.View
             }
         }
 
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            txtCid.Text = "";
+            txtCname.Text = "";
+            cbCstatus.Checked = false;
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace QTElectric
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QTElectric.Properties.Resources.logo;
+            this.pictureBox1.Image = global::QTElectric.Properties.Resources.logo_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(776, 384);
@@ -57,6 +57,7 @@ namespace QTElectric
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
             this.Controls.Add(this.progressBar1);

@@ -12,5 +12,6 @@ namespace QTElectric.DTO
         public string cat_name { get; set; }
         public Boolean status { get; set; }
         public DateTime date_ceate { get; set; }
+        public string status2 { get; set; }
     }
 }
