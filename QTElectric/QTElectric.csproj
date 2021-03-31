@@ -46,9 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\HashPassword.cs" />
     <Compile Include="DAO\CategoryDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DTO\Category.cs" />
     <Compile Include="DTO\Customer.cs" />
     <Compile Include="frmMain.cs">

@@ -16,6 +16,7 @@ namespace QTElectric
         public frmMain()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
         private void MdiLoadForm(Form f)
         {

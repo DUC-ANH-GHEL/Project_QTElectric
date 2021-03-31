@@ -26,6 +26,7 @@ namespace QTElectric.View
         {
             if (edit)
             {
+                btnCsave.Text = "Sửa";
                 if (MessageBox.Show("Bạn có muốn sửa không?", "Sửa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Update();
