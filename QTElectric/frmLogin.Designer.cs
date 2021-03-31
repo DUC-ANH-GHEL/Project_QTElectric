@@ -29,6 +29,7 @@ namespace QTElectric
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -55,7 +56,7 @@ namespace QTElectric
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(478, 293);
             this.panel1.TabIndex = 0;
@@ -71,7 +72,7 @@ namespace QTElectric
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(205, 31);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(241, 234);
             this.panel3.TabIndex = 1;
@@ -83,7 +84,7 @@ namespace QTElectric
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(118, 190);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 31);
             this.button1.TabIndex = 4;
@@ -95,7 +96,7 @@ namespace QTElectric
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(35, 169);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(90, 17);
             this.checkBox1.TabIndex = 3;
@@ -105,7 +106,7 @@ namespace QTElectric
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(35, 136);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(171, 20);
             this.textBox2.TabIndex = 2;
@@ -123,7 +124,7 @@ namespace QTElectric
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(35, 79);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(171, 20);
             this.textBox1.TabIndex = 1;
@@ -154,7 +155,7 @@ namespace QTElectric
             this.panel2.BackColor = System.Drawing.Color.LemonChiffon;
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(32, 31);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(174, 234);
             this.panel2.TabIndex = 0;
@@ -163,7 +164,7 @@ namespace QTElectric
             // 
             this.pictureBox1.Image = global::QTElectric.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(2, 36);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(167, 120);
             this.pictureBox1.TabIndex = 0;
@@ -176,7 +177,8 @@ namespace QTElectric
             this.ClientSize = new System.Drawing.Size(479, 293);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;

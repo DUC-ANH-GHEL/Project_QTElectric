@@ -1,13 +1,5 @@
 USE QTElectric
 GO
-CREATE PROC GetAll(@t varchar(10))
-AS
-BEGIN
-SELECT * FROM @t
-END
-
-exec GetAll @t = 'tbl_user'
-GO
 --CRUD OF tbl_user
 CREATE PROC Insert_User(@user_name varchar(10),	@password char(32),	@mobile char(10),@email varbinary(50),@gender bit,@full_name nvarchar(50),@status bit,@date_create datetime)
 AS
