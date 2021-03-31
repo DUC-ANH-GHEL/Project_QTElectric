@@ -25,6 +25,7 @@ namespace QTElectric
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+
             frmMain frm = new frmMain();
             frm.Show();
         }
