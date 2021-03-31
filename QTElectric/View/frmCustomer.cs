@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QTElectric.DAO;
+using QTElectric.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,76 @@ namespace QTElectric.View
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        public void Insert()
+        {
+            Customer cus = new Customer();
+            cus.fullName = txtCusfullname.Text;
+            cus.mobile = char.Parse(txtCusphone.Text);
+            cus.gender = cbCusgender.Checked == true ? true : false;
+            cus.email = txtCusemail.Text;
+            cus.status = cbCusstatus.Checked == true ? true : false;
+            cus.date_create = DateTime.Now;
+            int result = CustomerDAO.Instance.InsertCustomer(cus);
+            if (result > 0)
+            {
+                MessageBox.Show("Add New Success");
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!ValidateChildren())
+            {
+                MessageBox.Show("vui lòng điền");
+            }
+            else
+            {
+                Insert();
+            }
+
+        }
+
+        private void txtCusfullname_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCusfullname.Text == "")
+            {
+                lblerfullname.Text = "* Vui lòng không để trống";
+                return;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCusemail_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCusemail.Text == "")
+            {
+                lbleremail.Text = "* Vui lòng không để trống";
+                return;
+            }
+        }
+
+        private void txtCusphone_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCusphone.Text == "")
+            {
+                lblerphone.Text = "* Vui lòng không để trống";
+                return;
+            }
+        }
+
+        private void txtCusaddress_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCusaddress.Text == "")
+            {
+                lbleraddress.Text = "* Vui lòng không để trống";
+                return;
+            }
         }
     }
 }
