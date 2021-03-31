@@ -14,6 +14,7 @@ namespace QTElectric.View
 {
     public partial class frmCategory : Form
     {
+        bool edit;
         public frmCategory()
         {
             InitializeComponent();
@@ -23,11 +24,17 @@ namespace QTElectric.View
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn sửa không?", "Sửa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (edit)
             {
-                Update();
+                if (MessageBox.Show("Bạn có muốn sửa không?", "Sửa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Update();
+                }
             }
-
+            else
+            {
+                AddNew();
+            }
         }
         public void load()
         {
@@ -57,7 +64,10 @@ namespace QTElectric.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddNew();
+            txtCid.Text = "";
+            txtCname.Text = "";
+            cbCstatus.Checked = false;
+            edit = false;
         }
 
 
@@ -111,15 +121,9 @@ namespace QTElectric.View
                 txtCid.Text = dvgCategory.SelectedCells[0].Value.ToString();
                 txtCname.Text = dvgCategory.SelectedCells[1].Value.ToString();
                 cbCstatus.Checked = dvgCategory.SelectedCells[2].Value.ToString() == "True";
-
+                edit = true;
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            txtCid.Text = "";
-            txtCname.Text = "";
-            cbCstatus.Checked = false;
-        }
     }
 }
