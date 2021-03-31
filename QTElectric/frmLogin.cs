@@ -25,19 +25,6 @@ namespace QTElectric
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            //using (var stream = File.OpenRead(".\\Img\\logo.ico"))
-            //{
-            //    if (stream == null)
-            //    {
-            //        MessageBox.Show("Không tìm thấy");
-            //    }
-            //    else
-            //    {
-            //        this.Icon = new Icon(stream);
-            //    }
-
-            //}
-            Thread.Sleep(5000);
             frmMain frm = new frmMain();
             frm.Show();
         }
