@@ -36,7 +36,6 @@ namespace QTElectric
             {
                 f.Show();
             }
-
         }
         private void loạiLinhKiệnToolStripMenuItem_Click(object sender, EventArgs e)
         {
