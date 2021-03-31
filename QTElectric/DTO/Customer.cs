@@ -12,6 +12,9 @@ namespace QTElectric.DTO
         public string fullName { get; set; }
         public char mobile { get; set; }
         public string email { get; set; }
-
+        public string address { get; set; }
+        public Boolean gender { get; set; }
+        public Boolean status { get; set; }
+        public DateTime date_create { get; set; }
     }
 }
