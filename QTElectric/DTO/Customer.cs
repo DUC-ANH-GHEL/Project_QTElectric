@@ -10,7 +10,7 @@ namespace QTElectric.DTO
     {
         public int cus_id { get; set; }
         public string fullName { get; set; }
-        public char mobile { get; set; }
+        public string mobile { get; set; }
         public string email { get; set; }
         public string address { get; set; }
         public Boolean gender { get; set; }

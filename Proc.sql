@@ -1,12 +1,13 @@
 USE QTElectric
 GO
 --CRUD OF tbl_user
-CREATE PROC Insert_User(@user_name varchar(10),	@password char(32),	@mobile char(10),@email varbinary(50),@gender bit,@full_name nvarchar(50),@status bit,@date_create datetime)
+CREATE PROC Insert_User(@user_name varchar(10),	@password char(32),	@mobile char(10),@email varchar(50),@gender bit,@full_name nvarchar(50),@status bit,@date_create datetime)
 AS
 BEGIN
 INSERT INTO tbl_user(user_name, password, mobile, email, gender, full_name, status, date_create) VALUES (@user_name ,	@password ,	@mobile ,@email ,@gender ,@full_name ,@status ,@date_create )
 END
 GO
+
 exec Insert_User @user_name = 'd',	@password = '3' ,	@mobile = 99 ,@email = 9 ,@gender = 0 ,@full_name = 'd' ,@status = 1 ,@date_create = '2020-01-12'
 GO
 CREATE PROC Get_User
@@ -119,7 +120,7 @@ GO
 CREATE PROC Insert_Customer(@fullname nvarchar(50), @mobile nchar(10), @email varchar(50), @address nvarchar(250), @gender bit, @status bit, @date_create datetime)
 AS
 BEGIN
-INSERT INTO tbl_customer(fullName, mobile, email,address, gender, [status], date_create) VALUES (@fullname, @mobile, @email, @address, @gender, @status, @date_create) 
+INSERT INTO tbl_customer(fullName, mobile, email,[address], gender, [status], date_create) VALUES (@fullname, @mobile, @email, @address, @gender, @status, @date_create) 
 END
 GO
 CREATE PROC Get_Customer
@@ -241,3 +242,6 @@ BEGIN
 SELECT * FROM tbl_user WHERE user_name = @user_name AND password = @password
 END
 GO
+
+exec CheckPass @user_name = 'duc',  @password = '827ccb0eea8a706c4c34a16891f84e7b'
+

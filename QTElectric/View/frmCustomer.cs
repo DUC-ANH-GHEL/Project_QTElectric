@@ -27,7 +27,8 @@ namespace QTElectric.View
         {
             Customer cus = new Customer();
             cus.fullName = txtCusfullname.Text;
-            cus.mobile = char.Parse(txtCusphone.Text);
+            cus.mobile = (txtCusphone.Text);
+            cus.address = txtCusaddress.Text;
             cus.gender = cbCusgender.Checked == true ? true : false;
             cus.email = txtCusemail.Text;
             cus.status = cbCusstatus.Checked == true ? true : false;
@@ -60,6 +61,7 @@ namespace QTElectric.View
                 lblerfullname.Text = "* Vui lòng không để trống";
                 return;
             }
+            lblerfullname.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -74,6 +76,10 @@ namespace QTElectric.View
                 lbleremail.Text = "* Vui lòng không để trống";
                 return;
             }
+            else
+            {
+                lbleremail.Text = "";
+            }
         }
 
         private void txtCusphone_Validating(object sender, CancelEventArgs e)
@@ -83,6 +89,7 @@ namespace QTElectric.View
                 lblerphone.Text = "* Vui lòng không để trống";
                 return;
             }
+            lblerphone.Text = "";
         }
 
         private void txtCusaddress_Validating(object sender, CancelEventArgs e)
@@ -92,6 +99,7 @@ namespace QTElectric.View
                 lbleraddress.Text = "* Vui lòng không để trống";
                 return;
             }
+            lbleraddress.Text = "";
         }
     }
 }

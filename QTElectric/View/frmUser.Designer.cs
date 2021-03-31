@@ -47,9 +47,9 @@ namespace QTElectric.View
             this.label2 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dvgUser = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +59,7 @@ namespace QTElectric.View
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,10 +81,10 @@ namespace QTElectric.View
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtUserName);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtUid);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(16, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(932, 169);
             this.panel1.TabIndex = 4;
@@ -92,7 +92,7 @@ namespace QTElectric.View
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(828, 91);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 3;
@@ -102,17 +102,18 @@ namespace QTElectric.View
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(828, 46);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 3;
             this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(828, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 3;
@@ -123,7 +124,7 @@ namespace QTElectric.View
             // 
             this.chkStatus.AutoSize = true;
             this.chkStatus.Location = new System.Drawing.Point(488, 127);
-            this.chkStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkStatus.Margin = new System.Windows.Forms.Padding(4);
             this.chkStatus.Name = "chkStatus";
             this.chkStatus.Size = new System.Drawing.Size(96, 21);
             this.chkStatus.TabIndex = 2;
@@ -134,7 +135,7 @@ namespace QTElectric.View
             // 
             this.chkGender.AutoSize = true;
             this.chkGender.Location = new System.Drawing.Point(100, 127);
-            this.chkGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkGender.Margin = new System.Windows.Forms.Padding(4);
             this.chkGender.Name = "chkGender";
             this.chkGender.Size = new System.Drawing.Size(59, 21);
             this.chkGender.TabIndex = 2;
@@ -144,7 +145,7 @@ namespace QTElectric.View
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(488, 46);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(243, 22);
             this.txtPassword.TabIndex = 1;
@@ -152,7 +153,7 @@ namespace QTElectric.View
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(488, 86);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(237, 22);
             this.txtEmail.TabIndex = 1;
@@ -160,7 +161,7 @@ namespace QTElectric.View
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(100, 86);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(237, 22);
             this.txtPhone.TabIndex = 1;
@@ -168,7 +169,7 @@ namespace QTElectric.View
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(100, 46);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(237, 22);
             this.txtName.TabIndex = 1;
@@ -235,9 +236,8 @@ namespace QTElectric.View
             // 
             // txtUserName
             // 
-            this.txtUserName.Enabled = false;
             this.txtUserName.Location = new System.Drawing.Point(488, 5);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(243, 22);
             this.txtUserName.TabIndex = 1;
@@ -253,14 +253,14 @@ namespace QTElectric.View
             this.label5.TabIndex = 0;
             this.label5.Text = "UserName";
             // 
-            // textBox1
+            // txtUid
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(100, 5);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtUid.Enabled = false;
+            this.txtUid.Location = new System.Drawing.Point(100, 5);
+            this.txtUid.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUid.Name = "txtUid";
+            this.txtUid.Size = new System.Drawing.Size(237, 22);
+            this.txtUid.TabIndex = 1;
             // 
             // label1
             // 
@@ -272,10 +272,10 @@ namespace QTElectric.View
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã";
             // 
-            // dataGridView1
+            // dvgUser
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dvgUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column5,
             this.Column2,
@@ -284,12 +284,14 @@ namespace QTElectric.View
             this.Column8,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 191);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(932, 239);
-            this.dataGridView1.TabIndex = 5;
+            this.dvgUser.Location = new System.Drawing.Point(16, 191);
+            this.dvgUser.Margin = new System.Windows.Forms.Padding(4);
+            this.dvgUser.Name = "dvgUser";
+            this.dvgUser.RowHeadersWidth = 51;
+            this.dvgUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dvgUser.Size = new System.Drawing.Size(932, 239);
+            this.dvgUser.TabIndex = 5;
+            this.dvgUser.Click += new System.EventHandler(this.dvgUser_Click);
             // 
             // Column1
             // 
@@ -360,14 +362,14 @@ namespace QTElectric.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 444);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dvgUser);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmUser";
             this.Text = "Người quản trị";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,7 +385,7 @@ namespace QTElectric.View
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chkStatus;
         private System.Windows.Forms.TextBox txtPassword;
@@ -392,7 +394,7 @@ namespace QTElectric.View
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dvgUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
