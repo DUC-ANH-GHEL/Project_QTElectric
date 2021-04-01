@@ -37,3 +37,4 @@ E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QT
 E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.frmMain.resources
 D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.frmMain.resources
 E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmProduct.resources
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmProduct.resources
