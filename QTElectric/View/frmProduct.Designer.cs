@@ -30,6 +30,7 @@ namespace QTElectric.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -38,6 +39,7 @@ namespace QTElectric.View
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCsave = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@ namespace QTElectric.View
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgCategory)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,16 @@ namespace QTElectric.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(560, 118);
             this.panel1.TabIndex = 1;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(295, 78);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(45, 17);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "Còn";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // comboBox4
             // 
@@ -151,6 +161,15 @@ namespace QTElectric.View
             this.btnAddNew.Text = "Thêm mới";
             this.btnAddNew.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(225, 79);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Trạng thái";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -206,6 +225,8 @@ namespace QTElectric.View
             // 
             // dvgCategory
             // 
+            this.dvgCategory.AllowUserToAddRows = false;
+            this.dvgCategory.AllowUserToDeleteRows = false;
             this.dvgCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -272,25 +293,6 @@ namespace QTElectric.View
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(225, 79);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Trạng thái";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(295, 78);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(45, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Còn";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // frmProduct
             // 
