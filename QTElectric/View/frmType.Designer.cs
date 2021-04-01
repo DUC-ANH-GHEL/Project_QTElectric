@@ -30,18 +30,18 @@ namespace QTElectric.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxCat = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbxCat = new System.Windows.Forms.ComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +53,8 @@ namespace QTElectric.View
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.cbxCat);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -68,6 +70,14 @@ namespace QTElectric.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(560, 137);
             this.panel1.TabIndex = 1;
+            // 
+            // cbxCat
+            // 
+            this.cbxCat.FormattingEnabled = true;
+            this.cbxCat.Location = new System.Drawing.Point(110, 70);
+            this.cbxCat.Name = "cbxCat";
+            this.cbxCat.Size = new System.Drawing.Size(214, 21);
+            this.cbxCat.TabIndex = 4;
             // 
             // button3
             // 
@@ -122,6 +132,15 @@ namespace QTElectric.View
             this.label3.TabIndex = 0;
             this.label3.Text = "Trạng thái";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Loại linh kiện";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -150,6 +169,9 @@ namespace QTElectric.View
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -161,23 +183,6 @@ namespace QTElectric.View
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(560, 194);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 70);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Loại linh kiện";
-            // 
-            // cbxCat
-            // 
-            this.cbxCat.FormattingEnabled = true;
-            this.cbxCat.Location = new System.Drawing.Point(110, 70);
-            this.cbxCat.Name = "cbxCat";
-            this.cbxCat.Size = new System.Drawing.Size(214, 21);
-            this.cbxCat.TabIndex = 4;
             // 
             // Column1
             // 
