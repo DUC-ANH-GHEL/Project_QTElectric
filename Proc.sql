@@ -16,7 +16,7 @@ BEGIN
 SELECT * FROM tbl_user
 END
 GO
-CREATE PROC Update_User(@id int ,@user_name varchar(10),	@password char(32),	@mobile char(10),@email varbinary(50),@gender bit,@full_name nvarchar(50),@status bit,@date_create datetime)
+CREATE PROC Update_User(@id int ,@user_name varchar(10),	@password char(32),	@mobile char(10),@email nvarchar(50),@gender bit,@full_name nvarchar(50),@status bit,@date_create datetime)
 AS
 BEGIN
 UPDATE tbl_user
@@ -24,6 +24,7 @@ SET [user_name] = @user_name, [password] = @password, mobile = @mobile, email = 
 WHERE u_id = @id;
 END
 GO
+exec Update_User @id = 6, @user_name = 'k', @password = 'k', @mobile = jjj, @email = 'jj', @gender = true, @full_name = 'kk', @status = true, @date_create = '2000-2-2'
 CREATE PROC Delete_User(@id int)
 AS
 BEGIN
@@ -55,7 +56,7 @@ CREATE PROC Delete_Values(@id int)
 AS
 BEGIN
 DELETE FROM tbl_differenced WHERE val_id = @id
-DELETE FROM tbl_orderDetail WHERE value_id = @id
+DELETE FROM tbl_product WHERE val_id = @id
 DELETE FROM [values] WHERE val_id = @id
 END
 GO
@@ -85,7 +86,7 @@ CREATE PROC Delete_Differenced(@id int)
 AS
 BEGIN
 DELETE FROM tbl_differenced WHERE diff_id = @id;
-DELETE FROM tbl_orderDetail WHERE defference_id = @id;
+DELETE FROM tbl_product WHERE diff_id = @id;
 END
 GO
 --CRUD OF tbl_types
@@ -114,6 +115,8 @@ AS
 BEGIN
 DELETE FROM tbl_types WHERE type_id = @id
 DELETE FROM tbl_orderDetail WHERE type_id = @id
+DELETE FROM tbl_product WHERE type_id = @id
+DELETE FROM [values] WHERE type_id = @id
 END
 GO
 --CRUD OF thb_customer
@@ -173,11 +176,12 @@ DELETE FROM tbl_orderDetail WHERE order_id = @id
 END
 GO
 --CRUD OF tbl_orderDetail
-CREATE PROC Insert_OrderDetail(@order_id int, @cat_id int, @type_id int, @value_id int, @defference_id int, @amount_in int, @amount_out int, @status bit, @date_create datetime)
+CREATE PROC Insert_OrderDetail(@order_id int, @pro_id int, @type_id int, @value_id int, @amount_in int, @amount_out int, @status bit, @date_create datetime)
 AS
 BEGIN
-INSERT INTO tbl_orderDetail(order_id, cat_id, type_id, value_id, defference_id, amount_in, amount_out, status, date_create) VALUES (@order_id, @cat_id, @type_id, @value_id, @defference_id, @amount_in, @amount_out, @status, @date_create)
+INSERT INTO tbl_orderDetail(order_id, pro_id, type_id, amount_in, amount_out, status, date_create) VALUES (@order_id, @pro_id, @type_id,  @amount_in, @amount_out, @status, @date_create)
 END
+
 GO
 CREATE PROC Get_OrderDetail
 AS
@@ -185,11 +189,11 @@ BEGIN
 SELECT * FROM tbl_orderDetail
 END
 GO
-CREATE PROC Update_OrderDetail(@id int, @order_id int, @cat_id int, @type_id int, @value_id int, @defference_id int, @amount_in int, @amount_out int, @status bit, @date_create datetime)
+CREATE PROC Update_OrderDetail(@id int, @order_id int, @pro_id int, @type_id int,  @amount_in int, @amount_out int, @status bit, @date_create datetime)
 AS
 BEGIN
 UPDATE tbl_orderDetail
-SET order_id = @order_id, cat_id = @cat_id, type_id = @type_id, value_id = @value_id, defference_id = @defference_id, amount_in = @amount_in, amount_out = @amount_out, status = @status, date_create = @date_create
+SET order_id = @order_id, pro_id = @pro_id, type_id = @type_id, amount_in = @amount_in, amount_out = @amount_out, status = @status, date_create = @date_create
 WHERE or_detail_id = @id
 END
 GO
@@ -224,8 +228,36 @@ CREATE PROC Delete_Category(@id int)
 AS
 BEGIN
 DELETE FROM tbl_category WHERE cat_id = @id
-DELETE FROM tbl_orderDetail WHERE cat_id = @id
+DELETE FROM tbl_product WHERE cat_id = @id
 DELETE FROM tbl_types WHERE cat_id = @id
+END
+GO
+--CRUD OF tbl_Product
+CREATE PROC Insert_Product(@cat_id int, @type_id int, @val_id int, @diff_id int, @status bit, @date_create datetime)
+AS
+BEGIN
+INSERT INTO tbl_product(cat_id, [type_id], val_id, diff_id, [status], date_create) VALUES (@cat_id , @type_id , @val_id , @diff_id , @status , @date_create)
+END
+GO
+CREATE PROC Select_Product
+AS
+BEGIN
+SELECT * FROM tbl_product
+END
+GO
+CREATE PROC Update_Product(@id int , @cat_id int, @type_id int, @val_id int, @diff_id int, @status bit, @date_create datetime)
+AS
+BEGIN
+UPDATE tbl_product
+SET cat_id = @cat_id, type_id = @type_id, val_id = @val_id, diff_id = @diff_id, status = @status, date_create = @date_create
+WHERE pro_id = @id
+END
+GO
+CREATE PROC Delete_Product(@id int)
+AS
+BEGIN
+DELETE FROM tbl_product WHERE pro_id = @id
+DELETE FROM tbl_orderDetail WHERE pro_id = @id
 END
 GO
 --GET BY VALUES

@@ -47,6 +47,35 @@ namespace QTElectric.View
         {
             dvgUser.DataSource = UserDAO.Instance.Get();
         }
+        public void Update()
+        {
+            User u = new User();
+            u.u_id = int.Parse(txtUid.Text);
+            u.user_name = txtUserName.Text;
+            u.password = txtPassword.Text == null ? lblpasshide.Text : HashPassword.CreateMD5(txtPassword.Text);
+            u.status = chkStatus.Checked == true ? true : false;
+            u.gender = chkGender.Checked == true ? true : false;
+            u.full_name = txtName.Text;
+            u.date_create = DateTime.Now;
+            u.mobile = txtPhone.Text;
+            u.email = txtEmail.Text;
+            int result = UserDAO.Instance.Update(u);
+            if (result > 0)
+            {
+                MessageBox.Show("Update success", "Update");
+                Load();
+            }
+        }
+        public void Delete()
+        {
+            int id = int.Parse(txtUid.Text);
+            int result = UserDAO.Instance.Delete(id);
+            if (result > 0)
+            {
+                MessageBox.Show("Delete success", "Delete");
+                Load();
+            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -54,26 +83,38 @@ namespace QTElectric.View
             {
                 Insert();
             }
+            else
+            {
+                Update();
+            }
 
         }
 
         private void dvgUser_Click(object sender, EventArgs e)
         {
+
             check = false;
             txtUid.Text = dvgUser.SelectedCells[0].Value.ToString();
             txtUserName.Text = dvgUser.SelectedCells[1].Value.ToString();
-            txtName.Text = dvgUser.SelectedCells[2].Value.ToString();
+            lblpasshide.Text = dvgUser.SelectedCells[2].Value.ToString();
+            txtName.Text = dvgUser.SelectedCells[6].Value.ToString();
             txtPhone.Text = dvgUser.SelectedCells[3].Value.ToString();
             txtEmail.Text = dvgUser.SelectedCells[4].Value.ToString();
             chkGender.Checked = dvgUser.SelectedCells[7].Value.ToString() == "True";
             chkStatus.Checked = dvgUser.SelectedCells[5].Value.ToString() == "True";
-
+            button2.Text = "Sửa";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            button2.Text = "Lưu";
             txtUid.Text = txtUserName.Text = txtName.Text = txtPhone.Text = txtEmail.Text = "";
             chkGender.Checked = chkStatus.Checked = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Delete();
         }
     }
 }

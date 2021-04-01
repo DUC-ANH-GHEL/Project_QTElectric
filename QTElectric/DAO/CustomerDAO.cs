@@ -1,6 +1,7 @@
 ﻿using QTElectric.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,24 @@ namespace QTElectric.DAO
         {
             string query = "Insert_Customer @fullname , @mobile , @email , @address , @gender , @status , @date_create";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { cus.fullName, cus.mobile, cus.email, cus.address, cus.gender, cus.status, cus.date_create });
+            return result;
+        }
+        public DataTable Get()
+        {
+            string query = "Get_Customer";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            return result;
+        }
+        public int Update(Customer cu)
+        {
+            string query = "Update_Customer(@id , @fullname , @mobile , @email , @address , @gender , @status , @date_create";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { cu });
+            return result;
+        }
+        public int Delete(int id)
+        {
+            string query = "Delete_Customer @id";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
             return result;
         }
     }

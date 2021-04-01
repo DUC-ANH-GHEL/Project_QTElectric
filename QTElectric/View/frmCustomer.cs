@@ -18,7 +18,7 @@ namespace QTElectric.View
         {
             InitializeComponent();
         }
-
+        bool check = true;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -38,7 +38,40 @@ namespace QTElectric.View
             {
                 MessageBox.Show("Add New Success");
             }
+        }
+        public void Load()
+        {
+            dvgCus.DataSource = CustomerDAO.Instance.Get();
+        }
+        public void Update()
+        {
+            Customer cus = new Customer();
+            cus.cus_id = int.Parse(txtCusid.Text);
+            cus.fullName = txtCusfullname.Text;
+            cus.mobile = txtCusphone.Text;
+            cus.email = txtCusemail.Text;
+            cus.address = txtCusaddress.Text;
+            cus.date_create = DateTime.Now;
+            cus.gender = cbCusgender.Checked == true ? true : false;
+            cus.status = cbCusstatus.Checked == true ? true : false;
+            int result = CustomerDAO.Instance.Update(cus);
+            if(result > 0)
+            {
+                MessageBox.Show("Update success", "Update");
+                Load();
+            }
+        }
+        public void Delete()
+        {
+            int id = int.Parse(txtCusid.Text);
+            int result = CustomerDAO.Instance.Delete(id);
+            if (result > 0)
+            {
+                MessageBox.Show("Delete success", "Delete");
+            }
+            {
 
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,7 +99,14 @@ namespace QTElectric.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if (check)
+            {
+                Insert();
+            }
+            else
+            {
+                Update();
+            }
         }
 
         private void txtCusemail_Validating(object sender, CancelEventArgs e)
@@ -100,6 +140,13 @@ namespace QTElectric.View
                 return;
             }
             lbleraddress.Text = "";
+        }
+
+        private void dvgCus_Click(object sender, EventArgs e)
+        {
+            txtCusid.Text = dvgCus.SelectedCells[0].Value.ToString();
+
+            check = false;
         }
     }
 }

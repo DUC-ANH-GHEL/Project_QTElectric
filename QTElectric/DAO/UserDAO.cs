@@ -29,5 +29,17 @@ namespace QTElectric.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result;
         }
+        public int Update(User u)
+        {
+            string query = "Update_User @id , @user_name , @password , @mobile , @email , @gender , @full_name , @status , @date_create ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { u.u_id, u.user_name, u.password, u.mobile, u.email, u.gender, u.full_name, u.status, u.date_create });
+            return result;
+        }
+        public int Delete(int id)
+        {
+            string query = "Delete_User @id";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
+            return result;
+        }
     }
 }
