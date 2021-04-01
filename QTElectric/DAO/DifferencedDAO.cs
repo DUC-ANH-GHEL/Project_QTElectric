@@ -43,7 +43,7 @@ namespace QTElectric.DAO
         }
         public DataTable GetValues()
         {
-            string query = "GetValues";
+            string query = "Get_Values";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result;
         }

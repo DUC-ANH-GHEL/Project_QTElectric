@@ -66,7 +66,7 @@ namespace QTElectric.View
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.lbleraddress);
             this.panel1.Controls.Add(this.lblerphone);
@@ -89,54 +89,56 @@ namespace QTElectric.View
             this.panel1.Controls.Add(this.txtCusfullname);
             this.panel1.Controls.Add(this.txtCusid);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(16, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(933, 188);
+            this.panel1.Size = new System.Drawing.Size(700, 153);
             this.panel1.TabIndex = 5;
             // 
             // lbleraddress
             // 
             this.lbleraddress.AutoSize = true;
             this.lbleraddress.ForeColor = System.Drawing.Color.Red;
-            this.lbleraddress.Location = new System.Drawing.Point(96, 137);
+            this.lbleraddress.Location = new System.Drawing.Point(72, 111);
+            this.lbleraddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbleraddress.Name = "lbleraddress";
-            this.lbleraddress.Size = new System.Drawing.Size(0, 17);
+            this.lbleraddress.Size = new System.Drawing.Size(0, 13);
             this.lbleraddress.TabIndex = 4;
             // 
             // lblerphone
             // 
             this.lblerphone.AutoSize = true;
             this.lblerphone.ForeColor = System.Drawing.Color.Red;
-            this.lblerphone.Location = new System.Drawing.Point(96, 78);
+            this.lblerphone.Location = new System.Drawing.Point(72, 63);
+            this.lblerphone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblerphone.Name = "lblerphone";
-            this.lblerphone.Size = new System.Drawing.Size(0, 17);
+            this.lblerphone.Size = new System.Drawing.Size(0, 13);
             this.lblerphone.TabIndex = 4;
             // 
             // lbleremail
             // 
             this.lbleremail.AutoSize = true;
             this.lbleremail.ForeColor = System.Drawing.Color.Red;
-            this.lbleremail.Location = new System.Drawing.Point(485, 78);
+            this.lbleremail.Location = new System.Drawing.Point(364, 63);
+            this.lbleremail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbleremail.Name = "lbleremail";
-            this.lbleremail.Size = new System.Drawing.Size(0, 17);
+            this.lbleremail.Size = new System.Drawing.Size(0, 13);
             this.lbleremail.TabIndex = 4;
             // 
             // lblerfullname
             // 
             this.lblerfullname.AutoSize = true;
             this.lblerfullname.ForeColor = System.Drawing.Color.Red;
-            this.lblerfullname.Location = new System.Drawing.Point(484, 31);
+            this.lblerfullname.Location = new System.Drawing.Point(363, 25);
+            this.lblerfullname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblerfullname.Name = "lblerfullname";
-            this.lblerfullname.Size = new System.Drawing.Size(0, 17);
+            this.lblerfullname.Size = new System.Drawing.Size(0, 13);
             this.lblerfullname.TabIndex = 4;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(828, 91);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(621, 74);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 28);
+            this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
@@ -144,10 +146,9 @@ namespace QTElectric.View
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(828, 46);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(621, 37);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
+            this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = true;
@@ -155,10 +156,9 @@ namespace QTElectric.View
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(828, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(621, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Thêm mới";
             this.button1.UseVisualStyleBackColor = true;
@@ -167,10 +167,9 @@ namespace QTElectric.View
             // cbCusstatus
             // 
             this.cbCusstatus.AutoSize = true;
-            this.cbCusstatus.Location = new System.Drawing.Point(487, 158);
-            this.cbCusstatus.Margin = new System.Windows.Forms.Padding(4);
+            this.cbCusstatus.Location = new System.Drawing.Point(365, 128);
             this.cbCusstatus.Name = "cbCusstatus";
-            this.cbCusstatus.Size = new System.Drawing.Size(96, 21);
+            this.cbCusstatus.Size = new System.Drawing.Size(77, 17);
             this.cbCusstatus.TabIndex = 2;
             this.cbCusstatus.Text = "Hoạt động";
             this.cbCusstatus.UseVisualStyleBackColor = true;
@@ -178,133 +177,122 @@ namespace QTElectric.View
             // cbCusgender
             // 
             this.cbCusgender.AutoSize = true;
-            this.cbCusgender.Location = new System.Drawing.Point(99, 158);
-            this.cbCusgender.Margin = new System.Windows.Forms.Padding(4);
+            this.cbCusgender.Location = new System.Drawing.Point(74, 128);
             this.cbCusgender.Name = "cbCusgender";
-            this.cbCusgender.Size = new System.Drawing.Size(59, 21);
+            this.cbCusgender.Size = new System.Drawing.Size(48, 17);
             this.cbCusgender.TabIndex = 2;
             this.cbCusgender.Text = "Nam";
             this.cbCusgender.UseVisualStyleBackColor = true;
             // 
             // txtCusemail
             // 
-            this.txtCusemail.Location = new System.Drawing.Point(488, 52);
-            this.txtCusemail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCusemail.Location = new System.Drawing.Point(366, 42);
             this.txtCusemail.Name = "txtCusemail";
-            this.txtCusemail.Size = new System.Drawing.Size(243, 22);
+            this.txtCusemail.Size = new System.Drawing.Size(183, 20);
             this.txtCusemail.TabIndex = 1;
             this.txtCusemail.Validating += new System.ComponentModel.CancelEventHandler(this.txtCusemail_Validating);
             // 
             // txtCusaddress
             // 
-            this.txtCusaddress.Location = new System.Drawing.Point(99, 111);
-            this.txtCusaddress.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCusaddress.Location = new System.Drawing.Point(74, 90);
             this.txtCusaddress.Name = "txtCusaddress";
-            this.txtCusaddress.Size = new System.Drawing.Size(631, 22);
+            this.txtCusaddress.Size = new System.Drawing.Size(474, 20);
             this.txtCusaddress.TabIndex = 1;
             this.txtCusaddress.Validating += new System.ComponentModel.CancelEventHandler(this.txtCusaddress_Validating);
             // 
             // txtCusphone
             // 
-            this.txtCusphone.Location = new System.Drawing.Point(100, 52);
-            this.txtCusphone.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCusphone.Location = new System.Drawing.Point(75, 42);
             this.txtCusphone.Name = "txtCusphone";
-            this.txtCusphone.Size = new System.Drawing.Size(237, 22);
+            this.txtCusphone.Size = new System.Drawing.Size(179, 20);
             this.txtCusphone.TabIndex = 1;
             this.txtCusphone.Validating += new System.ComponentModel.CancelEventHandler(this.txtCusphone_Validating);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(392, 158);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(294, 128);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 17);
+            this.label8.Size = new System.Drawing.Size(55, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Trạng thái";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 158);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(3, 128);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Giới tính";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 111);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(3, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Địa chỉ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(392, 55);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(294, 45);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 17);
+            this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Email";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 52);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(4, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 17);
+            this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Số điện thoại";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(392, 6);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(294, 5);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 17);
+            this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Họ và tên";
             // 
             // txtCusfullname
             // 
-            this.txtCusfullname.Location = new System.Drawing.Point(488, 5);
-            this.txtCusfullname.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCusfullname.Location = new System.Drawing.Point(366, 4);
             this.txtCusfullname.Name = "txtCusfullname";
-            this.txtCusfullname.Size = new System.Drawing.Size(243, 22);
+            this.txtCusfullname.Size = new System.Drawing.Size(183, 20);
             this.txtCusfullname.TabIndex = 1;
             this.txtCusfullname.Validating += new System.ComponentModel.CancelEventHandler(this.txtCusfullname_Validating);
             // 
             // txtCusid
             // 
             this.txtCusid.Enabled = false;
-            this.txtCusid.Location = new System.Drawing.Point(100, 5);
-            this.txtCusid.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCusid.Location = new System.Drawing.Point(75, 4);
             this.txtCusid.Name = "txtCusid";
-            this.txtCusid.Size = new System.Drawing.Size(237, 22);
+            this.txtCusid.Size = new System.Drawing.Size(179, 20);
             this.txtCusid.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(4, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 17);
+            this.label1.Size = new System.Drawing.Size(22, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã";
             // 
             // dvgCus
             // 
-            this.dvgCus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dvgCus.AllowUserToAddRows = false;
+            this.dvgCus.AllowUserToDeleteRows = false;
+            this.dvgCus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgCus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgCus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -316,13 +304,12 @@ namespace QTElectric.View
             this.Column8,
             this.Column3,
             this.Column4});
-            this.dvgCus.Location = new System.Drawing.Point(16, 210);
-            this.dvgCus.Margin = new System.Windows.Forms.Padding(4);
+            this.dvgCus.Location = new System.Drawing.Point(12, 171);
             this.dvgCus.Name = "dvgCus";
             this.dvgCus.ReadOnly = true;
             this.dvgCus.RowHeadersWidth = 51;
             this.dvgCus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgCus.Size = new System.Drawing.Size(933, 219);
+            this.dvgCus.Size = new System.Drawing.Size(700, 178);
             this.dvgCus.TabIndex = 6;
             this.dvgCus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dvgCus.Click += new System.EventHandler(this.dvgCus_Click);
@@ -401,12 +388,11 @@ namespace QTElectric.View
             // 
             // frmCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 444);
+            this.ClientSize = new System.Drawing.Size(724, 361);
             this.Controls.Add(this.dvgCus);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCustomer";
             this.Text = "Khách hàng";
             this.panel1.ResumeLayout(false);

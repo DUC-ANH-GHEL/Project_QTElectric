@@ -30,6 +30,7 @@ namespace QTElectric.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtError = new System.Windows.Forms.Label();
             this.cbxCat = new System.Windows.Forms.ComboBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@ namespace QTElectric.View
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvType)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,14 @@ namespace QTElectric.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(560, 146);
             this.panel1.TabIndex = 1;
+            // 
+            // txtError
+            // 
+            this.txtError.AutoSize = true;
+            this.txtError.Location = new System.Drawing.Point(110, 127);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(0, 13);
+            this.txtError.TabIndex = 5;
             // 
             // cbxCat
             // 
@@ -174,6 +182,8 @@ namespace QTElectric.View
             // 
             // dgvType
             // 
+            this.dgvType.AllowUserToAddRows = false;
+            this.dgvType.AllowUserToDeleteRows = false;
             this.dgvType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -198,6 +208,7 @@ namespace QTElectric.View
             this.Column1.DataPropertyName = "type_id";
             this.Column1.HeaderText = "Mã";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
@@ -205,6 +216,7 @@ namespace QTElectric.View
             this.Column2.DataPropertyName = "type_name";
             this.Column2.HeaderText = "Tên";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column5
             // 
@@ -212,6 +224,7 @@ namespace QTElectric.View
             this.Column5.DataPropertyName = "cat_id";
             this.Column5.HeaderText = "Loại linh kiện";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column3
             // 
@@ -219,6 +232,7 @@ namespace QTElectric.View
             this.Column3.DataPropertyName = "status";
             this.Column3.HeaderText = "Trạng thái";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
@@ -226,14 +240,7 @@ namespace QTElectric.View
             this.Column4.DataPropertyName = "date_create";
             this.Column4.HeaderText = "Ngày nhập";
             this.Column4.Name = "Column4";
-            // 
-            // txtError
-            // 
-            this.txtError.AutoSize = true;
-            this.txtError.Location = new System.Drawing.Point(110, 127);
-            this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(0, 13);
-            this.txtError.TabIndex = 5;
+            this.Column4.ReadOnly = true;
             // 
             // frmType
             // 

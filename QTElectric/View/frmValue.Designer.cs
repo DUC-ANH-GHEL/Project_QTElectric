@@ -182,6 +182,8 @@ namespace QTElectric.View
             // 
             // dgvValue
             // 
+            this.dgvValue.AllowUserToAddRows = false;
+            this.dgvValue.AllowUserToDeleteRows = false;
             this.dgvValue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -194,6 +196,7 @@ namespace QTElectric.View
             this.Column4});
             this.dgvValue.Location = new System.Drawing.Point(12, 155);
             this.dgvValue.Name = "dgvValue";
+            this.dgvValue.ReadOnly = true;
             this.dgvValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvValue.Size = new System.Drawing.Size(560, 194);
             this.dgvValue.TabIndex = 3;
@@ -205,6 +208,7 @@ namespace QTElectric.View
             this.Column1.DataPropertyName = "val_id";
             this.Column1.HeaderText = "Mã";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
@@ -212,6 +216,7 @@ namespace QTElectric.View
             this.Column2.DataPropertyName = "val_name";
             this.Column2.HeaderText = "Tên";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column5
             // 
@@ -219,6 +224,7 @@ namespace QTElectric.View
             this.Column5.DataPropertyName = "type_id";
             this.Column5.HeaderText = "Loại chân";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column3
             // 
@@ -226,6 +232,7 @@ namespace QTElectric.View
             this.Column3.DataPropertyName = "status";
             this.Column3.HeaderText = "Trạng thái";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
@@ -233,6 +240,7 @@ namespace QTElectric.View
             this.Column4.DataPropertyName = "date_create";
             this.Column4.HeaderText = "Ngày nhập";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // frmValue
             // 
