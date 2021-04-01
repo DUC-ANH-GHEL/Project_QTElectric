@@ -30,6 +30,7 @@ namespace QTElectric.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblpasshide = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@ namespace QTElectric.View
             this.txtUid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dvgUser = new System.Windows.Forms.DataGridView();
-            this.lblpasshide = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,6 +92,16 @@ namespace QTElectric.View
             this.panel1.Size = new System.Drawing.Size(932, 169);
             this.panel1.TabIndex = 4;
             // 
+            // lblpasshide
+            // 
+            this.lblpasshide.AutoSize = true;
+            this.lblpasshide.Location = new System.Drawing.Point(641, 127);
+            this.lblpasshide.Name = "lblpasshide";
+            this.lblpasshide.Size = new System.Drawing.Size(65, 17);
+            this.lblpasshide.TabIndex = 4;
+            this.lblpasshide.Text = "passhide";
+            this.lblpasshide.Visible = false;
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(828, 91);
@@ -123,6 +133,7 @@ namespace QTElectric.View
             this.button1.TabIndex = 3;
             this.button1.Text = "Thêm mới";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // chkStatus
             // 
@@ -300,16 +311,6 @@ namespace QTElectric.View
             this.dvgUser.Size = new System.Drawing.Size(932, 239);
             this.dvgUser.TabIndex = 5;
             this.dvgUser.Click += new System.EventHandler(this.dvgUser_Click);
-            // 
-            // lblpasshide
-            // 
-            this.lblpasshide.AutoSize = true;
-            this.lblpasshide.Location = new System.Drawing.Point(641, 127);
-            this.lblpasshide.Name = "lblpasshide";
-            this.lblpasshide.Size = new System.Drawing.Size(65, 17);
-            this.lblpasshide.TabIndex = 4;
-            this.lblpasshide.Text = "passhide";
-            this.lblpasshide.Visible = false;
             // 
             // Column1
             // 

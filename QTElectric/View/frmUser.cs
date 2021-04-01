@@ -34,7 +34,7 @@ namespace QTElectric.View
             u.gender = chkGender.Checked == true ? true : false;
             u.status = chkStatus.Checked == true ? true : false;
             u.email = txtEmail.Text;
-            u.mobile = char.Parse(txtPhone.Text);
+            u.mobile = (txtPhone.Text);
             u.date_create = DateTime.Now;
             int result = UserDAO.Instance.Insert(u);
             if (result > 0)
@@ -104,16 +104,18 @@ namespace QTElectric.View
             button2.Text = "Sửa";
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            button2.Text = "Lưu";
-            txtUid.Text = txtUserName.Text = txtName.Text = txtPhone.Text = txtEmail.Text = "";
-            chkGender.Checked = chkStatus.Checked = false;
-        }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
             Delete();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            button2.Text = "Lưu";
+            txtUid.Text = txtUserName.Text = txtName.Text = txtPhone.Text = txtEmail.Text = "";
+            chkGender.Checked = chkStatus.Checked = false;
         }
     }
 }
