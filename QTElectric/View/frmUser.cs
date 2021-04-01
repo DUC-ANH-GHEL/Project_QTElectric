@@ -20,7 +20,7 @@ namespace QTElectric.View
             InitializeComponent();
             Load();
         }
-        bool check = true;
+
         private void txtUserName_TextChanged(object sender, EventArgs e)
         {
 
@@ -34,7 +34,7 @@ namespace QTElectric.View
             u.gender = chkGender.Checked == true ? true : false;
             u.status = chkStatus.Checked == true ? true : false;
             u.email = txtEmail.Text;
-            u.mobile = (txtPhone.Text);
+            u.mobile = char.Parse(txtPhone.Text);
             u.date_create = DateTime.Now;
             int result = UserDAO.Instance.Insert(u);
             if (result > 0)
@@ -50,16 +50,12 @@ namespace QTElectric.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (check)
-            {
-                Insert();
-            }
-
+            Insert();
         }
 
         private void dvgUser_Click(object sender, EventArgs e)
         {
-            check = false;
+
             txtUid.Text = dvgUser.SelectedCells[0].Value.ToString();
             txtUserName.Text = dvgUser.SelectedCells[1].Value.ToString();
             txtName.Text = dvgUser.SelectedCells[2].Value.ToString();
@@ -68,12 +64,6 @@ namespace QTElectric.View
             chkGender.Checked = dvgUser.SelectedCells[7].Value.ToString() == "True";
             chkStatus.Checked = dvgUser.SelectedCells[5].Value.ToString() == "True";
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txtUid.Text = txtUserName.Text = txtName.Text = txtPhone.Text = txtEmail.Text = "";
-            chkGender.Checked = chkStatus.Checked = false;
         }
     }
 }
