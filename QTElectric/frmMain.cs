@@ -94,5 +94,10 @@ namespace QTElectric
         {
             đơnHàngToolStripMenuItem_Click(sender, e);
         }
+
+        private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

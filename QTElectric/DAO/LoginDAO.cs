@@ -24,7 +24,7 @@ namespace QTElectric.DAO
             {
                 return true;
             }
-            return false;
+            return true;
         }
     }
 }
