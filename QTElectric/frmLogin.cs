@@ -32,8 +32,6 @@ namespace QTElectric
             txtUsername.Text = Settings.Default.Username;
             txtPassword.Text = Settings.Default.Password;
             cbRemember.Checked = Settings.Default.Remember;
-            //frmMain frm = new frmMain();
-            //frm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

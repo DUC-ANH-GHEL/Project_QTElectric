@@ -16,5 +16,10 @@ namespace QTElectric.View
         {
             InitializeComponent();
         }
+
+        private void frmOrder_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
