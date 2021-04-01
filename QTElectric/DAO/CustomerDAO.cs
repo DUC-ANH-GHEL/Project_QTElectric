@@ -31,8 +31,8 @@ namespace QTElectric.DAO
         }
         public int Update(Customer cu)
         {
-            string query = "Update_Customer(@id , @fullname , @mobile , @email , @address , @gender , @status , @date_create";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { cu });
+            string query = "Update_Customer @id , @fullname , @mobile , @email , @address , @gender , @status , @date_create";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { cu.cus_id, cu.fullName, cu.mobile, cu.email, cu.address, cu.gender, cu.status, cu.date_create });
             return result;
         }
         public int Delete(int id)

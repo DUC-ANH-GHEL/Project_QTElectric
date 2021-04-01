@@ -17,6 +17,7 @@ namespace QTElectric.View
         public frmCustomer()
         {
             InitializeComponent();
+            Load();
         }
         bool check = true;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -37,6 +38,7 @@ namespace QTElectric.View
             if (result > 0)
             {
                 MessageBox.Show("Add New Success");
+                Load();
             }
         }
         public void Load()
@@ -55,7 +57,7 @@ namespace QTElectric.View
             cus.gender = cbCusgender.Checked == true ? true : false;
             cus.status = cbCusstatus.Checked == true ? true : false;
             int result = CustomerDAO.Instance.Update(cus);
-            if(result > 0)
+            if (result > 0)
             {
                 MessageBox.Show("Update success", "Update");
                 Load();
@@ -68,24 +70,27 @@ namespace QTElectric.View
             if (result > 0)
             {
                 MessageBox.Show("Delete success", "Delete");
+                Load();
+                txtCusid.Text = txtCusfullname.Text = txtCusphone.Text = txtCusemail.Text = txtCusaddress.Text = "";
+                cbCusgender.Checked = cbCusstatus.Checked = false;
             }
             {
 
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (!ValidateChildren())
-            {
-                MessageBox.Show("vui lòng điền");
-            }
-            else
-            {
-                Insert();
-            }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    if (!ValidateChildren())
+        //    {
+        //        MessageBox.Show("vui lòng điền");
+        //    }
+        //    else
+        //    {
+        //        Insert();
+        //    }
 
-        }
+        //}
 
         private void txtCusfullname_Validating(object sender, CancelEventArgs e)
         {
@@ -101,7 +106,14 @@ namespace QTElectric.View
         {
             if (check)
             {
-                Insert();
+                if (!ValidateChildren())
+                {
+                    MessageBox.Show("vui lòng điền");
+                }
+                else
+                {
+                    Insert();
+                }
             }
             else
             {
@@ -116,10 +128,7 @@ namespace QTElectric.View
                 lbleremail.Text = "* Vui lòng không để trống";
                 return;
             }
-            else
-            {
-                lbleremail.Text = "";
-            }
+            lbleremail.Text = "";
         }
 
         private void txtCusphone_Validating(object sender, CancelEventArgs e)
@@ -144,9 +153,27 @@ namespace QTElectric.View
 
         private void dvgCus_Click(object sender, EventArgs e)
         {
+            button2.Text = "Sửa";
             txtCusid.Text = dvgCus.SelectedCells[0].Value.ToString();
-
+            txtCusfullname.Text = dvgCus.SelectedCells[1].Value.ToString();
+            txtCusphone.Text = dvgCus.SelectedCells[2].Value.ToString();
+            txtCusemail.Text = dvgCus.SelectedCells[3].Value.ToString();
+            txtCusaddress.Text = dvgCus.SelectedCells[4].Value.ToString();
+            cbCusgender.Checked = dvgCus.SelectedCells[5].Value.ToString() == "True" ? true : false;
+            cbCusstatus.Checked = dvgCus.SelectedCells[6].Value.ToString() == "True" ? true : false;
             check = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button2.Text = "Lưu";
+            txtCusid.Text = txtCusfullname.Text = txtCusphone.Text = txtCusemail.Text = txtCusaddress.Text = "";
+            cbCusgender.Checked = cbCusstatus.Checked = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Delete();
         }
     }
 }

@@ -89,6 +89,7 @@ DELETE FROM tbl_differenced WHERE diff_id = @id;
 DELETE FROM tbl_product WHERE diff_id = @id;
 END
 GO
+
 --CRUD OF tbl_types
 CREATE PROC Insert_Types(@type_name nvarchar(50), @cat_id int, @status bit, @date_create datetime)
 AS
@@ -260,11 +261,18 @@ DELETE FROM tbl_product WHERE pro_id = @id
 DELETE FROM tbl_orderDetail WHERE pro_id = @id
 END
 GO
+--GET VALUES
+CREATE PROC GetValues
+AS
+BEGIN
+SELECT val_id, val_name FROM [values]
+END
+GO
 --GET BY VALUES
 CREATE PROC GetByValues
 AS
 BEGIN
-SELECT v.val_name, t.type_name, c.cat_name, d.diff_name From [values] as v INNER JOIN tbl_types as t  ON v.val_id = t.type_id INNER JOIN tbl_category as c ON t.cat_id = c.cat_id INNER JOIN tbl_differenced as d ON v.val_id = d.val_id
+SELECT  v.val_name, t.type_name, c.cat_name, d.diff_name From [values] as v INNER JOIN tbl_types as t  ON v.val_id = t.type_id INNER JOIN tbl_category as c ON t.cat_id = c.cat_id INNER JOIN tbl_differenced as d ON v.val_id = d.val_id
 END
 GO
 --CHECK PASSWORD
