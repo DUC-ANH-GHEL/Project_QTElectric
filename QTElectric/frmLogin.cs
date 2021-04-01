@@ -54,7 +54,7 @@ namespace QTElectric
                     Settings.Default.Remember = false;
                 }
                 Settings.Default.Save();
-                frmMain main = new frmMain();
+                frmMain main = new frmMain(this);
                 this.Hide();
                 main.ShowDialog();
                 this.Show();
