@@ -69,6 +69,7 @@ namespace QTElectric.View
             txtCname.Text = "";
             cbCstatus.Checked = false;
             edit = false;
+            btnCsave.Text = "Lưu";
         }
 
 

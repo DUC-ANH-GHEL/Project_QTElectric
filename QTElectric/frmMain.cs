@@ -13,9 +13,11 @@ namespace QTElectric
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        Form frmParent;
+        public frmMain(Form frmParent)
         {
             InitializeComponent();
+            this.frmParent = frmParent;
             this.CenterToScreen();
         }
         private void MdiLoadForm(Form f)
@@ -98,6 +100,11 @@ namespace QTElectric
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmParent.Close();
         }
     }
 }
