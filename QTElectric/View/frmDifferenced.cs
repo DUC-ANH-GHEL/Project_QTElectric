@@ -20,6 +20,7 @@ namespace QTElectric.View
             Loadcbx();
             Load();
         }
+        bool check = true;
         public void Loadcbx()
         {
             DataTable result = DifferencedDAO.Instance.GetValues();
@@ -83,15 +84,41 @@ namespace QTElectric.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Insert();
+            if (check)
+            {
+                Insert();
+            }
+            else
+            {
+                Update();
+            }
         }
 
         private void dvgDiff_Click(object sender, EventArgs e)
         {
-            txtDid.Text = dvgDiff.SelectedCells[0].Value.ToString();
-            txtDname.Text = dvgDiff.SelectedCells[1].Value.ToString();
-            cbxValue.Text = dvgDiff.SelectedCells[2].ToString();
-            cbDstatus.Checked = dvgDiff.SelectedCells[3].Value.ToString() == "True" ? true : false;
+            if (dvgDiff.SelectedRows.Count > 0)
+            {
+                button2.Text = "Sửa";
+                txtDid.Text = dvgDiff.SelectedCells[0].Value.ToString();
+                txtDname.Text = dvgDiff.SelectedCells[1].Value.ToString();
+                cbxValue.SelectedValue = dvgDiff.SelectedCells[2].Value.ToString();
+                cbDstatus.Checked = dvgDiff.SelectedCells[3].Value.ToString() == "True" ? true : false;
+                check = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button2.Text = "Lưu";
+            txtDid.Text = txtDname.Text = "";
+            cbDstatus.Checked = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Delete();
+            txtDid.Text = txtDname.Text = "";
+            cbDstatus.Checked = false;
         }
     }
 }
