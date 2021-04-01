@@ -127,9 +127,10 @@ namespace QTElectric.View
             {
                 txtId.Text = dgvValue.SelectedCells[0].Value.ToString();
                 txtName.Text = dgvValue.SelectedCells[1].Value.ToString();
-                cbxType.SelectedItem = dgvValue.SelectedCells[2].Value.ToString();
+                cbxType.SelectedValue = dgvValue.SelectedCells[2].Value.ToString();
                 chkStatus.Checked = dgvValue.SelectedCells[3].Value.ToString() == "True";
                 edit = true;
+
             }
         }
     }
