@@ -30,6 +30,10 @@ namespace QTElectric.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbleraddress = new System.Windows.Forms.Label();
+            this.lblerphone = new System.Windows.Forms.Label();
+            this.lbleremail = new System.Windows.Forms.Label();
+            this.lblerfullname = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,9 +49,9 @@ namespace QTElectric.View
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCusfullname = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCusid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dvgCus = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,12 +60,8 @@ namespace QTElectric.View
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblerfullname = new System.Windows.Forms.Label();
-            this.lbleremail = new System.Windows.Forms.Label();
-            this.lblerphone = new System.Windows.Forms.Label();
-            this.lbleraddress = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgCus)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,13 +85,49 @@ namespace QTElectric.View
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtCusfullname);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtCusid);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(16, 15);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(933, 188);
             this.panel1.TabIndex = 5;
+            // 
+            // lbleraddress
+            // 
+            this.lbleraddress.AutoSize = true;
+            this.lbleraddress.ForeColor = System.Drawing.Color.Red;
+            this.lbleraddress.Location = new System.Drawing.Point(96, 137);
+            this.lbleraddress.Name = "lbleraddress";
+            this.lbleraddress.Size = new System.Drawing.Size(0, 17);
+            this.lbleraddress.TabIndex = 4;
+            // 
+            // lblerphone
+            // 
+            this.lblerphone.AutoSize = true;
+            this.lblerphone.ForeColor = System.Drawing.Color.Red;
+            this.lblerphone.Location = new System.Drawing.Point(96, 78);
+            this.lblerphone.Name = "lblerphone";
+            this.lblerphone.Size = new System.Drawing.Size(0, 17);
+            this.lblerphone.TabIndex = 4;
+            // 
+            // lbleremail
+            // 
+            this.lbleremail.AutoSize = true;
+            this.lbleremail.ForeColor = System.Drawing.Color.Red;
+            this.lbleremail.Location = new System.Drawing.Point(485, 78);
+            this.lbleremail.Name = "lbleremail";
+            this.lbleremail.Size = new System.Drawing.Size(0, 17);
+            this.lbleremail.TabIndex = 4;
+            // 
+            // lblerfullname
+            // 
+            this.lblerfullname.AutoSize = true;
+            this.lblerfullname.ForeColor = System.Drawing.Color.Red;
+            this.lblerfullname.Location = new System.Drawing.Point(484, 31);
+            this.lblerfullname.Name = "lblerfullname";
+            this.lblerfullname.Size = new System.Drawing.Size(0, 17);
+            this.lblerfullname.TabIndex = 4;
             // 
             // button3
             // 
@@ -243,14 +279,14 @@ namespace QTElectric.View
             this.txtCusfullname.TabIndex = 1;
             this.txtCusfullname.Validating += new System.ComponentModel.CancelEventHandler(this.txtCusfullname_Validating);
             // 
-            // textBox1
+            // txtCusid
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(100, 5);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtCusid.Enabled = false;
+            this.txtCusid.Location = new System.Drawing.Point(100, 5);
+            this.txtCusid.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCusid.Name = "txtCusid";
+            this.txtCusid.Size = new System.Drawing.Size(237, 22);
+            this.txtCusid.TabIndex = 1;
             // 
             // label1
             // 
@@ -262,10 +298,10 @@ namespace QTElectric.View
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã";
             // 
-            // dataGridView1
+            // dvgCus
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dvgCus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgCus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column5,
             this.Column6,
@@ -274,13 +310,14 @@ namespace QTElectric.View
             this.Column8,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 211);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(933, 219);
-            this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dvgCus.Location = new System.Drawing.Point(16, 211);
+            this.dvgCus.Margin = new System.Windows.Forms.Padding(4);
+            this.dvgCus.Name = "dvgCus";
+            this.dvgCus.RowHeadersWidth = 51;
+            this.dvgCus.Size = new System.Drawing.Size(933, 219);
+            this.dvgCus.TabIndex = 6;
+            this.dvgCus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dvgCus.Click += new System.EventHandler(this.dvgCus_Click);
             // 
             // Column1
             // 
@@ -346,55 +383,19 @@ namespace QTElectric.View
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             // 
-            // lblerfullname
-            // 
-            this.lblerfullname.AutoSize = true;
-            this.lblerfullname.ForeColor = System.Drawing.Color.Red;
-            this.lblerfullname.Location = new System.Drawing.Point(484, 31);
-            this.lblerfullname.Name = "lblerfullname";
-            this.lblerfullname.Size = new System.Drawing.Size(0, 17);
-            this.lblerfullname.TabIndex = 4;
-            // 
-            // lbleremail
-            // 
-            this.lbleremail.AutoSize = true;
-            this.lbleremail.ForeColor = System.Drawing.Color.Red;
-            this.lbleremail.Location = new System.Drawing.Point(485, 78);
-            this.lbleremail.Name = "lbleremail";
-            this.lbleremail.Size = new System.Drawing.Size(0, 17);
-            this.lbleremail.TabIndex = 4;
-            // 
-            // lblerphone
-            // 
-            this.lblerphone.AutoSize = true;
-            this.lblerphone.ForeColor = System.Drawing.Color.Red;
-            this.lblerphone.Location = new System.Drawing.Point(96, 78);
-            this.lblerphone.Name = "lblerphone";
-            this.lblerphone.Size = new System.Drawing.Size(0, 17);
-            this.lblerphone.TabIndex = 4;
-            // 
-            // lbleraddress
-            // 
-            this.lbleraddress.AutoSize = true;
-            this.lbleraddress.ForeColor = System.Drawing.Color.Red;
-            this.lbleraddress.Location = new System.Drawing.Point(96, 137);
-            this.lbleraddress.Name = "lbleraddress";
-            this.lbleraddress.Size = new System.Drawing.Size(0, 17);
-            this.lbleraddress.TabIndex = 4;
-            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 444);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dvgCus);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCustomer";
             this.Text = "Khách hàng";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgCus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -414,9 +415,9 @@ namespace QTElectric.View
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCusfullname;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCusid;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dvgCus;
         private System.Windows.Forms.TextBox txtCusaddress;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;

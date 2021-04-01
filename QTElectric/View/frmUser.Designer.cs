@@ -30,6 +30,7 @@ namespace QTElectric.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblpasshide = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@ namespace QTElectric.View
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +66,7 @@ namespace QTElectric.View
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblpasshide);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -89,6 +92,16 @@ namespace QTElectric.View
             this.panel1.Size = new System.Drawing.Size(932, 169);
             this.panel1.TabIndex = 4;
             // 
+            // lblpasshide
+            // 
+            this.lblpasshide.AutoSize = true;
+            this.lblpasshide.Location = new System.Drawing.Point(641, 127);
+            this.lblpasshide.Name = "lblpasshide";
+            this.lblpasshide.Size = new System.Drawing.Size(65, 17);
+            this.lblpasshide.TabIndex = 4;
+            this.lblpasshide.Text = "passhide";
+            this.lblpasshide.Visible = false;
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(828, 91);
@@ -98,6 +111,7 @@ namespace QTElectric.View
             this.button3.TabIndex = 3;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -119,6 +133,7 @@ namespace QTElectric.View
             this.button1.TabIndex = 3;
             this.button1.Text = "Thêm mới";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // chkStatus
             // 
@@ -274,11 +289,14 @@ namespace QTElectric.View
             // 
             // dvgUser
             // 
+            this.dvgUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column5,
             this.Column2,
+            this.Password,
             this.Column6,
             this.Column7,
             this.Column8,
@@ -287,6 +305,7 @@ namespace QTElectric.View
             this.dvgUser.Location = new System.Drawing.Point(16, 191);
             this.dvgUser.Margin = new System.Windows.Forms.Padding(4);
             this.dvgUser.Name = "dvgUser";
+            this.dvgUser.ReadOnly = true;
             this.dvgUser.RowHeadersWidth = 51;
             this.dvgUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgUser.Size = new System.Drawing.Size(932, 239);
@@ -300,6 +319,7 @@ namespace QTElectric.View
             this.Column1.HeaderText = "Mã";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column5
             // 
@@ -308,6 +328,7 @@ namespace QTElectric.View
             this.Column5.HeaderText = "UserName";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column2
             // 
@@ -316,6 +337,16 @@ namespace QTElectric.View
             this.Column2.HeaderText = "Tên";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "password";
+            this.Password.HeaderText = "Password";
+            this.Password.MinimumWidth = 6;
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.Width = 125;
             // 
             // Column6
             // 
@@ -323,6 +354,7 @@ namespace QTElectric.View
             this.Column6.HeaderText = "Số điện thoại";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             this.Column6.Width = 125;
             // 
             // Column7
@@ -331,6 +363,7 @@ namespace QTElectric.View
             this.Column7.HeaderText = "Email";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             this.Column7.Width = 125;
             // 
             // Column8
@@ -339,6 +372,7 @@ namespace QTElectric.View
             this.Column8.HeaderText = "Giới tính";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             this.Column8.Width = 125;
             // 
             // Column3
@@ -348,6 +382,7 @@ namespace QTElectric.View
             this.Column3.HeaderText = "Trạng thái";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
@@ -356,6 +391,7 @@ namespace QTElectric.View
             this.Column4.HeaderText = "Ngày nhập";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // frmUser
             // 
@@ -395,15 +431,17 @@ namespace QTElectric.View
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dvgUser;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Label lblpasshide;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtPhone;
     }
 }
