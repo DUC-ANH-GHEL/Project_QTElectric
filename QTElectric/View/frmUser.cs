@@ -34,7 +34,7 @@ namespace QTElectric.View
             u.gender = chkGender.Checked == true ? true : false;
             u.status = chkStatus.Checked == true ? true : false;
             u.email = txtEmail.Text;
-            u.mobile = (txtPhone.Text);
+            u.mobile = char.Parse(txtPhone.Text);
             u.date_create = DateTime.Now;
             int result = UserDAO.Instance.Insert(u);
             if (result > 0)
@@ -92,7 +92,6 @@ namespace QTElectric.View
 
         private void dvgUser_Click(object sender, EventArgs e)
         {
-
             check = false;
             txtUid.Text = dvgUser.SelectedCells[0].Value.ToString();
             txtUserName.Text = dvgUser.SelectedCells[1].Value.ToString();
