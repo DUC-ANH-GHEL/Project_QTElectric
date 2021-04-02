@@ -87,7 +87,7 @@ namespace QTElectric.View
                 MessageBox.Show("Delete fail");
             }
         }
-        private void btnAddNew_Click(object sender, EventArgs e)
+        private void btnAddNew_Click_1(object sender, EventArgs e)
         {
             txtId.Text = "";
             txtName.Text = "";
@@ -96,7 +96,6 @@ namespace QTElectric.View
             edit = false;
             btnSave.Text = "Lưu";
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (edit)
@@ -112,7 +111,6 @@ namespace QTElectric.View
                 AddNew();
             }
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn xóa?", "Xóa", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -121,7 +119,7 @@ namespace QTElectric.View
             }
         }
 
-        private void dgvType_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvType_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvType.SelectedRows.Count > 0)
             {

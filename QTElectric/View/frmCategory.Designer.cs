@@ -82,7 +82,7 @@ namespace QTElectric.View
             this.btnDelete.Location = new System.Drawing.Point(731, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 3;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.button3_Click);
@@ -93,7 +93,7 @@ namespace QTElectric.View
             this.btnCsave.Location = new System.Drawing.Point(650, 4);
             this.btnCsave.Name = "btnCsave";
             this.btnCsave.Size = new System.Drawing.Size(75, 23);
-            this.btnCsave.TabIndex = 3;
+            this.btnCsave.TabIndex = 4;
             this.btnCsave.Text = "Lưu";
             this.btnCsave.UseVisualStyleBackColor = true;
             this.btnCsave.Click += new System.EventHandler(this.button2_Click);
@@ -151,7 +151,7 @@ namespace QTElectric.View
             this.txtCid.Location = new System.Drawing.Point(553, 7);
             this.txtCid.Name = "txtCid";
             this.txtCid.Size = new System.Drawing.Size(10, 20);
-            this.txtCid.TabIndex = 1;
+            this.txtCid.TabIndex = 0;
             this.txtCid.Visible = false;
             // 
             // dvgCategory
@@ -173,8 +173,7 @@ namespace QTElectric.View
             this.dvgCategory.RowHeadersWidth = 51;
             this.dvgCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgCategory.Size = new System.Drawing.Size(809, 290);
-            this.dvgCategory.TabIndex = 1;
-            this.dvgCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgCategory_CellClick);
+            this.dvgCategory.TabIndex = 6;
             this.dvgCategory.SelectionChanged += new System.EventHandler(this.dvgCategory_SelectionChanged);
             // 
             // Column1

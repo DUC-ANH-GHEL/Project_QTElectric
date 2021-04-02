@@ -94,19 +94,6 @@ namespace QTElectric.View
             }
         }
 
-        private void dvgDiff_Click(object sender, EventArgs e)
-        {
-            if (dvgDiff.SelectedRows.Count > 0)
-            {
-                button2.Text = "Sửa";
-                txtDid.Text = dvgDiff.SelectedCells[0].Value.ToString();
-                txtDname.Text = dvgDiff.SelectedCells[1].Value.ToString();
-                cbxValue.SelectedValue = dvgDiff.SelectedCells[2].Value.ToString();
-                cbDstatus.Checked = dvgDiff.SelectedCells[3].Value.ToString() == "True" ? true : false;
-                check = false;
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             button2.Text = "Lưu";
@@ -119,6 +106,19 @@ namespace QTElectric.View
             Delete();
             txtDid.Text = txtDname.Text = "";
             cbDstatus.Checked = false;
+        }
+
+        private void dvgDiff_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dvgDiff.SelectedRows.Count > 0)
+            {
+                button2.Text = "Sửa";
+                txtDid.Text = dvgDiff.SelectedCells[0].Value.ToString();
+                txtDname.Text = dvgDiff.SelectedCells[1].Value.ToString();
+                cbxValue.SelectedValue = dvgDiff.SelectedCells[2].Value.ToString();
+                cbDstatus.Checked = dvgDiff.SelectedCells[3].Value.ToString() == "True" ? true : false;
+                check = false;
+            }
         }
     }
 }

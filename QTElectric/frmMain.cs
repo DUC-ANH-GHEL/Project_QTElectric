@@ -25,6 +25,7 @@ namespace QTElectric
         }
         private void MdiLoadForm(Form f)
         {
+            this.Text = f.Text;
             f.MdiParent = this;
             f.StartPosition = FormStartPosition.Manual;
             f.Dock = DockStyle.Fill;
@@ -102,7 +103,8 @@ namespace QTElectric
 
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmProduct frmChild = new frmProduct();
+            MdiLoadForm(frmChild);
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)

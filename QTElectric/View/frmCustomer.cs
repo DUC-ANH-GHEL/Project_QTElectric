@@ -20,10 +20,6 @@ namespace QTElectric.View
             Load();
         }
         bool check = true;
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         public void Insert()
         {
             Customer cus = new Customer();
@@ -102,25 +98,6 @@ namespace QTElectric.View
             lblerfullname.Text = "";
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (check)
-            {
-                if (ValidateChildren())
-                {
-                    MessageBox.Show("vui lòng điền");
-                }
-                else
-                {
-                    Insert();
-                }
-            }
-            else
-            {
-                Update();
-            }
-        }
-
         private void txtCusemail_Validating(object sender, CancelEventArgs e)
         {
             if (txtCusemail.Text == "")
@@ -151,9 +128,40 @@ namespace QTElectric.View
             lbleraddress.Text = "";
         }
 
-        private void dvgCus_Click(object sender, EventArgs e)
+        private void btnAddNew_Click(object sender, EventArgs e)
         {
-            button2.Text = "Sửa";
+            btnSave.Text = "Lưu";
+            txtCusid.Text = txtCusfullname.Text = txtCusphone.Text = txtCusemail.Text = txtCusaddress.Text = "";
+            cbCusgender.Checked = cbCusstatus.Checked = false;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (check)
+            {
+                if (ValidateChildren())
+                {
+                    MessageBox.Show("vui lòng điền");
+                }
+                else
+                {
+                    Insert();
+                }
+            }
+            else
+            {
+                Update();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Delete();
+        }
+
+        private void dvgCus_SelectionChanged(object sender, EventArgs e)
+        {
+            btnSave.Text = "Sửa";
             txtCusid.Text = dvgCus.SelectedCells[0].Value.ToString();
             txtCusfullname.Text = dvgCus.SelectedCells[1].Value.ToString();
             txtCusphone.Text = dvgCus.SelectedCells[2].Value.ToString();
@@ -162,18 +170,6 @@ namespace QTElectric.View
             cbCusgender.Checked = dvgCus.SelectedCells[5].Value.ToString() == "True" ? true : false;
             cbCusstatus.Checked = dvgCus.SelectedCells[6].Value.ToString() == "True" ? true : false;
             check = false;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            button2.Text = "Lưu";
-            txtCusid.Text = txtCusfullname.Text = txtCusphone.Text = txtCusemail.Text = txtCusaddress.Text = "";
-            cbCusgender.Checked = cbCusstatus.Checked = false;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Delete();
         }
     }
 }

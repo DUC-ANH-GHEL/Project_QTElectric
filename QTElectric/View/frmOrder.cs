@@ -27,10 +27,6 @@ namespace QTElectric.View
         public frmOrder()
         {
             InitializeComponent();
-            LoadCat();
-            LoadType();
-            LoadValue();
-            LoadDiff();
 
             listCat = new List<Category>();
             listType = new List<Types>();

@@ -21,10 +21,6 @@ namespace QTElectric.View
             Load();
         }
         bool check = true;
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         public void Insert()
         {
             User u = new User();
@@ -76,7 +72,6 @@ namespace QTElectric.View
                 Load();
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (check)
@@ -87,25 +82,7 @@ namespace QTElectric.View
             {
                 Update();
             }
-
         }
-
-        private void dvgUser_Click(object sender, EventArgs e)
-        {
-            check = false;
-            txtUid.Text = dvgUser.SelectedCells[0].Value.ToString();
-            txtUserName.Text = dvgUser.SelectedCells[1].Value.ToString();
-            lblpasshide.Text = dvgUser.SelectedCells[2].Value.ToString();
-            txtName.Text = dvgUser.SelectedCells[6].Value.ToString();
-            txtPhone.Text = dvgUser.SelectedCells[3].Value.ToString();
-            txtEmail.Text = dvgUser.SelectedCells[4].Value.ToString();
-            chkGender.Checked = dvgUser.SelectedCells[7].Value.ToString() == "True";
-            chkStatus.Checked = dvgUser.SelectedCells[5].Value.ToString() == "True";
-            button2.Text = "Sửa";
-        }
-
-
-
         private void button3_Click(object sender, EventArgs e)
         {
             Delete();
@@ -116,6 +93,23 @@ namespace QTElectric.View
             button2.Text = "Lưu";
             txtUid.Text = txtUserName.Text = txtName.Text = txtPhone.Text = txtEmail.Text = "";
             chkGender.Checked = chkStatus.Checked = false;
+        }
+
+        private void dvgUser_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dvgUser.SelectedRows.Count > 0)
+            {
+                check = false;
+                txtUid.Text = dvgUser.SelectedCells[0].Value.ToString();
+                txtUserName.Text = dvgUser.SelectedCells[1].Value.ToString();
+                lblpasshide.Text = dvgUser.SelectedCells[2].Value.ToString();
+                txtName.Text = dvgUser.SelectedCells[6].Value.ToString();
+                txtPhone.Text = dvgUser.SelectedCells[3].Value.ToString();
+                txtEmail.Text = dvgUser.SelectedCells[4].Value.ToString();
+                chkGender.Checked = dvgUser.SelectedCells[7].Value.ToString() == "True";
+                chkStatus.Checked = dvgUser.SelectedCells[5].Value.ToString() == "True";
+                button2.Text = "Sửa";
+            }
         }
     }
 }

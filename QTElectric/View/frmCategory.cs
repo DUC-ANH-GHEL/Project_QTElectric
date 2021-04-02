@@ -114,21 +114,6 @@ namespace QTElectric.View
                 Delete();
             }
         }
-
-
-
-        private void dvgCategory_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dvgCategory.SelectedRows.Count > 0)
-            {
-                btnCsave.Text = "Sửa";
-                txtCid.Text = dvgCategory.SelectedCells[0].Value.ToString();
-                txtCname.Text = dvgCategory.SelectedCells[1].Value.ToString();
-                cbCstatus.Checked = dvgCategory.SelectedCells[2].Value.ToString() == "True";
-                edit = true;
-            }
-        }
-
         private void txtCname_Validating(object sender, CancelEventArgs e)
         {
             if (txtCname.Text == "")
