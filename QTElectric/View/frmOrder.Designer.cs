@@ -33,9 +33,9 @@ namespace QTElectric.View
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnQr = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -102,9 +102,9 @@ namespace QTElectric.View
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel4.BackColor = System.Drawing.Color.LemonChiffon;
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.btnPrint);
+            this.panel4.Controls.Add(this.btnQr);
+            this.panel4.Controls.Add(this.btnSave);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.cbxDiff);
             this.panel4.Controls.Add(this.comboBox5);
@@ -125,45 +125,45 @@ namespace QTElectric.View
             this.panel4.Size = new System.Drawing.Size(678, 435);
             this.panel4.TabIndex = 3;
             // 
-            // button3
+            // btnPrint
             // 
-            this.button3.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(455, 367);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(81, 39);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "IN";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnPrint.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPrint.Location = new System.Drawing.Point(455, 367);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(81, 39);
+            this.btnPrint.TabIndex = 9;
+            this.btnPrint.Text = "IN";
+            this.btnPrint.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnQr
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(278, 367);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 39);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "QR";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnQr.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnQr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQr.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnQr.Location = new System.Drawing.Point(278, 367);
+            this.btnQr.Name = "btnQr";
+            this.btnQr.Size = new System.Drawing.Size(81, 39);
+            this.btnQr.TabIndex = 8;
+            this.btnQr.Text = "QR";
+            this.btnQr.UseVisualStyleBackColor = false;
+            this.btnQr.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(101, 367);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 39);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "FILE";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSave.Location = new System.Drawing.Point(101, 367);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(81, 39);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "LƯU";
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -204,6 +204,7 @@ namespace QTElectric.View
             this.cbxDiff.Name = "cbxDiff";
             this.cbxDiff.Size = new System.Drawing.Size(121, 21);
             this.cbxDiff.TabIndex = 6;
+            this.cbxDiff.SelectedValueChanged += new System.EventHandler(this.cbxDiff_SelectedValueChanged);
             // 
             // comboBox5
             // 
@@ -220,6 +221,7 @@ namespace QTElectric.View
             this.cbxValue.Name = "cbxValue";
             this.cbxValue.Size = new System.Drawing.Size(121, 21);
             this.cbxValue.TabIndex = 4;
+            this.cbxValue.SelectedValueChanged += new System.EventHandler(this.cbxValue_SelectedValueChanged);
             // 
             // cbxType
             // 
@@ -228,6 +230,7 @@ namespace QTElectric.View
             this.cbxType.Name = "cbxType";
             this.cbxType.Size = new System.Drawing.Size(121, 21);
             this.cbxType.TabIndex = 3;
+            this.cbxType.SelectedValueChanged += new System.EventHandler(this.cbxType_SelectedValueChanged);
             // 
             // cbxCat
             // 
@@ -236,6 +239,7 @@ namespace QTElectric.View
             this.cbxCat.Name = "cbxCat";
             this.cbxCat.Size = new System.Drawing.Size(121, 21);
             this.cbxCat.TabIndex = 2;
+            this.cbxCat.SelectedValueChanged += new System.EventHandler(this.cbxCat_SelectedValueChanged);
             // 
             // comboBox1
             // 
@@ -428,9 +432,9 @@ namespace QTElectric.View
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnQr;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox cbxDiff;
         private System.Windows.Forms.ComboBox comboBox5;

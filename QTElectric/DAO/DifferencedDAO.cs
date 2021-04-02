@@ -32,7 +32,7 @@ namespace QTElectric.DAO
         public int Update(Differenced diff)
         {
             string query = "Update_Differenced @id , @diff_name , @val_id , @status , @date_create ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { diff.id, diff.diff_name, diff.val_id, diff.status, diff.date_create });
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { diff.diff_id, diff.diff_name, diff.val_id, diff.status, diff.date_create });
             return result;
         }
         public int Delete(int id)

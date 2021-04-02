@@ -39,7 +39,6 @@ namespace QTElectric.View
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCid = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dvgCategory = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,28 +61,27 @@ namespace QTElectric.View
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtCid);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(17, 16);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(745, 145);
+            this.panel1.Size = new System.Drawing.Size(809, 40);
             this.panel1.TabIndex = 0;
             // 
             // txtCerror
             // 
             this.txtCerror.AutoSize = true;
             this.txtCerror.ForeColor = System.Drawing.Color.Red;
-            this.txtCerror.Location = new System.Drawing.Point(97, 81);
+            this.txtCerror.Location = new System.Drawing.Point(73, 66);
+            this.txtCerror.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtCerror.Name = "txtCerror";
-            this.txtCerror.Size = new System.Drawing.Size(0, 17);
+            this.txtCerror.Size = new System.Drawing.Size(0, 13);
             this.txtCerror.TabIndex = 4;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(641, 91);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(731, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 28);
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -91,10 +89,10 @@ namespace QTElectric.View
             // 
             // btnCsave
             // 
-            this.btnCsave.Location = new System.Drawing.Point(641, 46);
-            this.btnCsave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCsave.Location = new System.Drawing.Point(650, 4);
             this.btnCsave.Name = "btnCsave";
-            this.btnCsave.Size = new System.Drawing.Size(100, 28);
+            this.btnCsave.Size = new System.Drawing.Size(75, 23);
             this.btnCsave.TabIndex = 3;
             this.btnCsave.Text = "Lưu";
             this.btnCsave.UseVisualStyleBackColor = true;
@@ -102,10 +100,10 @@ namespace QTElectric.View
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(641, 0);
-            this.btnAddNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNew.Location = new System.Drawing.Point(569, 4);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(100, 28);
+            this.btnAddNew.Size = new System.Drawing.Size(75, 23);
             this.btnAddNew.TabIndex = 3;
             this.btnAddNew.Text = "Thêm mới";
             this.btnAddNew.UseVisualStyleBackColor = true;
@@ -114,61 +112,47 @@ namespace QTElectric.View
             // cbCstatus
             // 
             this.cbCstatus.AutoSize = true;
-            this.cbCstatus.Location = new System.Drawing.Point(100, 102);
-            this.cbCstatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCstatus.Location = new System.Drawing.Point(364, 7);
             this.cbCstatus.Name = "cbCstatus";
-            this.cbCstatus.Size = new System.Drawing.Size(55, 21);
+            this.cbCstatus.Size = new System.Drawing.Size(45, 17);
             this.cbCstatus.TabIndex = 2;
             this.cbCstatus.Text = "Còn";
             this.cbCstatus.UseVisualStyleBackColor = true;
             // 
             // txtCname
             // 
-            this.txtCname.Location = new System.Drawing.Point(100, 46);
-            this.txtCname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCname.Location = new System.Drawing.Point(45, 4);
             this.txtCname.Name = "txtCname";
-            this.txtCname.Size = new System.Drawing.Size(284, 22);
+            this.txtCname.Size = new System.Drawing.Size(214, 20);
             this.txtCname.TabIndex = 1;
             this.txtCname.Validating += new System.ComponentModel.CancelEventHandler(this.txtCname_Validating);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 102);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(293, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Trạng thái";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 46);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(4, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 17);
+            this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên";
             // 
             // txtCid
             // 
             this.txtCid.Enabled = false;
-            this.txtCid.Location = new System.Drawing.Point(100, 5);
-            this.txtCid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCid.Location = new System.Drawing.Point(553, 7);
             this.txtCid.Name = "txtCid";
-            this.txtCid.Size = new System.Drawing.Size(284, 22);
+            this.txtCid.Size = new System.Drawing.Size(10, 20);
             this.txtCid.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã";
+            this.txtCid.Visible = false;
             // 
             // dvgCategory
             // 
@@ -183,15 +167,15 @@ namespace QTElectric.View
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dvgCategory.Location = new System.Drawing.Point(17, 170);
-            this.dvgCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dvgCategory.Location = new System.Drawing.Point(13, 59);
             this.dvgCategory.Name = "dvgCategory";
             this.dvgCategory.ReadOnly = true;
             this.dvgCategory.RowHeadersWidth = 51;
             this.dvgCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgCategory.Size = new System.Drawing.Size(745, 260);
+            this.dvgCategory.Size = new System.Drawing.Size(809, 290);
             this.dvgCategory.TabIndex = 1;
             this.dvgCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgCategory_CellClick);
+            this.dvgCategory.SelectionChanged += new System.EventHandler(this.dvgCategory_SelectionChanged);
             // 
             // Column1
             // 
@@ -231,12 +215,11 @@ namespace QTElectric.View
             // 
             // frmCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 444);
+            this.ClientSize = new System.Drawing.Size(834, 361);
             this.Controls.Add(this.dvgCategory);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCategory";
             this.Text = "Loại linh kiện";
             this.panel1.ResumeLayout(false);
@@ -257,7 +240,6 @@ namespace QTElectric.View
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCid;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dvgCategory;
         private System.Windows.Forms.Label txtCerror;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

@@ -44,7 +44,7 @@ namespace QTElectric.View
         }
         public void AddNew()
         {
-            if ((ValidateChildren()))
+            if (!ValidateChildren())
             {
                 MessageBox.Show("* Vui lòng điền");
             }
@@ -137,6 +137,18 @@ namespace QTElectric.View
                 return;
             }
             txtCerror.Text = "";
+        }
+
+        private void dvgCategory_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dvgCategory.SelectedRows.Count > 0)
+            {
+                btnCsave.Text = "Sửa";
+                txtCid.Text = dvgCategory.SelectedCells[0].Value.ToString();
+                txtCname.Text = dvgCategory.SelectedCells[1].Value.ToString();
+                cbCstatus.Checked = dvgCategory.SelectedCells[2].Value.ToString() == "True";
+                edit = true;
+            }
         }
     }
 }

@@ -58,7 +58,7 @@ namespace QTElectric.View
             Differenced diff = new Differenced()
             {
 
-                id = int.Parse(txtDid.Text),
+                diff_id = int.Parse(txtDid.Text),
                 diff_name = txtDname.Text,
                 date_create = DateTime.Now,
                 status = cbDstatus.Checked == true ? true : false,
