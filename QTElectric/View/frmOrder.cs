@@ -43,7 +43,6 @@ namespace QTElectric.View
             cbxDiff.DataSource = DifferencedDAO.Instance.Get();
             cbxDiff.DisplayMember = "diff_name";
             cbxDiff.ValueMember = "diff_id";
-            MessageBox.Show("diff");
         }
 
         private void frmOrder_Load_1(object sender, EventArgs e)
