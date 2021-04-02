@@ -122,7 +122,7 @@ namespace QTElectric.View
             }
         }
 
-        private void dgvValue_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvValue_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvValue.SelectedRows.Count > 0)
             {

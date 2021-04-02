@@ -44,7 +44,7 @@ namespace QTElectric.View
         }
         public void AddNew()
         {
-            if ((ValidateChildren()))
+            if (!ValidateChildren())
             {
                 MessageBox.Show("* Vui lòng điền");
             }
@@ -114,10 +114,17 @@ namespace QTElectric.View
                 Delete();
             }
         }
+        private void txtCname_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCname.Text == "")
+            {
+                txtCerror.Text = "* Vui lòng không để trống";
+                return;
+            }
+            txtCerror.Text = "";
+        }
 
-
-
-        private void dvgCategory_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dvgCategory_SelectionChanged(object sender, EventArgs e)
         {
             if (dvgCategory.SelectedRows.Count > 0)
             {
@@ -127,16 +134,6 @@ namespace QTElectric.View
                 cbCstatus.Checked = dvgCategory.SelectedCells[2].Value.ToString() == "True";
                 edit = true;
             }
-        }
-
-        private void txtCname_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtCname.Text == "")
-            {
-                txtCerror.Text = "* Vui lòng không để trống";
-                return;
-            }
-            txtCerror.Text = "";
         }
     }
 }

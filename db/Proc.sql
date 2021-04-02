@@ -25,6 +25,7 @@ WHERE u_id = @id;
 END
 GO
 exec Update_User @id = 6, @user_name = 'k', @password = 'k', @mobile = jjj, @email = 'jj', @gender = true, @full_name = 'kk', @status = true, @date_create = '2000-2-2'
+go
 CREATE PROC Delete_User(@id int)
 AS
 BEGIN
@@ -62,6 +63,7 @@ DELETE FROM [values] WHERE val_id = @id
 END
 GO
 exec Delete_Values @id = 5
+go
 --CRUD OF [tbl_differenced]
 CREATE PROC Insert_Differenced(@diff_name varchar(3), @val_id int, @status bit, @date_create datetime)
 AS

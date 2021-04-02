@@ -16,5 +16,10 @@ namespace QTElectric.View
         {
             InitializeComponent();
         }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

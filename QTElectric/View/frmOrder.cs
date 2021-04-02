@@ -20,6 +20,10 @@ namespace QTElectric.View
         private List<Types> listType;
         private List<Value> listVal;
         private List<Differenced> listDiff;
+        private int cat_id;
+        private int type_id;
+        private int val_id;
+        private int diff_id;
         public frmOrder()
         {
             InitializeComponent();
@@ -61,40 +65,33 @@ namespace QTElectric.View
             cbxDiff.DisplayMember = "diff_name";
             cbxDiff.ValueMember = "type_name";
         }
-        private static List<T> ConvertDataTable<T>(DataTable dt)
+        public List<T> ConvertToList<T>(DataTable dt)
         {
-            List<T> data = new List<T>();
-            foreach (DataRow row in dt.Rows)
+            var columnNames = dt.Columns.Cast<DataColumn>()
+                    .Select(c => c.ColumnName)
+                    .ToList();
+            var properties = typeof(T).GetProperties();
+            return dt.AsEnumerable().Select(row =>
             {
-                T item = GetItem<T>(row);
-                data.Add(item);
-            }
-            return data;
-        }
-        private static T GetItem<T>(DataRow dr)
-        {
-            Type temp = typeof(T);
-            T obj = Activator.CreateInstance<T>();
-
-            foreach (DataColumn column in dr.Table.Columns)
-            {
-                foreach (PropertyInfo pro in temp.GetProperties())
+                var objT = Activator.CreateInstance<T>();
+                foreach (var pro in properties)
                 {
-                    if (pro.Name == column.ColumnName)
-                        pro.SetValue(obj, dr[column.ColumnName], null);
-                    else
-                        continue;
+                    if (columnNames.Contains(pro.Name))
+                    {
+                        PropertyInfo pI = objT.GetType().GetProperty(pro.Name);
+                        pro.SetValue(objT, row[pro.Name] == DBNull.Value ? null : Convert.ChangeType(row[pro.Name], pI.PropertyType));
+                    }
                 }
-            }
-            return obj;
+                return objT;
+            }).ToList();
         }
 
         private void frmOrder_Load_1(object sender, EventArgs e)
         {
-            listCat = ConvertDataTable<Category>(CategoryDAO.Instance.Categories());
-            listType = ConvertDataTable<Types>(TypeDAO.Instance.Types());
-            listVal = ConvertDataTable<Value>(ValueDAO.Instance.Value());
-            listDiff = ConvertDataTable<Differenced>(DifferencedDAO.Instance.Get());
+            listCat = ConvertToList<Category>(CategoryDAO.Instance.Categories());
+            listType = ConvertToList<Types>(TypeDAO.Instance.Types());
+            listVal = ConvertToList<Value>(ValueDAO.Instance.Value());
+            listDiff = ConvertToList<Differenced>(DifferencedDAO.Instance.Get());
             LoadCat(listCat);
             LoadType(listType);
             LoadValue(listVal);
@@ -128,5 +125,66 @@ namespace QTElectric.View
 
             };
         }
+
+        private void cbxCat_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                cat_id = int.Parse(cbxCat.SelectedValue.ToString());
+            }
+            catch (Exception)
+            {
+                cat_id = 0;
+            }
+        }
+
+        private void cbxType_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                type_id = int.Parse(cbxType.SelectedValue.ToString());
+            }
+            catch (Exception)
+            {
+                type_id = 0;
+            }
+        }
+
+        private void cbxValue_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                val_id = int.Parse(cbxValue.SelectedValue.ToString());
+            }
+            catch (Exception)
+            {
+                val_id = 0;
+            }
+        }
+
+        private void cbxDiff_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                diff_id = int.Parse(cbxDiff.SelectedValue.ToString());
+            }
+            catch (Exception)
+            {
+                diff_id = 0;
+            }
+        }
     }
 }
+
+
+
+//CREATE PROC GetByValues
+//AS
+//BEGIN
+//SELECT  v.val_name, t.type_name, c.cat_name, d.diff_name 
+//From [values] as v 
+//    INNER JOIN tbl_types as t  ON v.val_id = t.type_id 
+//    INNER JOIN tbl_category as c ON t.cat_id = c.cat_id 
+//    INNER JOIN tbl_differenced as d ON v.val_id = d.val_id
+//END
+//GO

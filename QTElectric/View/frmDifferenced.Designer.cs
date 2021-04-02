@@ -40,7 +40,6 @@ namespace QTElectric.View
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDid = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dvgDiff = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,46 +64,45 @@ namespace QTElectric.View
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtDid);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(560, 137);
+            this.panel1.Size = new System.Drawing.Size(806, 41);
             this.panel1.TabIndex = 3;
             // 
             // cbxValue
             // 
             this.cbxValue.FormattingEnabled = true;
-            this.cbxValue.Location = new System.Drawing.Point(110, 70);
+            this.cbxValue.Location = new System.Drawing.Point(252, 6);
             this.cbxValue.Name = "cbxValue";
-            this.cbxValue.Size = new System.Drawing.Size(214, 21);
-            this.cbxValue.TabIndex = 4;
+            this.cbxValue.Size = new System.Drawing.Size(154, 21);
+            this.cbxValue.TabIndex = 2;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(481, 74);
+            this.button3.Location = new System.Drawing.Point(728, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
+            this.button3.TabIndex = 6;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(481, 37);
+            this.button2.Location = new System.Drawing.Point(647, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(481, 0);
+            this.button1.Location = new System.Drawing.Point(566, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Thêm mới";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -112,24 +110,24 @@ namespace QTElectric.View
             // cbDstatus
             // 
             this.cbDstatus.AutoSize = true;
-            this.cbDstatus.Location = new System.Drawing.Point(110, 103);
+            this.cbDstatus.Location = new System.Drawing.Point(473, 9);
             this.cbDstatus.Name = "cbDstatus";
             this.cbDstatus.Size = new System.Drawing.Size(45, 17);
-            this.cbDstatus.TabIndex = 2;
+            this.cbDstatus.TabIndex = 3;
             this.cbDstatus.Text = "Còn";
             this.cbDstatus.UseVisualStyleBackColor = true;
             // 
             // txtDname
             // 
-            this.txtDname.Location = new System.Drawing.Point(110, 37);
+            this.txtDname.Location = new System.Drawing.Point(36, 4);
             this.txtDname.Name = "txtDname";
-            this.txtDname.Size = new System.Drawing.Size(214, 20);
+            this.txtDname.Size = new System.Drawing.Size(143, 20);
             this.txtDname.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 103);
+            this.label3.Location = new System.Drawing.Point(412, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 0;
@@ -138,7 +136,7 @@ namespace QTElectric.View
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 70);
+            this.label4.Location = new System.Drawing.Point(185, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 0;
@@ -147,7 +145,7 @@ namespace QTElectric.View
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 37);
+            this.label2.Location = new System.Drawing.Point(4, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 0;
@@ -156,19 +154,11 @@ namespace QTElectric.View
             // txtDid
             // 
             this.txtDid.Enabled = false;
-            this.txtDid.Location = new System.Drawing.Point(110, 4);
+            this.txtDid.Location = new System.Drawing.Point(550, 7);
             this.txtDid.Name = "txtDid";
-            this.txtDid.Size = new System.Drawing.Size(214, 20);
-            this.txtDid.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã";
+            this.txtDid.Size = new System.Drawing.Size(10, 20);
+            this.txtDid.TabIndex = 0;
+            this.txtDid.Visible = false;
             // 
             // dvgDiff
             // 
@@ -184,14 +174,14 @@ namespace QTElectric.View
             this.Column5,
             this.Column3,
             this.Column4});
-            this.dvgDiff.Location = new System.Drawing.Point(12, 155);
+            this.dvgDiff.Location = new System.Drawing.Point(12, 59);
             this.dvgDiff.Name = "dvgDiff";
             this.dvgDiff.ReadOnly = true;
             this.dvgDiff.RowHeadersWidth = 51;
             this.dvgDiff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgDiff.Size = new System.Drawing.Size(560, 194);
-            this.dvgDiff.TabIndex = 4;
-            this.dvgDiff.Click += new System.EventHandler(this.dvgDiff_Click);
+            this.dvgDiff.Size = new System.Drawing.Size(806, 290);
+            this.dvgDiff.TabIndex = 7;
+            this.dvgDiff.SelectionChanged += new System.EventHandler(this.dvgDiff_SelectionChanged);
             // 
             // Column1
             // 
@@ -242,11 +232,11 @@ namespace QTElectric.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.ClientSize = new System.Drawing.Size(830, 361);
             this.Controls.Add(this.dvgDiff);
             this.Controls.Add(this.panel1);
             this.Name = "frmDifferenced";
-            this.Text = "frmDifferenced";
+            this.Text = "Sai số";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDiff)).EndInit();
@@ -267,7 +257,6 @@ namespace QTElectric.View
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDid;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dvgDiff;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

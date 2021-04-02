@@ -8,7 +8,7 @@ namespace QTElectric.DTO
 {
     public class Differenced
     {
-        public int id { get; set; }
+        public int diff_id { get; set; }
         public string diff_name { get; set; }
         public int val_id { get; set; }
         public DateTime date_create { get; set; }
