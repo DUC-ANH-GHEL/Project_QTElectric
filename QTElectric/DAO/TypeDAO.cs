@@ -42,6 +42,12 @@ namespace QTElectric.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
             return result;
         }
+        public DataTable GetbyCat(int cat_id)
+        {
+            string query = "GetByCat @cat_id ";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { cat_id });
+            return result;
+        }
     }
 }
 

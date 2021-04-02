@@ -32,7 +32,7 @@ DELETE FROM tbl_user WHERE u_id = @id
 END
 GO
 --CRUD OF tbl_values
-CREATE PROC Insert_Values(@val_name varchar(10),@type_id int,@status bit,@date_create datetime)
+CREATE PROC Insert_Values(@val_name varchar(50),@type_id int,@status bit,@date_create datetime)
 AS
 BEGIN
 INSERT INTO [values](val_name, type_id,  status, date_create) VALUES (@val_name,@type_id ,@status ,@date_create )
@@ -44,7 +44,7 @@ BEGIN
 SELECT * FROM [values]
 END
 GO
-CREATE PROC Update_Values(@id int,@val_name nvarchar, @type_id int , @status bit, @date_create datetime)
+CREATE PROC Update_Values(@id int,@val_name nvarchar(50), @type_id int , @status bit, @date_create datetime)
 AS
 BEGIN
 UPDATE [values]
@@ -52,6 +52,7 @@ SET val_name = @val_name,[type_id] = @type_id, [status] = @status, date_create =
 WHERE val_id = @id
 END
 GO
+
 CREATE PROC Delete_Values(@id int)
 AS
 BEGIN

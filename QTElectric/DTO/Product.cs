@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace QTElectric.DTO
 {
-    class Product
+    public class Product
     {
+        public int pro_id { get; set; }
+        public int type_id { get; set; }
+        public int cat_id { get; set; }
+        public int val_id { get; set; }
+        public int diff_id { get; set; }
+        public string qrname { get; set; }
+        public bool status { get; set; }
+        public DateTime date_create { get; set; }
     }
 }
