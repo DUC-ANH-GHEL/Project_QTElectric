@@ -106,7 +106,7 @@ namespace QTElectric.View
         {
             if (check)
             {
-                if (!ValidateChildren())
+                if (ValidateChildren())
                 {
                     MessageBox.Show("vui lòng điền");
                 }
