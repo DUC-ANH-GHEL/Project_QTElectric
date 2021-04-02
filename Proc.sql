@@ -234,10 +234,10 @@ DELETE FROM tbl_types WHERE cat_id = @id
 END
 GO
 --CRUD OF tbl_Product
-CREATE PROC Insert_Product(@cat_id int, @type_id int, @val_id int, @diff_id int, @status bit, @date_create datetime)
+CREATE PROC Insert_Product(@cat_id int, @type_id int, @val_id int, @diff_id int,@qrname varchar(50), @status bit, @date_create datetime)
 AS
 BEGIN
-INSERT INTO tbl_product(cat_id, [type_id], val_id, diff_id, [status], date_create) VALUES (@cat_id , @type_id , @val_id , @diff_id , @status , @date_create)
+INSERT INTO tbl_product(cat_id, [type_id], val_id, diff_id, qrname, [status], date_create) VALUES (@cat_id , @type_id , @val_id , @diff_id ,@qrname , @status , @date_create)
 END
 GO
 CREATE PROC Select_Product
@@ -246,11 +246,11 @@ BEGIN
 SELECT * FROM tbl_product
 END
 GO
-CREATE PROC Update_Product(@id int , @cat_id int, @type_id int, @val_id int, @diff_id int, @status bit, @date_create datetime)
+CREATE PROC Update_Product(@id int , @cat_id int, @type_id int, @val_id int, @diff_id int, @qrname varchar(50), @status bit, @date_create datetime)
 AS
 BEGIN
 UPDATE tbl_product
-SET cat_id = @cat_id, type_id = @type_id, val_id = @val_id, diff_id = @diff_id, status = @status, date_create = @date_create
+SET cat_id = @cat_id, type_id = @type_id, val_id = @val_id, diff_id = @diff_id,qrname = @qrname, status = @status, date_create = @date_create
 WHERE pro_id = @id
 END
 GO
