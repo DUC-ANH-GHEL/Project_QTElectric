@@ -1,4 +1,5 @@
-﻿using QTElectric.DAO;
+﻿using QRCoder;
+using QTElectric.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace QTElectric.View
         public frmOrder()
         {
             InitializeComponent();
+
+
         }
         private void LoadCat()
         {
@@ -49,6 +52,23 @@ namespace QTElectric.View
             LoadType();
             LoadValue();
             LoadDiff();
+        }
+        public void GetQrCode(string qrText)
+        {
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrText, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            Bitmap qrCodeImage = qrCode.GetGraphic(20);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var text = cbxCat.Text + cbxType.Text + cbxValue.Text + cbxDiff.Text;
+            MessageBox.Show(text);
+            Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+            pictureBox3.Image = barcode.Draw(text, 50);
+            Zen.Barcode.CodeQrBarcodeDraw qrcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
+            pictureBox2.Image = qrcode.Draw(text, 50);
         }
     }
 }

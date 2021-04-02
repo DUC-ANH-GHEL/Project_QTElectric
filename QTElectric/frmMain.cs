@@ -1,4 +1,6 @@
-﻿using QTElectric.View;
+﻿using QRCoder;
+using QTElectric.Properties;
+using QTElectric.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -106,5 +108,16 @@ namespace QTElectric
         {
             frmParent.Close();
         }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+            Settings.Default.Username = Settings.Default.Password = "";
+            Settings.Default.Remember = false;
+            Settings.Default.Save();
+        }
+
     }
 }
