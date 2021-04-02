@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -43,9 +44,9 @@ namespace QTElectric.View
         }
         public void AddNew()
         {
-            if (txtCname.Text == "")
+            if ((ValidateChildren()))
             {
-                txtCerror.Text = "* Vui lòng không để trống";
+                MessageBox.Show("* Vui lòng điền");
             }
             else
             {
@@ -120,6 +121,7 @@ namespace QTElectric.View
         {
             if (dvgCategory.SelectedRows.Count > 0)
             {
+                btnCsave.Text = "Sửa";
                 txtCid.Text = dvgCategory.SelectedCells[0].Value.ToString();
                 txtCname.Text = dvgCategory.SelectedCells[1].Value.ToString();
                 cbCstatus.Checked = dvgCategory.SelectedCells[2].Value.ToString() == "True";
@@ -127,5 +129,14 @@ namespace QTElectric.View
             }
         }
 
+        private void txtCname_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCname.Text == "")
+            {
+                txtCerror.Text = "* Vui lòng không để trống";
+                return;
+            }
+            txtCerror.Text = "";
+        }
     }
 }

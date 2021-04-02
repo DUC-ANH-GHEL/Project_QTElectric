@@ -102,7 +102,6 @@ namespace QTElectric.View
         private void button2_Click(object sender, EventArgs e)
         {
             var text = cbxCat.Text + cbxType.Text + cbxValue.Text + cbxDiff.Text;
-            MessageBox.Show(text);
             Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
             pictureBox3.Image = barcode.Draw(text, 50);
             Zen.Barcode.CodeQrBarcodeDraw qrcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
