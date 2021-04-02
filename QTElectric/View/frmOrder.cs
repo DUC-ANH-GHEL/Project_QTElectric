@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,10 @@ namespace QTElectric.View
 {
     public partial class frmOrder : Form
     {
+        private List<Category> listCat;
+        private List<Types> listType;
+        private List<Value> listVal;
+        private List<Differenced> listDiff;
         public frmOrder()
         {
             InitializeComponent();
@@ -23,39 +28,77 @@ namespace QTElectric.View
             LoadValue();
             LoadDiff();
 
+            listCat = new List<Category>();
+            listType = new List<Types>();
+            listVal = new List<Value>();
+            listDiff = new List<Differenced>();
         }
-        private void LoadCat()
+        private void LoadCat(List<Category> listCat)
         {
-            cbxCat.DataSource = CategoryDAO.Instance.Categories();
+            cbxCat.DataSource = listCat;
             cbxCat.DisplayMember = "cat_name";
             cbxCat.ValueMember = "cat_id";
         }
-        private void LoadType()
+        private void LoadType(List<Types> listType)
         {
             int cat_id = (int)cbxCat.SelectedValue;
             cbxType.DataSource = TypeDAO.Instance.GetbyCat(cat_id);
+            cbxType.DataSource = listType;
             cbxType.DisplayMember = "type_name";
             cbxType.ValueMember = "type_id";
         }
-        private void LoadValue()
+        private void LoadValue(List<Value> listVal)
         {
             cbxValue.DataSource = OrderDAO.Instance.Get();
+            cbxValue.DataSource = listVal;
             cbxValue.DisplayMember = "val_name";
             cbxValue.ValueMember = "type_name";
         }
-        private void LoadDiff()
+        private void LoadDiff(List<Differenced> listDiff)
         {
             cbxDiff.DataSource = OrderDAO.Instance.Get();
+            cbxDiff.DataSource = listDiff;
             cbxDiff.DisplayMember = "diff_name";
             cbxDiff.ValueMember = "type_name";
+        }
+        private static List<T> ConvertDataTable<T>(DataTable dt)
+        {
+            List<T> data = new List<T>();
+            foreach (DataRow row in dt.Rows)
+            {
+                T item = GetItem<T>(row);
+                data.Add(item);
+            }
+            return data;
+        }
+        private static T GetItem<T>(DataRow dr)
+        {
+            Type temp = typeof(T);
+            T obj = Activator.CreateInstance<T>();
+
+            foreach (DataColumn column in dr.Table.Columns)
+            {
+                foreach (PropertyInfo pro in temp.GetProperties())
+                {
+                    if (pro.Name == column.ColumnName)
+                        pro.SetValue(obj, dr[column.ColumnName], null);
+                    else
+                        continue;
+                }
+            }
+            return obj;
         }
 
         private void frmOrder_Load_1(object sender, EventArgs e)
         {
-            LoadCat();
-            LoadType();
-            LoadValue();
-            LoadDiff();
+            listCat = ConvertDataTable<Category>(CategoryDAO.Instance.Categories());
+            listType = ConvertDataTable<Types>(TypeDAO.Instance.Types());
+            listVal = ConvertDataTable<Value>(ValueDAO.Instance.Value());
+            listDiff = ConvertDataTable<Differenced>(DifferencedDAO.Instance.Get());
+            LoadCat(listCat);
+            LoadType(listType);
+            LoadValue(listVal);
+            LoadDiff(listDiff);
         }
         public void GetQrCode(string qrText)
         {
