@@ -21,6 +21,7 @@ namespace QTElectric
             InitializeComponent();
             this.frmParent = frmParent;
             this.CenterToScreen();
+            this.WindowState = FormWindowState.Maximized;
         }
         private void MdiLoadForm(Form f)
         {
