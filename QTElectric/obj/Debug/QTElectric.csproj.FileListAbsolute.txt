@@ -41,3 +41,6 @@ D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmProduct.reso
 D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\QRCoder.dll
 D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\Zen.Barcode.Core.dll
 D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.csproj.CopyComplete
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\QRCoder.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\Zen.Barcode.Core.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.csproj.CopyComplete
