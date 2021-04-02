@@ -62,6 +62,7 @@ namespace QTElectric.View
             c.type_id = int.Parse(cbxType.SelectedValue.ToString());
             c.status = chkStatus.Checked == true ? true : false;
             c.date_ceate = DateTime.Now;
+            MessageBox.Show(c.val_name);
             int result = ValueDAO.Instance.UpdateValue(c);
             if (result <= 0)
             {
