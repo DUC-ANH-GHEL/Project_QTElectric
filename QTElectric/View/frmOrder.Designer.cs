@@ -71,12 +71,12 @@ namespace QTElectric.View
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1691, 69);
             this.panel1.TabIndex = 0;
@@ -96,7 +96,7 @@ namespace QTElectric.View
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(4, 71);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(900, 524);
             this.panel3.TabIndex = 1;
@@ -124,7 +124,7 @@ namespace QTElectric.View
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Location = new System.Drawing.Point(0, 71);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(904, 535);
             this.panel4.TabIndex = 3;
@@ -136,7 +136,7 @@ namespace QTElectric.View
             this.btnPrint.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPrint.Location = new System.Drawing.Point(607, 452);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(108, 48);
             this.btnPrint.TabIndex = 9;
@@ -150,7 +150,7 @@ namespace QTElectric.View
             this.btnQr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQr.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnQr.Location = new System.Drawing.Point(371, 452);
-            this.btnQr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQr.Margin = new System.Windows.Forms.Padding(4);
             this.btnQr.Name = "btnQr";
             this.btnQr.Size = new System.Drawing.Size(108, 48);
             this.btnQr.TabIndex = 8;
@@ -165,7 +165,7 @@ namespace QTElectric.View
             this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSave.Location = new System.Drawing.Point(135, 452);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 48);
             this.btnSave.TabIndex = 7;
@@ -180,7 +180,7 @@ namespace QTElectric.View
             this.panel5.Controls.Add(this.pictureBox3);
             this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Location = new System.Drawing.Point(48, 283);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(595, 123);
             this.panel5.TabIndex = 4;
@@ -209,7 +209,7 @@ namespace QTElectric.View
             // 
             this.cbxDiff.FormattingEnabled = true;
             this.cbxDiff.Location = new System.Drawing.Point(700, 379);
-            this.cbxDiff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxDiff.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDiff.Name = "cbxDiff";
             this.cbxDiff.Size = new System.Drawing.Size(160, 24);
             this.cbxDiff.TabIndex = 6;
@@ -219,7 +219,7 @@ namespace QTElectric.View
             // 
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(700, 302);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(160, 24);
             this.comboBox5.TabIndex = 5;
@@ -228,7 +228,7 @@ namespace QTElectric.View
             // 
             this.cbxValue.FormattingEnabled = true;
             this.cbxValue.Location = new System.Drawing.Point(700, 224);
-            this.cbxValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxValue.Margin = new System.Windows.Forms.Padding(4);
             this.cbxValue.Name = "cbxValue";
             this.cbxValue.Size = new System.Drawing.Size(160, 24);
             this.cbxValue.TabIndex = 4;
@@ -239,18 +239,17 @@ namespace QTElectric.View
             // 
             this.cbxType.FormattingEnabled = true;
             this.cbxType.Location = new System.Drawing.Point(483, 224);
-            this.cbxType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxType.Margin = new System.Windows.Forms.Padding(4);
             this.cbxType.Name = "cbxType";
             this.cbxType.Size = new System.Drawing.Size(160, 24);
             this.cbxType.TabIndex = 3;
-            this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged);
-            this.cbxType.SelectedValueChanged += new System.EventHandler(this.cbxType_SelectedValueChanged);
+            this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged_1);
             // 
             // cbxCat
             // 
             this.cbxCat.FormattingEnabled = true;
             this.cbxCat.Location = new System.Drawing.Point(265, 224);
-            this.cbxCat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxCat.Margin = new System.Windows.Forms.Padding(4);
             this.cbxCat.Name = "cbxCat";
             this.cbxCat.Size = new System.Drawing.Size(160, 24);
             this.cbxCat.TabIndex = 2;
@@ -261,7 +260,7 @@ namespace QTElectric.View
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(48, 224);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 1;
@@ -348,7 +347,7 @@ namespace QTElectric.View
             // 
             this.pictureBox1.Image = global::QTElectric.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(48, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(224, 158);
             this.pictureBox1.TabIndex = 0;
@@ -358,8 +357,8 @@ namespace QTElectric.View
             // 
             this.dvgCategory.AllowUserToAddRows = false;
             this.dvgCategory.AllowUserToDeleteRows = false;
-            this.dvgCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dvgCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -370,7 +369,7 @@ namespace QTElectric.View
             this.Column6,
             this.Column4});
             this.dvgCategory.Location = new System.Drawing.Point(912, 75);
-            this.dvgCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dvgCategory.Margin = new System.Windows.Forms.Padding(4);
             this.dvgCategory.Name = "dvgCategory";
             this.dvgCategory.ReadOnly = true;
             this.dvgCategory.RowHeadersWidth = 51;
@@ -442,7 +441,7 @@ namespace QTElectric.View
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmOrder";
             this.Text = "NHẬP - KIỂM LINH KIỆN";
             this.Load += new System.EventHandler(this.frmOrder_Load_1);

@@ -51,6 +51,8 @@ namespace QTElectric.View
                     MessageBox.Show("Insert Success");
                     load();
                     txtName.Text = "";
+                    edit = false;
+                    btnSave.Text = "Lưu";
                 }
             }
         }

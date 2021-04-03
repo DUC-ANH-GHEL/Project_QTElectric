@@ -28,6 +28,9 @@ namespace QTElectric.View
         {
             InitializeComponent();
             LoadCat();
+            LoadType();
+            LoadValue();
+            LoadDiff();
 
             listCat = new List<Category>();
             listType = new List<Types>();
@@ -57,7 +60,7 @@ namespace QTElectric.View
         private void LoadValue()
         {
 
-            if ((cbxType.SelectedValue != null))
+            if (cbxType.SelectedValue != null)
             {
 
                 int type_id = (int)cbxType.SelectedValue;
@@ -197,6 +200,12 @@ namespace QTElectric.View
         }
         private void cbxValue_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LoadDiff();
+        }
+
+        private void cbxType_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            LoadValue();
             LoadDiff();
         }
     }

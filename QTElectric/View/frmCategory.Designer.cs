@@ -50,7 +50,7 @@ namespace QTElectric.View
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.txtCerror);
             this.panel1.Controls.Add(this.btnDelete);
@@ -125,7 +125,6 @@ namespace QTElectric.View
             this.txtCname.Name = "txtCname";
             this.txtCname.Size = new System.Drawing.Size(214, 20);
             this.txtCname.TabIndex = 1;
-            this.txtCname.Validating += new System.ComponentModel.CancelEventHandler(this.txtCname_Validating);
             // 
             // label3
             // 
@@ -158,8 +157,8 @@ namespace QTElectric.View
             // 
             this.dvgCategory.AllowUserToAddRows = false;
             this.dvgCategory.AllowUserToDeleteRows = false;
-            this.dvgCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dvgCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
