@@ -111,10 +111,23 @@ namespace QTElectric.View
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa?", "Xóa", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (!edit)
             {
-                Delete();
+                MessageBox.Show("Vui lòng chọn sản phẩm cần xóa");
             }
+            else
+            {
+                if (MessageBox.Show("Bạn có muốn xóa?", "Xóa", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    Delete();
+                    txtCid.Text = "";
+                    txtCname.Text = "";
+                    cbCstatus.Checked = false;
+                    edit = false;
+                    btnCsave.Text = "Lưu";
+                }
+            }
+
         }
 
 

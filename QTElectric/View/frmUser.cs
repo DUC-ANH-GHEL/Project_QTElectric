@@ -90,7 +90,22 @@ namespace QTElectric.View
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            Delete();
+            if (check)
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm cần xóa");
+            }
+            else
+            {
+                if (MessageBox.Show("Bạn có muốn xóa?", "Xóa", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    Delete();
+                    button2.Text = "Lưu";
+                    txtUid.Text = txtUserName.Text = txtName.Text = txtPhone.Text = txtEmail.Text = "";
+                    chkGender.Checked = chkStatus.Checked = false;
+                    check = true;
+                }
+            }
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)

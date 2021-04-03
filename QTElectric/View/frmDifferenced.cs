@@ -19,6 +19,7 @@ namespace QTElectric.View
             InitializeComponent();
             Loadcbx();
             Load();
+
         }
         bool check = true;
         public void Loadcbx()
@@ -106,11 +107,23 @@ namespace QTElectric.View
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Delete();
-            txtDid.Text = txtDname.Text = "";
-            cbDstatus.Checked = false;
-            check = true;
-            button2.Text = "Lưu";
+            if (check)
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm cần xóa");
+            }
+            else
+            {
+                if (MessageBox.Show("Bạn có muốn xóa?", "Xóa", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    Delete();
+                    txtDid.Text = txtDname.Text = "";
+                    cbDstatus.Checked = false;
+                    check = true;
+                    button2.Text = "Lưu";
+                }
+            }
+
+
         }
 
         private void dvgDiff_SelectionChanged(object sender, EventArgs e)

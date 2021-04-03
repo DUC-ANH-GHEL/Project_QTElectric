@@ -159,11 +159,23 @@ namespace QTElectric.View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Delete();
-            btnSave.Text = "Lưu";
-            txtCusid.Text = txtCusfullname.Text = txtCusphone.Text = txtCusemail.Text = txtCusaddress.Text = "";
-            cbCusgender.Checked = cbCusstatus.Checked = false;
-            check = true;
+            if (check)
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm cần xóa");
+            }
+            else
+            {
+                if (MessageBox.Show("Bạn có muốn xóa?", "Xóa", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    Delete();
+                    btnSave.Text = "Lưu";
+                    txtCusid.Text = txtCusfullname.Text = txtCusphone.Text = txtCusemail.Text = txtCusaddress.Text = "";
+                    cbCusgender.Checked = cbCusstatus.Checked = false;
+                    check = true;
+                }
+            }
+
+
         }
 
         private void dvgCus_SelectionChanged(object sender, EventArgs e)

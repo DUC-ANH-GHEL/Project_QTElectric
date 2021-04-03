@@ -118,10 +118,24 @@ namespace QTElectric.View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa?", "Xóa", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (!edit)
             {
-                Delete();
+                MessageBox.Show("Vui lòng chọn sản phẩm cần xóa");
             }
+            else
+            {
+                if (MessageBox.Show("Bạn có muốn xóa?", "Xóa", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    Delete();
+                    txtId.Text = "";
+                    txtName.Text = "";
+                    cbxType.SelectedIndex = 0;
+                    chkStatus.Checked = false;
+                    edit = false;
+                    btnSave.Text = "Lưu";
+                }
+            }
+
         }
 
         private void dgvValue_SelectionChanged(object sender, EventArgs e)
