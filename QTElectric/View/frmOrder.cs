@@ -37,20 +37,6 @@ namespace QTElectric.View
             listVal = new List<Value>();
             listDiff = new List<Differenced>();
         }
-        //private void LoadCat(List<Category> listCat)
-        //{
-        //    cbxCat.DataSource = listCat;
-        //    cbxCat.DisplayMember = "cat_name";
-        //    cbxCat.ValueMember = "cat_id";
-        //}
-        //private void LoadType(List<Types> listType)
-        //{
-        //    int cat_id = (int)cbxCat.SelectedValue;
-        //    cbxType.DataSource = TypeDAO.Instance.GetbyCat(cat_id);
-        //    //cbxType.DataSource = listType;
-        //    cbxType.DisplayMember = "type_name";
-        //    cbxType.ValueMember = "type_id";
-        //}
         private void LoadCat()
         {
             cbxCat.DataSource = CategoryDAO.Instance.Categories();
@@ -69,9 +55,7 @@ namespace QTElectric.View
                     cbxType.DisplayMember = "type_name";
                     cbxType.ValueMember = "type_id";
                 }
-
             }
-
         }
         private void LoadValue()
         {
@@ -97,20 +81,6 @@ namespace QTElectric.View
                 cbxDiff.ValueMember = "diff_id";
             }
         }
-        //private void LoadValue(List<Value> listVal)
-        //{
-        //    cbxValue.DataSource = OrderDAO.Instance.Get();
-        //    cbxValue.DataSource = listVal;
-        //    cbxValue.DisplayMember = "val_name";
-        //    cbxValue.ValueMember = "type_name";
-        //}
-        //private void LoadDiff(List<Differenced> listDiff)
-        //{
-        //    cbxDiff.DataSource = OrderDAO.Instance.Get();
-        //    cbxDiff.DataSource = listDiff;
-        //    cbxDiff.DisplayMember = "diff_name";
-        //    cbxDiff.ValueMember = "type_name";
-        //}
         public List<T> ConvertToList<T>(DataTable dt)
         {
             var columnNames = dt.Columns.Cast<DataColumn>()
@@ -131,7 +101,6 @@ namespace QTElectric.View
                 return objT;
             }).ToList();
         }
-
         private void frmOrder_Load_1(object sender, EventArgs e)
         {
             listCat = ConvertToList<Category>(CategoryDAO.Instance.Categories());
@@ -174,7 +143,6 @@ namespace QTElectric.View
 
         private void cbxCat_SelectedValueChanged(object sender, EventArgs e)
         {
-            //LoadType();
             try
             {
                 cat_id = int.Parse(cbxCat.SelectedValue.ToString());
@@ -184,7 +152,6 @@ namespace QTElectric.View
                 cat_id = 0;
             }
         }
-
         private void cbxType_SelectedValueChanged(object sender, EventArgs e)
         {
             LoadType();
@@ -197,7 +164,6 @@ namespace QTElectric.View
                 type_id = 0;
             }
         }
-
         private void cbxValue_SelectedValueChanged(object sender, EventArgs e)
         {
             try
@@ -209,7 +175,6 @@ namespace QTElectric.View
                 val_id = 0;
             }
         }
-
         private void cbxDiff_SelectedValueChanged(object sender, EventArgs e)
         {
             try
@@ -221,16 +186,18 @@ namespace QTElectric.View
                 diff_id = 0;
             }
         }
-
-
-
+        private void cbxType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listType = ConvertToList<Types>(TypeDAO.Instance.Types());
+            LoadValue();
+            LoadDiff();
+        }
         private void cbxCat_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadType();
             LoadValue();
             LoadDiff();
         }
-
         private void cbxValue_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadDiff();
@@ -243,16 +210,3 @@ namespace QTElectric.View
         }
     }
 }
-
-
-
-//CREATE PROC GetByValues
-//AS
-//BEGIN
-//SELECT  v.val_name, t.type_name, c.cat_name, d.diff_name 
-//From [values] as v 
-//    INNER JOIN tbl_types as t  ON v.val_id = t.type_id 
-//    INNER JOIN tbl_category as c ON t.cat_id = c.cat_id 
-//    INNER JOIN tbl_differenced as d ON v.val_id = d.val_id
-//END
-//GO
