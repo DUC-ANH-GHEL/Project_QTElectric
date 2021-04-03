@@ -51,6 +51,8 @@ namespace QTElectric.View
             {
                 MessageBox.Show("Insert success", "Add New");
                 Load();
+                check = true;
+                button2.Text = "Lưu";
             }
         }
         public void Update()
@@ -99,6 +101,7 @@ namespace QTElectric.View
             button2.Text = "Lưu";
             txtDid.Text = txtDname.Text = "";
             cbDstatus.Checked = false;
+            check = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -106,6 +109,8 @@ namespace QTElectric.View
             Delete();
             txtDid.Text = txtDname.Text = "";
             cbDstatus.Checked = false;
+            check = true;
+            button2.Text = "Lưu";
         }
 
         private void dvgDiff_SelectionChanged(object sender, EventArgs e)

@@ -35,6 +35,8 @@ namespace QTElectric.View
             {
                 MessageBox.Show("Add New Success");
                 Load();
+                check = true;
+                btnSave.Text = "Lưu";
             }
         }
         public void Load()
@@ -133,6 +135,7 @@ namespace QTElectric.View
             btnSave.Text = "Lưu";
             txtCusid.Text = txtCusfullname.Text = txtCusphone.Text = txtCusemail.Text = txtCusaddress.Text = "";
             cbCusgender.Checked = cbCusstatus.Checked = false;
+            check = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -157,19 +160,26 @@ namespace QTElectric.View
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Delete();
+            btnSave.Text = "Lưu";
+            txtCusid.Text = txtCusfullname.Text = txtCusphone.Text = txtCusemail.Text = txtCusaddress.Text = "";
+            cbCusgender.Checked = cbCusstatus.Checked = false;
+            check = true;
         }
 
         private void dvgCus_SelectionChanged(object sender, EventArgs e)
         {
-            btnSave.Text = "Sửa";
-            txtCusid.Text = dvgCus.SelectedCells[0].Value.ToString();
-            txtCusfullname.Text = dvgCus.SelectedCells[1].Value.ToString();
-            txtCusphone.Text = dvgCus.SelectedCells[2].Value.ToString();
-            txtCusemail.Text = dvgCus.SelectedCells[3].Value.ToString();
-            txtCusaddress.Text = dvgCus.SelectedCells[4].Value.ToString();
-            cbCusgender.Checked = dvgCus.SelectedCells[5].Value.ToString() == "True" ? true : false;
-            cbCusstatus.Checked = dvgCus.SelectedCells[6].Value.ToString() == "True" ? true : false;
-            check = false;
+            if (dvgCus.SelectedRows.Count > 0)
+            {
+                btnSave.Text = "Sửa";
+                txtCusid.Text = dvgCus.SelectedCells[0].Value.ToString();
+                txtCusfullname.Text = dvgCus.SelectedCells[1].Value.ToString();
+                txtCusphone.Text = dvgCus.SelectedCells[2].Value.ToString();
+                txtCusemail.Text = dvgCus.SelectedCells[3].Value.ToString();
+                txtCusaddress.Text = dvgCus.SelectedCells[4].Value.ToString();
+                cbCusgender.Checked = dvgCus.SelectedCells[5].Value.ToString() == "True" ? true : false;
+                cbCusstatus.Checked = dvgCus.SelectedCells[6].Value.ToString() == "True" ? true : false;
+                check = false;
+            }
         }
     }
 }

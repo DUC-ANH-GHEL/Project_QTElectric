@@ -44,7 +44,7 @@ namespace QTElectric.View
         }
         public void AddNew()
         {
-            if (!ValidateChildren())
+            if (txtCname.Text == null)
             {
                 MessageBox.Show("* Vui lòng điền");
             }
@@ -60,6 +60,8 @@ namespace QTElectric.View
                     MessageBox.Show("Insert Success");
                     load();
                     txtCname.Text = "";
+                    edit = false;
+                    btnCsave.Text = "Lưu";
                 }
             }
         }
@@ -114,15 +116,7 @@ namespace QTElectric.View
                 Delete();
             }
         }
-        private void txtCname_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtCname.Text == "")
-            {
-                txtCerror.Text = "* Vui lòng không để trống";
-                return;
-            }
-            txtCerror.Text = "";
-        }
+
 
         private void dvgCategory_SelectionChanged(object sender, EventArgs e)
         {

@@ -19,6 +19,7 @@ namespace QTElectric.View
         {
             InitializeComponent();
             Load();
+
         }
         bool check = true;
         public void Insert()
@@ -37,6 +38,10 @@ namespace QTElectric.View
             {
                 MessageBox.Show("Insert succes", "Add New");
                 Load();
+                txtUid.Text = txtUserName.Text = txtName.Text = txtPhone.Text = txtEmail.Text = "";
+                chkGender.Checked = chkStatus.Checked = false;
+                check = true;
+                button2.Text = "Lưu";
             }
         }
         public void Load()
@@ -93,6 +98,7 @@ namespace QTElectric.View
             button2.Text = "Lưu";
             txtUid.Text = txtUserName.Text = txtName.Text = txtPhone.Text = txtEmail.Text = "";
             chkGender.Checked = chkStatus.Checked = false;
+            check = true;
         }
 
         private void dvgUser_SelectionChanged(object sender, EventArgs e)
