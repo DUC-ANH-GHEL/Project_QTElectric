@@ -27,40 +27,90 @@ namespace QTElectric.View
         public frmOrder()
         {
             InitializeComponent();
+            LoadCat();
+            //LoadType();
+            //LoadValue();
+            //LoadDiff();
 
             listCat = new List<Category>();
             listType = new List<Types>();
             listVal = new List<Value>();
             listDiff = new List<Differenced>();
         }
-        private void LoadCat(List<Category> listCat)
+        //private void LoadCat(List<Category> listCat)
+        //{
+        //    cbxCat.DataSource = listCat;
+        //    cbxCat.DisplayMember = "cat_name";
+        //    cbxCat.ValueMember = "cat_id";
+        //}
+        //private void LoadType(List<Types> listType)
+        //{
+        //    int cat_id = (int)cbxCat.SelectedValue;
+        //    cbxType.DataSource = TypeDAO.Instance.GetbyCat(cat_id);
+        //    //cbxType.DataSource = listType;
+        //    cbxType.DisplayMember = "type_name";
+        //    cbxType.ValueMember = "type_id";
+        //}
+        private void LoadCat()
         {
-            cbxCat.DataSource = listCat;
+            cbxCat.DataSource = CategoryDAO.Instance.Categories();
             cbxCat.DisplayMember = "cat_name";
             cbxCat.ValueMember = "cat_id";
         }
-        private void LoadType(List<Types> listType)
+        private void LoadType()
         {
-            int cat_id = (int)cbxCat.SelectedValue;
-            cbxType.DataSource = TypeDAO.Instance.GetbyCat(cat_id);
-            cbxType.DataSource = listType;
-            cbxType.DisplayMember = "type_name";
-            cbxType.ValueMember = "type_id";
+            if (cbxCat.SelectedValue != null)
+            {
+                int cat_id = (int)cbxCat.SelectedValue;
+                DataTable result = TypeDAO.Instance.GetbyCat(cat_id);
+                if (result.Rows.Count > 0)
+                {
+                    cbxType.DataSource = result;
+                    cbxType.DisplayMember = "type_name";
+                    cbxType.ValueMember = "type_id";
+                }
+
+            }
+
         }
-        private void LoadValue(List<Value> listVal)
+        private void LoadValue()
         {
-            cbxValue.DataSource = OrderDAO.Instance.Get();
-            cbxValue.DataSource = listVal;
-            cbxValue.DisplayMember = "val_name";
-            cbxValue.ValueMember = "type_name";
+
+            if ((cbxType.SelectedValue != null))
+            {
+
+                int type_id = (int)cbxType.SelectedValue;
+                cbxValue.DataSource = ValueDAO.Instance.GetbyType(type_id);
+                cbxValue.DisplayMember = "val_name";
+                cbxValue.ValueMember = "val_id";
+            }
+
         }
-        private void LoadDiff(List<Differenced> listDiff)
+        private void LoadDiff()
         {
-            cbxDiff.DataSource = OrderDAO.Instance.Get();
-            cbxDiff.DataSource = listDiff;
-            cbxDiff.DisplayMember = "diff_name";
-            cbxDiff.ValueMember = "type_name";
+            if (cbxValue.SelectedValue != null)
+            {
+                int val_id = (int)cbxValue.SelectedValue;
+
+                cbxDiff.DataSource = DifferencedDAO.Instance.GetbyValues(val_id);
+                cbxDiff.DisplayMember = "diff_name";
+                cbxDiff.ValueMember = "diff_id";
+            }
         }
+        //private void LoadValue(List<Value> listVal)
+        //{
+        //    cbxValue.DataSource = OrderDAO.Instance.Get();
+        //    cbxValue.DataSource = listVal;
+        //    cbxValue.DisplayMember = "val_name";
+        //    cbxValue.ValueMember = "type_name";
+        //}
+        //private void LoadDiff(List<Differenced> listDiff)
+        //{
+        //    cbxDiff.DataSource = OrderDAO.Instance.Get();
+        //    cbxDiff.DataSource = listDiff;
+        //    cbxDiff.DisplayMember = "diff_name";
+        //    cbxDiff.ValueMember = "type_name";
+        //}
         public List<T> ConvertToList<T>(DataTable dt)
         {
             var columnNames = dt.Columns.Cast<DataColumn>()
@@ -88,10 +138,10 @@ namespace QTElectric.View
             listType = ConvertToList<Types>(TypeDAO.Instance.Types());
             listVal = ConvertToList<Value>(ValueDAO.Instance.Value());
             listDiff = ConvertToList<Differenced>(DifferencedDAO.Instance.Get());
-            LoadCat(listCat);
-            LoadType(listType);
-            LoadValue(listVal);
-            LoadDiff(listDiff);
+            //LoadCat(listCat);
+            //LoadType(listType);
+            //LoadValue(listVal);
+            //LoadDiff(listDiff);
         }
         public void GetQrCode(string qrText)
         {
@@ -124,6 +174,7 @@ namespace QTElectric.View
 
         private void cbxCat_SelectedValueChanged(object sender, EventArgs e)
         {
+            //LoadType();
             try
             {
                 cat_id = int.Parse(cbxCat.SelectedValue.ToString());
@@ -136,6 +187,7 @@ namespace QTElectric.View
 
         private void cbxType_SelectedValueChanged(object sender, EventArgs e)
         {
+            LoadType();
             try
             {
                 type_id = int.Parse(cbxType.SelectedValue.ToString());
@@ -168,6 +220,25 @@ namespace QTElectric.View
             {
                 diff_id = 0;
             }
+        }
+
+        private void cbxType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listType = ConvertToList<Types>(TypeDAO.Instance.Types());
+            LoadValue();
+            LoadDiff();
+        }
+
+        private void cbxCat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadType();
+            LoadValue();
+            LoadDiff();
+        }
+
+        private void cbxValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDiff();
         }
     }
 }

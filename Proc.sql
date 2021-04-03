@@ -269,13 +269,32 @@ BEGIN
 SELECT val_id, val_name FROM [values]
 END
 GO
---GET BY VALUES
-CREATE PROC GetByValues
+
+drop proc GetByValues
+SELECT  *  From [values]  INNER JOIN tbl_types  ON [values].type_id = tbl_types.type_id
+select * from [values]
+select * from tbl_types
+
+CREATE PROC GetByCat(@cat_id int)
 AS
 BEGIN
-SELECT  v.val_name, t.type_name, c.cat_name, d.diff_name From [values] as v INNER JOIN tbl_types as t  ON v.val_id = t.type_id INNER JOIN tbl_category as c ON t.cat_id = c.cat_id INNER JOIN tbl_differenced as d ON v.val_id = d.val_id
+SELECT * FROM tbl_types WHERE cat_id = @cat_id
+END
+go
+CREATE PROC GetByType(@type_id int)
+AS
+BEGIN
+SELECT * FROM [values] WHERE type_id = @type_id
 END
 GO
+CREATE PROC GetByValues(@val_id int)
+AS
+BEGIN
+SELECT * FROM tbl_differenced WHERE val_id = @val_id
+END
+GO
+exec GetByCat @cat_id = 13
+
 --CHECK PASSWORD
 CREATE PROC CheckPass(@user_name varchar(10), @password char(32))
 AS
