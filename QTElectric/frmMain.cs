@@ -16,9 +16,12 @@ namespace QTElectric
     public partial class frmMain : Form
     {
         Form frmParent;
+        string cusname;
+
         public frmMain(Form frmParent)
         {
             InitializeComponent();
+
             this.frmParent = frmParent;
             this.CenterToScreen();
             this.WindowState = FormWindowState.Maximized;

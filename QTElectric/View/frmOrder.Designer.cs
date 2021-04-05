@@ -60,6 +60,7 @@ namespace QTElectric.View
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtcusname = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -105,6 +106,7 @@ namespace QTElectric.View
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel4.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panel4.Controls.Add(this.txtcusname);
             this.panel4.Controls.Add(this.btnPrint);
             this.panel4.Controls.Add(this.btnQr);
             this.panel4.Controls.Add(this.btnSave);
@@ -368,7 +370,7 @@ namespace QTElectric.View
             this.Column3,
             this.Column6,
             this.Column4});
-            this.dvgCategory.Location = new System.Drawing.Point(912, 75);
+            this.dvgCategory.Location = new System.Drawing.Point(915, 71);
             this.dvgCategory.Margin = new System.Windows.Forms.Padding(4);
             this.dvgCategory.Name = "dvgCategory";
             this.dvgCategory.ReadOnly = true;
@@ -431,6 +433,15 @@ namespace QTElectric.View
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // txtcusname
+            // 
+            this.txtcusname.AutoSize = true;
+            this.txtcusname.Location = new System.Drawing.Point(371, 38);
+            this.txtcusname.Name = "txtcusname";
+            this.txtcusname.Size = new System.Drawing.Size(106, 17);
+            this.txtcusname.TabIndex = 10;
+            this.txtcusname.Text = "ten khach hang";
+            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -491,5 +502,6 @@ namespace QTElectric.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label txtcusname;
     }
 }

@@ -24,6 +24,16 @@ namespace QTElectric.View
         private int type_id;
         private int val_id;
         private int diff_id;
+        private string cusname;
+        public frmOrder(string cusname)
+        {
+            InitializeComponent();
+            txtcusname.Text = cusname;
+            LoadCat();
+            LoadType();
+            LoadValue();
+            LoadDiff();
+        }
         public frmOrder()
         {
             InitializeComponent();
@@ -31,7 +41,6 @@ namespace QTElectric.View
             LoadType();
             LoadValue();
             LoadDiff();
-
             listCat = new List<Category>();
             listType = new List<Types>();
             listVal = new List<Value>();
