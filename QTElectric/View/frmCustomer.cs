@@ -193,5 +193,13 @@ namespace QTElectric.View
                 check = false;
             }
         }
+
+        private void dvgCus_DoubleClick(object sender, EventArgs e)
+        {
+            string cusname = txtCusfullname.Text;
+            frmOrder frmOrder = new frmOrder(cusname);
+            frmOrder.ShowDialog();
+
+        }
     }
 }
