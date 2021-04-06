@@ -163,7 +163,7 @@ namespace QTElectric.View
         }
         private void cbxType_SelectedValueChanged(object sender, EventArgs e)
         {
-            //LoadType();
+            LoadType();
             try
             {
                 type_id = int.Parse(cbxType.SelectedValue.ToString());
