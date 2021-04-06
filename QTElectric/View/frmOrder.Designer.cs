@@ -139,9 +139,9 @@ namespace QTElectric.View
             this.txtcusname.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcusname.Location = new System.Drawing.Point(422, 41);
             this.txtcusname.Name = "txtcusname";
-            this.txtcusname.Size = new System.Drawing.Size(77, 23);
-            this.txtcusname.TabIndex = 12;
-            this.txtcusname.Text = "Customer";
+            this.txtcusname.Size = new System.Drawing.Size(118, 23);
+            this.txtcusname.TabIndex = 10;
+            this.txtcusname.Text = "ten khach hang";
             // 
             // txtDateNow
             // 
@@ -172,11 +172,6 @@ namespace QTElectric.View
             this.label9.Size = new System.Drawing.Size(143, 22);
             this.label9.TabIndex = 11;
             this.label9.Text = "Tên khách hàng";
-            this.txtcusname.Location = new System.Drawing.Point(371, 38);
-            this.txtcusname.Name = "txtcusname";
-            this.txtcusname.Size = new System.Drawing.Size(106, 17);
-            this.txtcusname.TabIndex = 10;
-            this.txtcusname.Text = "ten khach hang";
             // 
             // btnAdd
             // 
@@ -198,7 +193,6 @@ namespace QTElectric.View
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrint.Location = new System.Drawing.Point(455, 367);
             this.btnPrint.Location = new System.Drawing.Point(520, 459);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
@@ -213,7 +207,6 @@ namespace QTElectric.View
             this.btnQr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQr.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnQr.Location = new System.Drawing.Point(278, 367);
             this.btnQr.Location = new System.Drawing.Point(284, 459);
             this.btnQr.Margin = new System.Windows.Forms.Padding(4);
             this.btnQr.Name = "btnQr";
@@ -229,7 +222,6 @@ namespace QTElectric.View
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(101, 367);
             this.btnSave.Location = new System.Drawing.Point(48, 459);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
