@@ -84,7 +84,10 @@ namespace QTElectric.View
                 Load();
             }
         }
-
+        public void Search(string search)
+        {
+            dvgDiff.DataSource = DifferencedDAO.Instance.Search(search);
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             if (check)
@@ -99,6 +102,7 @@ namespace QTElectric.View
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Load();
             button2.Text = "Lưu";
             txtDid.Text = txtDname.Text = "";
             cbDstatus.Checked = false;
@@ -122,8 +126,6 @@ namespace QTElectric.View
                     button2.Text = "Lưu";
                 }
             }
-
-
         }
 
         private void dvgDiff_SelectionChanged(object sender, EventArgs e)
@@ -136,6 +138,20 @@ namespace QTElectric.View
                 cbxValue.SelectedValue = dvgDiff.SelectedCells[2].Value.ToString();
                 cbDstatus.Checked = dvgDiff.SelectedCells[3].Value.ToString() == "True" ? true : false;
                 check = false;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string txtSearch = "";
+            if (txtDname.Text.Length > 0)
+            {
+                txtSearch = txtDname.Text;
+                Search(txtSearch);
+                return;
+            }else if (txtDname.Text.Length == 0)
+            {
+                dvgDiff.DataSource = DifferencedDAO.Instance.GetbyValues((int)cbxValue.SelectedValue);
             }
         }
     }

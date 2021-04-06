@@ -46,6 +46,7 @@ namespace QTElectric.View
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDiff)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +58,7 @@ namespace QTElectric.View
             this.panel1.Controls.Add(this.cbxValue);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cbDstatus);
             this.panel1.Controls.Add(this.txtDname);
@@ -79,9 +81,9 @@ namespace QTElectric.View
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(728, 4);
+            this.button3.Location = new System.Drawing.Point(687, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(36, 23);
             this.button3.TabIndex = 6;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
@@ -89,9 +91,9 @@ namespace QTElectric.View
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(647, 4);
+            this.button2.Location = new System.Drawing.Point(636, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(45, 23);
             this.button2.TabIndex = 5;
             this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = true;
@@ -99,9 +101,9 @@ namespace QTElectric.View
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(566, 4);
+            this.button1.Location = new System.Drawing.Point(567, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(63, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "Thêm mới";
             this.button1.UseVisualStyleBackColor = true;
@@ -228,6 +230,16 @@ namespace QTElectric.View
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(728, 5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(63, 23);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // frmDifferenced
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,5 +275,6 @@ namespace QTElectric.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

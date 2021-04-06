@@ -76,7 +76,10 @@ namespace QTElectric.View
 
             }
         }
-
+        public void Search(string search)
+        {
+            dvgCus.DataSource = CustomerDAO.Instance.Search(search);
+        }
         //private void button1_Click(object sender, EventArgs e)
         //{
         //    if (!ValidateChildren())
@@ -132,6 +135,7 @@ namespace QTElectric.View
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
+            Load();
             btnSave.Text = "Lưu";
             txtCusid.Text = txtCusfullname.Text = txtCusphone.Text = txtCusemail.Text = txtCusaddress.Text = "";
             cbCusgender.Checked = cbCusstatus.Checked = false;
@@ -142,14 +146,14 @@ namespace QTElectric.View
         {
             if (check)
             {
-                if (ValidateChildren())
-                {
-                    MessageBox.Show("vui lòng điền");
-                }
-                else
-                {
+                //if (ValidateChildren())
+                //{
+                //    MessageBox.Show("vui lòng điền");
+                //}
+                //else
+                //{
                     Insert();
-                }
+                //}
             }
             else
             {
@@ -199,7 +203,36 @@ namespace QTElectric.View
             string cusname = txtCusfullname.Text;
             frmOrder frmOrder = new frmOrder(cusname);
             frmOrder.ShowDialog();
+            frmOrder.WindowState = FormWindowState.Maximized;
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            String txtSearch = "";
+            if(txtCusfullname.Text.Length > 0)
+            {
+                txtSearch = txtCusfullname.Text;
+                Search(txtSearch);
+                return;
+            }
+            else if(txtCusemail.Text.Length > 0)
+            {
+                txtSearch = txtCusemail.Text;
+                Search(txtSearch);
+                return;
+            }
+            else if (txtCusphone.Text.Length > 0)
+            {
+                txtSearch = txtCusphone.Text;
+                Search(txtSearch);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Mời bạn nhập từ khóa!");
+                return;
+            }
         }
     }
 }

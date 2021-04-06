@@ -112,6 +112,7 @@ namespace QTElectric.View
         }
         private void frmOrder_Load_1(object sender, EventArgs e)
         {
+            txtDateNow.Text = DateTime.Now.ToString("dd/MM/yyyy");
             listCat = ConvertToList<Category>(CategoryDAO.Instance.Categories());
             listType = ConvertToList<Types>(TypeDAO.Instance.Types());
             listVal = ConvertToList<Value>(ValueDAO.Instance.Value());
@@ -163,7 +164,7 @@ namespace QTElectric.View
         }
         private void cbxType_SelectedValueChanged(object sender, EventArgs e)
         {
-            //LoadType();
+            LoadType();
             try
             {
                 type_id = int.Parse(cbxType.SelectedValue.ToString());
@@ -216,6 +217,11 @@ namespace QTElectric.View
         {
             LoadValue();
             LoadDiff();
+        }
+
+        private void cbxDiff_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

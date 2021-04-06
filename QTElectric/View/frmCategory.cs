@@ -68,6 +68,7 @@ namespace QTElectric.View
 
         private void button1_Click(object sender, EventArgs e)
         {
+            load();
             txtCid.Text = "";
             txtCname.Text = "";
             cbCstatus.Checked = false;
@@ -108,7 +109,10 @@ namespace QTElectric.View
                 MessageBox.Show("Delete fail");
             }
         }
-
+        public void Search(string search)
+        {
+            dvgCategory.DataSource = CategoryDAO.Instance.Search(search);
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             if (!edit)
@@ -142,5 +146,22 @@ namespace QTElectric.View
                 edit = true;
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string txtSearch = "";
+            if (txtCname.Text.Length > 0)
+            {
+                txtSearch = txtCname.Text;
+                Search(txtSearch);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Mời bạn nhập từ khóa!");
+                return;
+            }
+        }
+
     }
 }

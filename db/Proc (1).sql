@@ -25,6 +25,7 @@ WHERE u_id = @id;
 END
 GO
 exec Update_User @id = 6, @user_name = 'k', @password = 'k', @mobile = jjj, @email = 'jj', @gender = true, @full_name = 'kk', @status = true, @date_create = '2000-2-2'
+GO
 CREATE PROC Delete_User(@id int)
 AS
 BEGIN
@@ -62,6 +63,7 @@ DELETE FROM [values] WHERE val_id = @id
 END
 GO
 exec Delete_Values @id = 5
+GO
 --CRUD OF [tbl_differenced]
 CREATE PROC Insert_Differenced(@diff_name varchar(3), @val_id int, @status bit, @date_create datetime)
 AS
@@ -274,7 +276,7 @@ drop proc GetByValues
 SELECT  *  From [values]  INNER JOIN tbl_types  ON [values].type_id = tbl_types.type_id
 select * from [values]
 select * from tbl_types
-
+GO
 CREATE PROC GetByCat(@cat_id int)
 AS
 BEGIN
@@ -294,7 +296,7 @@ SELECT * FROM tbl_differenced WHERE val_id = @val_id
 END
 GO
 exec GetByCat @cat_id = 13
-
+GO
 --CHECK PASSWORD
 CREATE PROC CheckPass(@user_name varchar(10), @password char(32))
 AS
@@ -304,4 +306,29 @@ END
 GO
 
 exec CheckPass @user_name = 'duc',  @password = '827ccb0eea8a706c4c34a16891f84e7b'
+GO
 
+-- Proc Search
+Create proc GetCusBySearch @search Nvarchar(100)
+as
+begin
+select * from tbl_customer 
+where fullName like '%'+@search+'%' OR email like '%'+@search+'%' OR mobile like '%'+@search+'%'
+end
+go
+
+Create proc GetCatBySearch @search Nvarchar(100)
+as
+begin
+select * from tbl_category 
+where cat_name like '%'+@search+'%' 
+end
+go
+
+Create proc GetDiffBySearch @search Nvarchar(100)
+as
+begin
+select * from tbl_differenced
+where diff_name like '%'+@search+'%' 
+end
+go
