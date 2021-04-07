@@ -16,10 +16,6 @@ namespace QTElectric.View
 {
     public partial class frmOrder : Form
     {
-        private List<Category> listCat;
-        private List<Types> listType;
-        private List<Value> listVal;
-        private List<Differenced> listDiff;
         private int cat_id;
         private int type_id;
         private int val_id;
@@ -41,10 +37,6 @@ namespace QTElectric.View
             LoadType();
             LoadValue();
             LoadDiff();
-            listCat = new List<Category>();
-            listType = new List<Types>();
-            listVal = new List<Value>();
-            listDiff = new List<Differenced>();
         }
         private void LoadCat()
         {
@@ -90,37 +82,29 @@ namespace QTElectric.View
                 cbxDiff.ValueMember = "diff_id";
             }
         }
-        public List<T> ConvertToList<T>(DataTable dt)
-        {
-            var columnNames = dt.Columns.Cast<DataColumn>()
-                    .Select(c => c.ColumnName)
-                    .ToList();
-            var properties = typeof(T).GetProperties();
-            return dt.AsEnumerable().Select(row =>
-            {
-                var objT = Activator.CreateInstance<T>();
-                foreach (var pro in properties)
-                {
-                    if (columnNames.Contains(pro.Name))
-                    {
-                        PropertyInfo pI = objT.GetType().GetProperty(pro.Name);
-                        pro.SetValue(objT, row[pro.Name] == DBNull.Value ? null : Convert.ChangeType(row[pro.Name], pI.PropertyType));
-                    }
-                }
-                return objT;
-            }).ToList();
-        }
+        //public List<T> ConvertToList<T>(DataTable dt)
+        //{
+        //    var columnNames = dt.Columns.Cast<DataColumn>()
+        //            .Select(c => c.ColumnName)
+        //            .ToList();
+        //    var properties = typeof(T).GetProperties();
+        //    return dt.AsEnumerable().Select(row =>
+        //    {
+        //        var objT = Activator.CreateInstance<T>();
+        //        foreach (var pro in properties)
+        //        {
+        //            if (columnNames.Contains(pro.Name))
+        //            {
+        //                PropertyInfo pI = objT.GetType().GetProperty(pro.Name);
+        //                pro.SetValue(objT, row[pro.Name] == DBNull.Value ? null : Convert.ChangeType(row[pro.Name], pI.PropertyType));
+        //            }
+        //        }
+        //        return objT;
+        //    }).ToList();
+        //}
         private void frmOrder_Load_1(object sender, EventArgs e)
         {
             txtDateNow.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            listCat = ConvertToList<Category>(CategoryDAO.Instance.Categories());
-            listType = ConvertToList<Types>(TypeDAO.Instance.Types());
-            listVal = ConvertToList<Value>(ValueDAO.Instance.Value());
-            listDiff = ConvertToList<Differenced>(DifferencedDAO.Instance.Get());
-            //LoadCat(listCat);
-            //LoadType(listType);
-            //LoadValue(listVal);
-            //LoadDiff(listDiff);
         }
         public void GetQrCode(string qrText)
         {
@@ -198,7 +182,6 @@ namespace QTElectric.View
         }
         private void cbxType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listType = ConvertToList<Types>(TypeDAO.Instance.Types());
             LoadValue();
             LoadDiff();
         }
@@ -210,12 +193,6 @@ namespace QTElectric.View
         }
         private void cbxValue_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadDiff();
-        }
-
-        private void cbxType_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            LoadValue();
             LoadDiff();
         }
 

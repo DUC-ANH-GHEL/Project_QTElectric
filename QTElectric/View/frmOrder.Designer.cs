@@ -31,7 +31,6 @@ namespace QTElectric.View
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtcusname = new System.Windows.Forms.Label();
             this.txtDateNow = new System.Windows.Forms.Label();
@@ -95,13 +94,6 @@ namespace QTElectric.View
             this.label1.TabIndex = 0;
             this.label1.Text = "NHẬP - KIỂM LINH KIỆN";
             // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(3, 58);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(675, 426);
-            this.panel3.TabIndex = 1;
-            // 
             // panel4
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -130,7 +122,7 @@ namespace QTElectric.View
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Location = new System.Drawing.Point(0, 58);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(678, 435);
+            this.panel4.Size = new System.Drawing.Size(678, 415);
             this.panel4.TabIndex = 3;
             // 
             // txtcusname
@@ -297,7 +289,7 @@ namespace QTElectric.View
             this.cbxType.Name = "cbxType";
             this.cbxType.Size = new System.Drawing.Size(121, 21);
             this.cbxType.TabIndex = 3;
-            this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged_1);
+            this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged);
             this.cbxType.SelectedValueChanged += new System.EventHandler(this.cbxType_SelectedValueChanged);
             // 
             // cbxCat
@@ -473,7 +465,6 @@ namespace QTElectric.View
             this.Controls.Add(this.dvgCategory);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
             this.Name = "frmOrder";
             this.Text = "NHẬP - KIỂM LINH KIỆN";
             this.Load += new System.EventHandler(this.frmOrder_Load_1);
@@ -494,7 +485,6 @@ namespace QTElectric.View
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnQr;
