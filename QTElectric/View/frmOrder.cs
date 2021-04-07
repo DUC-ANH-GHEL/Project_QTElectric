@@ -113,15 +113,7 @@ namespace QTElectric.View
             QRCode qrCode = new QRCode(qrCodeData);
             Bitmap qrCodeImage = qrCode.GetGraphic(20);
         }
-        string textqr;
-        private void button2_Click(object sender, EventArgs e)
-        {
-            textqr = cbxCat.Text + cbxType.Text + cbxValue.Text + cbxDiff.Text;
-            Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
-            pictureBox3.Image = barcode.Draw(textqr, 50);
-            Zen.Barcode.CodeQrBarcodeDraw qrcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
-            pictureBox2.Image = qrcode.Draw(textqr, 50);
-        }
+        
         public void Insert()
         {
             Product p = new Product()
@@ -199,6 +191,15 @@ namespace QTElectric.View
         private void cbxDiff_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        string textqr;
+        private void btnQr_Click(object sender, EventArgs e)
+        {
+            textqr = cbxCat.Text + cbxType.Text + cbxValue.Text + cbxDiff.Text;
+            Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+            pictureBox3.Image = barcode.Draw(textqr, 50);
+            Zen.Barcode.CodeQrBarcodeDraw qrcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
+            pictureBox2.Image = qrcode.Draw(textqr, 50);
         }
     }
 }

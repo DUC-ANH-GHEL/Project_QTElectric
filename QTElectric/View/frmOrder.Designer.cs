@@ -10,7 +10,7 @@ namespace QTElectric.View
 
         /// <summary>
         /// Clean up any resources being used.
-        /// </summary>
+        /// </summary>s
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
@@ -32,14 +32,14 @@ namespace QTElectric.View
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnQr = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtcusname = new System.Windows.Forms.Label();
             this.txtDateNow = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnQr = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -98,14 +98,14 @@ namespace QTElectric.View
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel4.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panel4.Controls.Add(this.btnSave);
+            this.panel4.Controls.Add(this.btnPrint);
+            this.panel4.Controls.Add(this.btnQr);
+            this.panel4.Controls.Add(this.btnAdd);
             this.panel4.Controls.Add(this.txtcusname);
             this.panel4.Controls.Add(this.txtDateNow);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.btnAdd);
-            this.panel4.Controls.Add(this.btnPrint);
-            this.panel4.Controls.Add(this.btnQr);
-            this.panel4.Controls.Add(this.btnSave);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.cbxDiff);
             this.panel4.Controls.Add(this.comboBox5);
@@ -124,6 +124,59 @@ namespace QTElectric.View
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(678, 415);
             this.panel4.TabIndex = 3;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(476, 358);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 36);
+            this.btnSave.TabIndex = 16;
+            this.btnSave.Text = "LƯU";
+            this.btnSave.UseVisualStyleBackColor = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(359, 358);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 36);
+            this.btnPrint.TabIndex = 16;
+            this.btnPrint.Text = "IN";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            // 
+            // btnQr
+            // 
+            this.btnQr.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnQr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQr.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQr.ForeColor = System.Drawing.Color.White;
+            this.btnQr.Location = new System.Drawing.Point(242, 358);
+            this.btnQr.Name = "btnQr";
+            this.btnQr.Size = new System.Drawing.Size(75, 36);
+            this.btnQr.TabIndex = 16;
+            this.btnQr.Text = "QR";
+            this.btnQr.UseVisualStyleBackColor = false;
+            this.btnQr.Click += new System.EventHandler(this.btnQr_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(125, 358);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 36);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Text = "THÊM";
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // txtcusname
             // 
@@ -164,63 +217,6 @@ namespace QTElectric.View
             this.label9.Size = new System.Drawing.Size(143, 22);
             this.label9.TabIndex = 11;
             this.label9.Text = "Tên khách hàng";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAdd.Location = new System.Drawing.Point(700, 459);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(108, 48);
-            this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "THÊM";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrint.Location = new System.Drawing.Point(520, 459);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(81, 39);
-            this.btnPrint.TabIndex = 9;
-            this.btnPrint.Text = "IN";
-            this.btnPrint.UseVisualStyleBackColor = false;
-            // 
-            // btnQr
-            // 
-            this.btnQr.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnQr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQr.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnQr.Location = new System.Drawing.Point(284, 459);
-            this.btnQr.Margin = new System.Windows.Forms.Padding(4);
-            this.btnQr.Name = "btnQr";
-            this.btnQr.Size = new System.Drawing.Size(81, 39);
-            this.btnQr.TabIndex = 8;
-            this.btnQr.Text = "QR";
-            this.btnQr.UseVisualStyleBackColor = false;
-            this.btnQr.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(48, 459);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 39);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "LƯU";
-            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -486,9 +482,6 @@ namespace QTElectric.View
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnQr;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox cbxDiff;
         private System.Windows.Forms.ComboBox comboBox5;
@@ -516,6 +509,9 @@ namespace QTElectric.View
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label txtcusname;
         private System.Windows.Forms.Label txtDateNow;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnQr;
         private System.Windows.Forms.Button btnAdd;
     }
 }
