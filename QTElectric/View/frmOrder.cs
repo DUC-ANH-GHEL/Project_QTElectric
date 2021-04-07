@@ -16,15 +16,18 @@ namespace QTElectric.View
 {
     public partial class frmOrder : Form
     {
+        private List<ModelOrder> listOrder;
         private int cat_id;
         private int type_id;
         private int val_id;
         private int diff_id;
         private string cusname;
+
         public frmOrder(string cusname)
         {
             InitializeComponent();
             txtcusname.Text = cusname;
+            listOrder = new List<ModelOrder>();
             LoadCat();
             LoadType();
             LoadValue();
@@ -33,10 +36,15 @@ namespace QTElectric.View
         public frmOrder()
         {
             InitializeComponent();
+            listOrder = new List<ModelOrder>();
             LoadCat();
             LoadType();
             LoadValue();
             LoadDiff();
+        }
+        private void LoadOrder()
+        {
+            dvgOrder.DataSource = listOrder;
         }
         private void LoadCat()
         {
@@ -200,6 +208,21 @@ namespace QTElectric.View
             pictureBox3.Image = barcode.Draw(textqr, 50);
             Zen.Barcode.CodeQrBarcodeDraw qrcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
             pictureBox2.Image = qrcode.Draw(textqr, 50);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ModelOrder model = new ModelOrder();
+            model.order_id = txtId.Text;
+            model.cat_name = cbxType.SelectedValue.ToString();
+            model.type_name = cbxType.SelectedValue.ToString();
+            model.value_name = cbxValue.SelectedValue.ToString();
+            model.diff_name = cbxDiff.SelectedValue.ToString();
+            model.amount_in = int.Parse(txtAmount.Text);
+            model.amount_out = 0;
+            model.date_create = DateTime.Now;
+            listOrder.Add(model);
+            LoadOrder();
         }
     }
 }
