@@ -29,6 +29,7 @@ namespace QTElectric
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplashScreen));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -36,33 +37,37 @@ namespace QTElectric
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 415);
+            this.progressBar1.Location = new System.Drawing.Point(9, 337);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progressBar1.MarqueeAnimationSpeed = 50;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(776, 23);
+            this.progressBar1.Size = new System.Drawing.Size(582, 19);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QTElectric.Properties.Resources.logo_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(776, 384);
+            this.pictureBox1.Size = new System.Drawing.Size(582, 312);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // frmSplashScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.ControlBox = false;
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmSplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSplashScreen";

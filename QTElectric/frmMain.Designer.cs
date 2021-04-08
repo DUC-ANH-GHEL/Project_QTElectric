@@ -64,42 +64,43 @@ namespace QTElectric
             this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(779, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(584, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // loạiLinhKiệnToolStripMenuItem
             // 
             this.loạiLinhKiệnToolStripMenuItem.Name = "loạiLinhKiệnToolStripMenuItem";
-            this.loạiLinhKiệnToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.loạiLinhKiệnToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.loạiLinhKiệnToolStripMenuItem.Text = "Loại linh kiện";
             this.loạiLinhKiệnToolStripMenuItem.Click += new System.EventHandler(this.loạiLinhKiệnToolStripMenuItem_Click);
             // 
             // kiểuChânToolStripMenuItem
             // 
             this.kiểuChânToolStripMenuItem.Name = "kiểuChânToolStripMenuItem";
-            this.kiểuChânToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.kiểuChânToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.kiểuChânToolStripMenuItem.Text = "Kiểu chân";
             this.kiểuChânToolStripMenuItem.Click += new System.EventHandler(this.kiểuChânToolStripMenuItem_Click);
             // 
             // tênGiáTrịToolStripMenuItem
             // 
             this.tênGiáTrịToolStripMenuItem.Name = "tênGiáTrịToolStripMenuItem";
-            this.tênGiáTrịToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
+            this.tênGiáTrịToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.tênGiáTrịToolStripMenuItem.Text = "Tên/ Giá trị";
             this.tênGiáTrịToolStripMenuItem.Click += new System.EventHandler(this.tênGiáTrịToolStripMenuItem_Click);
             // 
             // saiSốToolStripMenuItem
             // 
             this.saiSốToolStripMenuItem.Name = "saiSốToolStripMenuItem";
-            this.saiSốToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.saiSốToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.saiSốToolStripMenuItem.Text = "Sai số";
             this.saiSốToolStripMenuItem.Click += new System.EventHandler(this.saiSốToolStripMenuItem_Click);
             // 
             // sảnPhẩmToolStripMenuItem
             // 
             this.sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
-            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.sảnPhẩmToolStripMenuItem.Text = "Sản phẩm";
             this.sảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.sảnPhẩmToolStripMenuItem_Click);
             // 
@@ -110,34 +111,34 @@ namespace QTElectric
             this.kháchHàngToolStripMenuItem,
             this.đơnHàngToolStripMenuItem});
             this.càiĐặtToolStripMenuItem.Name = "càiĐặtToolStripMenuItem";
-            this.càiĐặtToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.càiĐặtToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.càiĐặtToolStripMenuItem.Text = "Cài đặt";
             // 
             // tàiKhoảnToolStripMenuItem
             // 
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             this.tàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.tàiKhoảnToolStripMenuItem_Click);
             // 
             // kháchHàngToolStripMenuItem
             // 
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
             this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
             // 
             // đơnHàngToolStripMenuItem
             // 
             this.đơnHàngToolStripMenuItem.Name = "đơnHàngToolStripMenuItem";
-            this.đơnHàngToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.đơnHàngToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.đơnHàngToolStripMenuItem.Text = "Đơn hàng";
             this.đơnHàngToolStripMenuItem.Click += new System.EventHandler(this.đơnHàngToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -150,9 +151,9 @@ namespace QTElectric
             this.btnCustomer,
             this.toolStripSeparator2,
             this.btnOrder});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(779, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(584, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -162,7 +163,7 @@ namespace QTElectric
             this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
             this.btnUser.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(29, 24);
+            this.btnUser.Size = new System.Drawing.Size(24, 24);
             this.btnUser.Text = "Tài khoản";
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
@@ -177,7 +178,7 @@ namespace QTElectric
             this.btnCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.Image")));
             this.btnCustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(29, 24);
+            this.btnCustomer.Size = new System.Drawing.Size(24, 24);
             this.btnCustomer.Text = "Khách hàng";
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
@@ -192,22 +193,21 @@ namespace QTElectric
             this.btnOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnOrder.Image")));
             this.btnOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(29, 24);
+            this.btnOrder.Size = new System.Drawing.Size(24, 24);
             this.btnOrder.Text = "Đơn hàng";
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(779, 444);
+            this.ClientSize = new System.Drawing.Size(584, 361);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMain";
             this.Text = "Nhập - Kiểm linh kiện";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
