@@ -116,11 +116,11 @@ CREATE PROC Delete_Types(@id int)
 AS
 BEGIN
 DELETE FROM tbl_types WHERE type_id = @id
-DELETE FROM tbl_orderDetail WHERE type_id = @id
 DELETE FROM tbl_product WHERE type_id = @id
 DELETE FROM [values] WHERE type_id = @id
 END
 GO
+
 --CRUD OF thb_customer
 CREATE PROC Insert_Customer(@fullname nvarchar(50), @mobile nchar(10), @email varchar(50), @address nvarchar(250), @gender bit, @status bit, @date_create datetime)
 AS
@@ -178,12 +178,11 @@ DELETE FROM tbl_orderDetail WHERE order_id = @id
 END
 GO
 --CRUD OF tbl_orderDetail
-CREATE PROC Insert_OrderDetail(@order_id int, @pro_id int, @type_id int, @value_id int, @amount_in int, @amount_out int, @status bit, @date_create datetime)
+CREATE PROC Insert_OrderDetail(@order_id varchar(max), @pro_id int, @value_id int, @amount_in int, @amount_out int, @status bit, @date_create datetime)
 AS
 BEGIN
-INSERT INTO tbl_orderDetail(order_id, pro_id, type_id, amount_in, amount_out, status, date_create) VALUES (@order_id, @pro_id, @type_id,  @amount_in, @amount_out, @status, @date_create)
+INSERT INTO tbl_orderDetail(order_id, pro_id, amount_in, amount_out, status, date_create) VALUES (@order_id, @pro_id, @amount_in, @amount_out, @status, @date_create)
 END
-
 GO
 CREATE PROC Get_OrderDetail
 AS
@@ -191,14 +190,15 @@ BEGIN
 SELECT * FROM tbl_orderDetail
 END
 GO
-CREATE PROC Update_OrderDetail(@id int, @order_id int, @pro_id int, @type_id int,  @amount_in int, @amount_out int, @status bit, @date_create datetime)
+CREATE PROC Update_OrderDetail(@id varchar(max), @order_id int, @pro_id int,   @amount_in int, @amount_out int, @status bit, @date_create datetime)
 AS
 BEGIN
 UPDATE tbl_orderDetail
-SET order_id = @order_id, pro_id = @pro_id, type_id = @type_id, amount_in = @amount_in, amount_out = @amount_out, status = @status, date_create = @date_create
+SET order_id = @order_id, pro_id = @pro_id,  amount_in = @amount_in, amount_out = @amount_out, status = @status, date_create = @date_create
 WHERE or_detail_id = @id
 END
 GO
+
 CREATE PROC Delete_OrderDetail(@id int)
 AS
 BEGIN
@@ -305,3 +305,27 @@ GO
 
 exec CheckPass @user_name = 'duc',  @password = '827ccb0eea8a706c4c34a16891f84e7b'
 
+-- Proc Search
+Create proc GetCusBySearch @search Nvarchar(100)
+as
+begin
+select * from tbl_customer 
+where fullName like '%'+@search+'%' OR email like '%'+@search+'%' OR mobile like '%'+@search+'%'
+end
+go
+
+Create proc GetCatBySearch @search Nvarchar(100)
+as
+begin
+select * from tbl_category 
+where cat_name like '%'+@search+'%' 
+end
+go
+
+Create proc GetDiffBySearch @search Nvarchar(100)
+as
+begin
+select * from tbl_differenced
+where diff_name like '%'+@search+'%' 
+end
+go
