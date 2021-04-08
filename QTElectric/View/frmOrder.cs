@@ -205,9 +205,9 @@ namespace QTElectric.View
         {
             textqr = cbxCat.Text + cbxType.Text + cbxValue.Text + cbxDiff.Text;
             Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
-            pictureBox3.Image = barcode.Draw(textqr, 50);
+            pictureBox3.Image = barcode.Draw(textqr, 150);
             Zen.Barcode.CodeQrBarcodeDraw qrcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
-            pictureBox2.Image = qrcode.Draw(textqr, 50);
+            pictureBox2.Image = qrcode.Draw(textqr, 150);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
