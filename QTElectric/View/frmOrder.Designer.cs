@@ -10,7 +10,7 @@ namespace QTElectric.View
 
         /// <summary>
         /// Clean up any resources being used.
-        /// </summary>
+        /// </summary>s
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
@@ -31,25 +31,22 @@ namespace QTElectric.View
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnQr = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtcusname = new System.Windows.Forms.Label();
             this.txtDateNow = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnQr = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cbxDiff = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.cbxValue = new System.Windows.Forms.ComboBox();
             this.cbxType = new System.Windows.Forms.ComboBox();
             this.cbxCat = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -57,12 +54,16 @@ namespace QTElectric.View
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dvgCategory = new System.Windows.Forms.DataGridView();
+            this.dvgOrder = new System.Windows.Forms.DataGridView();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -70,7 +71,7 @@ namespace QTElectric.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgCategory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,32 +96,25 @@ namespace QTElectric.View
             this.label1.TabIndex = 0;
             this.label1.Text = "NHẬP - KIỂM LINH KIỆN";
             // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(3, 58);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(675, 426);
-            this.panel3.TabIndex = 1;
-            // 
             // panel4
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel4.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panel4.Controls.Add(this.txtAmount);
+            this.panel4.Controls.Add(this.txtId);
+            this.panel4.Controls.Add(this.btnSave);
+            this.panel4.Controls.Add(this.btnPrint);
+            this.panel4.Controls.Add(this.btnQr);
+            this.panel4.Controls.Add(this.btnAdd);
             this.panel4.Controls.Add(this.txtcusname);
             this.panel4.Controls.Add(this.txtDateNow);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.btnAdd);
-            this.panel4.Controls.Add(this.btnPrint);
-            this.panel4.Controls.Add(this.btnQr);
-            this.panel4.Controls.Add(this.btnSave);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.cbxDiff);
-            this.panel4.Controls.Add(this.comboBox5);
             this.panel4.Controls.Add(this.cbxValue);
             this.panel4.Controls.Add(this.cbxType);
             this.panel4.Controls.Add(this.cbxCat);
-            this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label6);
@@ -130,8 +124,62 @@ namespace QTElectric.View
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Location = new System.Drawing.Point(0, 58);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(678, 435);
+            this.panel4.Size = new System.Drawing.Size(678, 415);
             this.panel4.TabIndex = 3;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(476, 358);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 36);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "LƯU";
+            this.btnSave.UseVisualStyleBackColor = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(359, 358);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 36);
+            this.btnPrint.TabIndex = 9;
+            this.btnPrint.Text = "IN";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            // 
+            // btnQr
+            // 
+            this.btnQr.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnQr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQr.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQr.ForeColor = System.Drawing.Color.White;
+            this.btnQr.Location = new System.Drawing.Point(242, 358);
+            this.btnQr.Name = "btnQr";
+            this.btnQr.Size = new System.Drawing.Size(75, 36);
+            this.btnQr.TabIndex = 8;
+            this.btnQr.Text = "QR";
+            this.btnQr.UseVisualStyleBackColor = false;
+            this.btnQr.Click += new System.EventHandler(this.btnQr_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(125, 358);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 36);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "THÊM";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtcusname
             // 
@@ -172,63 +220,6 @@ namespace QTElectric.View
             this.label9.Size = new System.Drawing.Size(143, 22);
             this.label9.TabIndex = 11;
             this.label9.Text = "Tên khách hàng";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAdd.Location = new System.Drawing.Point(700, 459);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(108, 48);
-            this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "THÊM";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrint.Location = new System.Drawing.Point(520, 459);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(81, 39);
-            this.btnPrint.TabIndex = 9;
-            this.btnPrint.Text = "IN";
-            this.btnPrint.UseVisualStyleBackColor = false;
-            // 
-            // btnQr
-            // 
-            this.btnQr.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnQr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQr.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnQr.Location = new System.Drawing.Point(284, 459);
-            this.btnQr.Margin = new System.Windows.Forms.Padding(4);
-            this.btnQr.Name = "btnQr";
-            this.btnQr.Size = new System.Drawing.Size(81, 39);
-            this.btnQr.TabIndex = 8;
-            this.btnQr.Text = "QR";
-            this.btnQr.UseVisualStyleBackColor = false;
-            this.btnQr.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(48, 459);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 39);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "LƯU";
-            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -272,14 +263,6 @@ namespace QTElectric.View
             this.cbxDiff.SelectedIndexChanged += new System.EventHandler(this.cbxDiff_SelectedIndexChanged);
             this.cbxDiff.SelectedValueChanged += new System.EventHandler(this.cbxDiff_SelectedValueChanged);
             // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(525, 245);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 5;
-            // 
             // cbxValue
             // 
             this.cbxValue.FormattingEnabled = true;
@@ -297,7 +280,7 @@ namespace QTElectric.View
             this.cbxType.Name = "cbxType";
             this.cbxType.Size = new System.Drawing.Size(121, 21);
             this.cbxType.TabIndex = 3;
-            this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged_1);
+            this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged);
             this.cbxType.SelectedValueChanged += new System.EventHandler(this.cbxType_SelectedValueChanged);
             // 
             // cbxCat
@@ -309,14 +292,6 @@ namespace QTElectric.View
             this.cbxCat.TabIndex = 2;
             this.cbxCat.SelectedIndexChanged += new System.EventHandler(this.cbxCat_SelectedIndexChanged);
             this.cbxCat.SelectedValueChanged += new System.EventHandler(this.cbxCat_SelectedValueChanged);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(36, 182);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
             // 
             // label8
             // 
@@ -387,51 +362,65 @@ namespace QTElectric.View
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // dvgCategory
+            // dvgOrder
             // 
-            this.dvgCategory.AllowUserToAddRows = false;
-            this.dvgCategory.AllowUserToDeleteRows = false;
-            this.dvgCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dvgOrder.AllowUserToAddRows = false;
+            this.dvgOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dvgCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dvgOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column5,
             this.Column2,
             this.Column3,
             this.Column6,
+            this.Column7,
+            this.Column8,
             this.Column4});
-            this.dvgCategory.Location = new System.Drawing.Point(684, 58);
-            this.dvgCategory.Name = "dvgCategory";
-            this.dvgCategory.ReadOnly = true;
-            this.dvgCategory.RowHeadersWidth = 51;
-            this.dvgCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgCategory.Size = new System.Drawing.Size(655, 415);
-            this.dvgCategory.TabIndex = 10;
+            this.dvgOrder.Location = new System.Drawing.Point(684, 58);
+            this.dvgOrder.Name = "dvgOrder";
+            this.dvgOrder.ReadOnly = true;
+            this.dvgOrder.RowHeadersWidth = 51;
+            this.dvgOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dvgOrder.Size = new System.Drawing.Size(655, 415);
+            this.dvgOrder.TabIndex = 10;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(39, 182);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(121, 20);
+            this.txtId.TabIndex = 1;
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(525, 245);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(121, 20);
+            this.txtAmount.TabIndex = 5;
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "pro_id";
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "order_id";
             this.Column1.HeaderText = "STT Bom";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "cat_id";
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "cat_name";
             this.Column5.HeaderText = "Loại linh kiện";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 125;
             // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "type_id";
+            this.Column2.DataPropertyName = "type_name";
             this.Column2.HeaderText = "Kiểu chân";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
@@ -440,7 +429,7 @@ namespace QTElectric.View
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "val_id";
+            this.Column3.DataPropertyName = "value_name";
             this.Column3.HeaderText = "Tên/ Giá trị";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
@@ -448,12 +437,28 @@ namespace QTElectric.View
             // 
             // Column6
             // 
-            this.Column6.DataPropertyName = "diff_id";
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.DataPropertyName = "diff_name";
             this.Column6.HeaderText = "Sai số";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.DataPropertyName = "amount_in";
+            this.Column7.HeaderText = "Số lượng ban đầu";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column8.DataPropertyName = "amount_out";
+            this.Column8.HeaderText = "Số lượng thực tế";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // Column4
             // 
@@ -470,10 +475,9 @@ namespace QTElectric.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1342, 485);
-            this.Controls.Add(this.dvgCategory);
+            this.Controls.Add(this.dvgOrder);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
             this.Name = "frmOrder";
             this.Text = "NHẬP - KIỂM LINH KIỆN";
             this.Load += new System.EventHandler(this.frmOrder_Load_1);
@@ -485,7 +489,7 @@ namespace QTElectric.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgCategory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,18 +498,12 @@ namespace QTElectric.View
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnQr;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox cbxDiff;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox cbxValue;
         private System.Windows.Forms.ComboBox cbxType;
         private System.Windows.Forms.ComboBox cbxCat;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -515,17 +513,24 @@ namespace QTElectric.View
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.DataGridView dvgCategory;
+        private System.Windows.Forms.DataGridView dvgOrder;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label txtcusname;
+        private System.Windows.Forms.Label txtDateNow;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnQr;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label txtcusname;
-        private System.Windows.Forms.Label txtDateNow;
-        private System.Windows.Forms.Button btnAdd;
     }
 }
