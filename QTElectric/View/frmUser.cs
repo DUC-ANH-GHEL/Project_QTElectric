@@ -132,5 +132,10 @@ namespace QTElectric.View
                 button2.Text = "Sửa";
             }
         }
+
+        private void dvgUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

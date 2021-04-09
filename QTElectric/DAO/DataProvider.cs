@@ -20,7 +20,7 @@ namespace QTElectric.DAO
         }
         private DataProvider() { }
         // Kết nối SQL SERVER
-        private string connectionSTR = "Data Source=LE-BA-ANH-DUC;Initial Catalog=QTElectric; uid = sa; pwd = 1234$;Integrated Security=True";
+        private string connectionSTR = "Data Source=LE-BA-ANH-DUC;Initial Catalog=QTElectric; uid =sa; pwd = 1234$;Integrated Security=True";
 
         #region return list data
         public DataTable ExecuteQuery(string query, object[] parameter = null)

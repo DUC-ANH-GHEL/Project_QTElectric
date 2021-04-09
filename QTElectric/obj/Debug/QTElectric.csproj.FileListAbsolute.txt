@@ -44,3 +44,25 @@ D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.csproj.CopyComplete
 E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\QRCoder.dll
 E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\Zen.Barcode.Core.dll
 E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\obj\Debug\QTElectric.csproj.CopyComplete
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\BarcodeStandard.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Buffers.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Drawing.Common.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Memory.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Numerics.Vectors.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Text.Encodings.Web.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Text.Json.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.ValueTuple.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Buffers.xml
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Memory.xml
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Numerics.Vectors.xml
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Text.Encodings.Web.xml
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Text.Json.xml
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.ValueTuple.xml
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\Aspose.BarCode.dll
+D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\Aspose.BarCode.xml
