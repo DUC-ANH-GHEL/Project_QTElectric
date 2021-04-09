@@ -32,6 +32,8 @@ namespace QTElectric.View
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnQr = new System.Windows.Forms.Button();
@@ -55,8 +57,6 @@ namespace QTElectric.View
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dvgOrder = new System.Windows.Forms.DataGridView();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.txtAmount = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,6 +126,20 @@ namespace QTElectric.View
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(678, 415);
             this.panel4.TabIndex = 3;
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(525, 245);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(121, 20);
+            this.txtAmount.TabIndex = 5;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(39, 182);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(121, 20);
+            this.txtId.TabIndex = 1;
             // 
             // btnSave
             // 
@@ -355,7 +369,7 @@ namespace QTElectric.View
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QTElectric.Properties.Resources.logo;
+            this.pictureBox1.Image = global::QTElectric.Properties.Resources.logo_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(36, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(168, 128);
@@ -384,20 +398,6 @@ namespace QTElectric.View
             this.dvgOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgOrder.Size = new System.Drawing.Size(655, 415);
             this.dvgOrder.TabIndex = 10;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(39, 182);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(121, 20);
-            this.txtId.TabIndex = 1;
-            // 
-            // txtAmount
-            // 
-            this.txtAmount.Location = new System.Drawing.Point(525, 245);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(121, 20);
-            this.txtAmount.TabIndex = 5;
             // 
             // Column1
             // 

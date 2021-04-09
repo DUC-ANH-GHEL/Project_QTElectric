@@ -77,6 +77,10 @@ namespace QTElectric.View
                 Load();
             }
         }
+        public void Search(string search)
+        {
+            dvgUser.DataSource = UserDAO.Instance.Search(search);
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             if (check)
@@ -110,8 +114,9 @@ namespace QTElectric.View
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            Load();
             button2.Text = "Lưu";
-            txtUid.Text = txtUserName.Text = txtName.Text = txtPhone.Text = txtEmail.Text = "";
+            txtUid.Text = txtUserName.Text = txtPassword.Text = txtName.Text = txtPhone.Text = txtEmail.Text = "";
             chkGender.Checked = chkStatus.Checked = false;
             check = true;
         }
@@ -136,6 +141,38 @@ namespace QTElectric.View
         private void dvgUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            String txtSearch = "";
+            if (txtName.Text.Length > 0)
+            {
+                txtSearch = txtName.Text;
+                Search(txtSearch);
+                return;
+            }
+            else if (txtUserName.Text.Length > 0)
+            {
+                txtSearch = txtUserName.Text;
+                Search(txtSearch);
+                return;
+            }
+            else if (txtEmail.Text.Length > 0)
+            {
+                txtSearch = txtEmail.Text;
+                Search(txtSearch);
+                return;
+            }
+            else if (txtPhone.Text.Length > 0)
+            {
+                txtSearch = txtPhone.Text;
+                Search(txtSearch);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Mời bạn nhập từ khóa!");
+                return;
+            }
         }
     }
 }

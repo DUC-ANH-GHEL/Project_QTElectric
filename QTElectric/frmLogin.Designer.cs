@@ -86,7 +86,7 @@ namespace QTElectric
             this.button1.Location = new System.Drawing.Point(118, 190);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 31);
+            this.button1.Size = new System.Drawing.Size(88, 26);
             this.button1.TabIndex = 4;
             this.button1.Text = "Đăng nhập";
             this.button1.UseVisualStyleBackColor = false;
@@ -165,7 +165,7 @@ namespace QTElectric
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QTElectric.Properties.Resources.logo;
+            this.pictureBox1.Image = global::QTElectric.Properties.Resources.logo_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(2, 36);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";

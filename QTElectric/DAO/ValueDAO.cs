@@ -48,5 +48,11 @@ namespace QTElectric.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { type_id });
             return result;
         }
+        public DataTable Search(string search)
+        {
+            string query = "GetValueBySearch @search";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { search });
+            return result;
+        }
     }
 }

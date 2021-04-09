@@ -134,7 +134,6 @@ namespace QTElectric.View
                 type_id = (int)cbxType.SelectedValue,
                 val_id = (int)cbxValue.SelectedValue,
                 diff_id = (int)cbxDiff.SelectedValue,
-                qrname = textqr,
 
             };
         }

@@ -51,6 +51,7 @@ namespace QTElectric.View
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtError = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvValue)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -71,9 +72,10 @@ namespace QTElectric.View
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(165, 3);
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(174, 3);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(65, 23);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -81,9 +83,10 @@ namespace QTElectric.View
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(84, 3);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(104, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(64, 23);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -91,7 +94,8 @@ namespace QTElectric.View
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(3, 3);
+            this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNew.Location = new System.Drawing.Point(23, 3);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(75, 23);
             this.btnAddNew.TabIndex = 4;
@@ -173,7 +177,7 @@ namespace QTElectric.View
             this.dgvValue.ReadOnly = true;
             this.dgvValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvValue.Size = new System.Drawing.Size(796, 263);
-            this.dgvValue.TabIndex = 7;
+            this.dgvValue.TabIndex = 8;
             this.dgvValue.SelectionChanged += new System.EventHandler(this.dgvValue_SelectionChanged);
             // 
             // Column1
@@ -221,10 +225,10 @@ namespace QTElectric.View
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.77228F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.77228F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.77228F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.68317F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.77352F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.77352F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.77069F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.68227F));
             this.tableLayoutPanel1.Controls.Add(this.panel5, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
@@ -240,11 +244,12 @@ namespace QTElectric.View
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.btnAddNew);
+            this.panel5.Controls.Add(this.btnSearch);
             this.panel5.Controls.Add(this.btnDelete);
             this.panel5.Controls.Add(this.btnSave);
-            this.panel5.Location = new System.Drawing.Point(546, 3);
+            this.panel5.Location = new System.Drawing.Point(466, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(246, 51);
+            this.panel5.Size = new System.Drawing.Size(326, 51);
             this.panel5.TabIndex = 0;
             // 
             // panel2
@@ -267,7 +272,7 @@ namespace QTElectric.View
             this.panel4.Controls.Add(this.txtId);
             this.panel4.Location = new System.Drawing.Point(365, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(175, 51);
+            this.panel4.Size = new System.Drawing.Size(95, 51);
             this.panel4.TabIndex = 0;
             // 
             // panel3
@@ -291,6 +296,17 @@ namespace QTElectric.View
             this.txtError.TabIndex = 0;
             this.txtError.Text = "label1";
             this.txtError.Visible = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(245, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(78, 23);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // frmValue
             // 
@@ -337,5 +353,6 @@ namespace QTElectric.View
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label txtError;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
