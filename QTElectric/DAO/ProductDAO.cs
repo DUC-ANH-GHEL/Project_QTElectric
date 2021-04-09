@@ -19,8 +19,8 @@ namespace QTElectric.DAO
         private ProductDAO() { }
         public int Insert(Product p)
         {
-            string query = "Insert_Product @cat_id , @type_id , @val_id , @diff_id , @qrname , @status , @date_create ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { p.cat_id, p.type_id, p.val_id, p.diff_id, p.qrname, p.status, p.date_create });
+            string query = "Insert_Product @cat_id , @type_id , @val_id , @diff_id , @status , @date_create ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { p.cat_id, p.type_id, p.val_id, p.diff_id,  p.status, p.date_create });
             return result;
         }
         public DataTable Get()

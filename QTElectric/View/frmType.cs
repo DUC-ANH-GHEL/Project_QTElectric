@@ -89,8 +89,13 @@ namespace QTElectric.View
                 MessageBox.Show("Delete fail");
             }
         }
+        public void Search(string search)
+        {
+            dgvType.DataSource = TypeDAO.Instance.Search(search);
+        }
         private void btnAddNew_Click_1(object sender, EventArgs e)
         {
+            load();
             txtId.Text = "";
             txtName.Text = "";
             cbxCat.SelectedIndex = 0;
@@ -143,6 +148,21 @@ namespace QTElectric.View
                 cbxCat.SelectedValue = dgvType.SelectedCells[2].Value.ToString();
                 chkStatus.Checked = dgvType.SelectedCells[3].Value.ToString() == "True";
                 edit = true;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string txtSearch = "";
+            if (txtName.Text.Length > 0)
+            {
+                txtSearch = txtName.Text;
+                Search(txtSearch);
+                return;
+            }
+            else if (txtName.Text.Length == 0)
+            {
+                dgvType.DataSource = TypeDAO.Instance.GetbyCat((int)cbxCat.SelectedValue);
             }
         }
     }

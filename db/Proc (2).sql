@@ -331,3 +331,28 @@ select * from tbl_differenced
 where diff_name like '%'+@search+'%' 
 end
 go
+
+Create proc GetTypeBySearch @search Nvarchar(100)
+as
+begin
+select * from tbl_types
+where type_name like '%'+@search+'%' 
+end
+go
+
+Create proc GetUserBySearch @search Nvarchar(100)
+as
+begin
+select * from tbl_user 
+where full_name like '%'+@search+'%' OR user_name like '%'+@search+'%' OR email like '%'+@search+'%' OR mobile like '%'+@search+'%'
+end
+go
+
+Create proc GetValueBySearch @search Nvarchar(100)
+as
+begin
+select * from [values]
+where val_name like '%'+@search+'%' 
+end
+go
+
