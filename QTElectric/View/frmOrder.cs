@@ -16,7 +16,8 @@ namespace QTElectric.View
 {
     public partial class frmOrder : Form
     {
-        private List<ModelOrder> listOrder;
+        private List<ModelOrder> listModelOrder;
+        private List<Order> listOrder;
         private int cat_id;
         private int type_id;
         private int val_id;
@@ -27,7 +28,8 @@ namespace QTElectric.View
         {
             InitializeComponent();
             txtcusname.Text = cusname;
-            listOrder = new List<ModelOrder>();
+            listModelOrder = new List<ModelOrder>();
+            listOrder = new List<Order>();
             LoadCat();
             LoadType();
             LoadValue();
@@ -36,7 +38,8 @@ namespace QTElectric.View
         public frmOrder()
         {
             InitializeComponent();
-            listOrder = new List<ModelOrder>();
+            listModelOrder = new List<ModelOrder>();
+            listOrder = new List<Order>();
             LoadCat();
             LoadType();
             LoadValue();
@@ -44,7 +47,7 @@ namespace QTElectric.View
         }
         private void LoadOrder()
         {
-            dvgOrder.DataSource = listOrder;
+            dvgOrder.DataSource = listModelOrder;
         }
         private void LoadCat()
         {
@@ -124,14 +127,11 @@ namespace QTElectric.View
         
         public void Insert()
         {
-            Product p = new Product()
-            {
-                cat_id = (int)cbxCat.SelectedValue,
-                type_id = (int)cbxType.SelectedValue,
-                val_id = (int)cbxValue.SelectedValue,
-                diff_id = (int)cbxDiff.SelectedValue,
+            
+        }
+        public void Update()
+        {
 
-            };
         }
 
         private void cbxCat_SelectedValueChanged(object sender, EventArgs e)
@@ -220,8 +220,37 @@ namespace QTElectric.View
             model.amount_in = int.Parse(txtAmount.Text);
             model.amount_out = 0;
             model.date_create = DateTime.Now;
-            listOrder.Add(model);
+            listModelOrder.Add(model);
             LoadOrder();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            foreach (ModelOrder item in listModelOrder)
+            {
+                Product p = ProductDAO.Instance.CheckProduct(int.Parse(item.cat_name), int.Parse(item.type_name), int.Parse(item.value_name), int.Parse(item.diff_name));
+                if (p == null)
+                {
+                    MessageBox.Show("null");
+                    Product pro = new Product();
+                    pro.cat_id = int.Parse(item.cat_name);
+                    pro.type_id = int.Parse(item.type_name);
+                    pro.val_id = int.Parse(item.value_name);
+                    pro.diff_id = int.Parse(item.diff_name);
+                    pro.status = true;
+                    pro.date_create = DateTime.Now;
+                    int i = ProductDAO.Instance.Insert(pro);
+                    if(i > 0)
+                    {
+                        MessageBox.Show("Thêm mới thành công!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Not null: " + p.pro_id);
+                }
+            }
+            
         }
     }
 }

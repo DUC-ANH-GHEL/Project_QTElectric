@@ -29,5 +29,11 @@ namespace QTElectric.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result;
         }
+        public Product CheckProduct(int cat_id, int type_id, int val_id, int diff_id)
+        {
+            string query = "CheckProduct @cat_id , @type_id , @value_id , @diff_id ";
+            object p = DataProvider.Instance.ExecuteScalarQuery(query, new object[] { cat_id, type_id, val_id, diff_id });
+            return (Product)p;
+        }
     }
 }

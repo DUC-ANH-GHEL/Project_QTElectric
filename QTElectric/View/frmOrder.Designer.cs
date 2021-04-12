@@ -153,6 +153,7 @@ namespace QTElectric.View
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "LƯU";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnPrint
             // 
