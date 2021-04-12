@@ -20,6 +20,7 @@ namespace QTElectric.DAO
         public int Insert(Product p)
         {
             string query = "Insert_Product @cat_id , @type_id , @val_id , @diff_id , @status , @date_create ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { p.cat_id, p.type_id, p.val_id, p.diff_id, p.status, p.date_create });
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { p.cat_id, p.type_id, p.val_id, p.diff_id,  p.status, p.date_create });
             return result;
         }
@@ -34,6 +35,18 @@ namespace QTElectric.DAO
             string query = "CheckProduct @cat_id , @type_id , @value_id , @diff_id ";
             object p = DataProvider.Instance.ExecuteScalarQuery(query, new object[] { cat_id, type_id, val_id, diff_id });
             return (Product)p;
+        }
+        public int Update(Product p)
+        {
+            string query = "Update_Product @id , @cat_id , @type_id , @val_id , @diff_id , @status , @date_create ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { p.pro_id, p.cat_id, p.type_id, p.val_id, p.diff_id, p.status, p.date_create });
+            return result;
+        }
+        public int Delete(int id)
+        {
+            string query = "Delete_Product @id";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
+            return result;
         }
     }
 }

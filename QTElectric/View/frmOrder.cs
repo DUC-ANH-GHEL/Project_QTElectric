@@ -11,6 +11,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BarcodeLib;
+using Aspose.BarCode.Generation;
 
 namespace QTElectric.View
 {
@@ -24,6 +26,7 @@ namespace QTElectric.View
         private int diff_id;
         private string cusname;
 
+        BarcodeLib.Barcode code128;
         public frmOrder(string cusname)
         {
             InitializeComponent();
@@ -34,6 +37,7 @@ namespace QTElectric.View
             LoadType();
             LoadValue();
             LoadDiff();
+            code128 = new Barcode();
         }
         public frmOrder()
         {
@@ -124,7 +128,7 @@ namespace QTElectric.View
             QRCode qrCode = new QRCode(qrCodeData);
             Bitmap qrCodeImage = qrCode.GetGraphic(20);
         }
-        
+
         public void Insert()
         {
             
@@ -202,11 +206,12 @@ namespace QTElectric.View
         string textqr;
         private void btnQr_Click(object sender, EventArgs e)
         {
-            textqr = cbxCat.Text + cbxType.Text + cbxValue.Text + cbxDiff.Text;
+            textqr = cbxCat.SelectedValue + "-" + cbxType.SelectedValue + "-" + cbxValue.SelectedValue + "-" + cbxDiff.SelectedValue;
             Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
-            pictureBox3.Image = barcode.Draw(textqr, 150);
+            pictureBox3.Image = barcode.Draw(textqr, 50);
             Zen.Barcode.CodeQrBarcodeDraw qrcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
-            pictureBox2.Image = qrcode.Draw(textqr, 150);
+            pictureBox2.Image = qrcode.Draw(textqr, 50);
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
