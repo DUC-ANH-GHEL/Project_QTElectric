@@ -198,15 +198,6 @@ namespace QTElectric.View
             }
         }
 
-        private void dvgCus_DoubleClick(object sender, EventArgs e)
-        {
-            string cusname = txtCusfullname.Text;
-            frmOrder frmOrder = new frmOrder(cusname);
-            frmOrder.ShowDialog();
-            frmOrder.WindowState = FormWindowState.Maximized;
-
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String txtSearch = "";
@@ -232,6 +223,32 @@ namespace QTElectric.View
             {
                 MessageBox.Show("Mời bạn nhập từ khóa!");
                 return;
+            }
+        }
+        private void dvgCus_DoubleClick(object sender, EventArgs e)
+        {
+            Customer c = new Customer();
+            c.cus_id = int.Parse(txtCusid.Text);
+            c.fullName = txtCusfullname.Text;
+            c.address = txtCusaddress.Text;
+            c.email = txtCusemail.Text;
+            c.mobile = txtCusphone.Text;
+            c.gender = cbCusgender.Checked ? true : false;
+            c.status = cbCusstatus.Checked ? true : false;
+            frmOrder frmOrder = new frmOrder(c);
+            frmOrder.ShowDialog();
+            frmOrder.WindowState = FormWindowState.Maximized;
+
+        }
+        private void dvgCus_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right) {
+                ContextMenu ctm = new ContextMenu();
+                IEnumerable<Order> listOrder = (IEnumerable<Order>)OrderDAO.Instance.GetOrderByCus(int.Parse(txtCusid.Text));
+                foreach (var item in listOrder)
+                {
+                    ctm.MenuItems.Add(item.order_name);
+                }
             }
         }
     }

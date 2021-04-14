@@ -164,6 +164,13 @@ BEGIN
 SELECT * FROM tbl_order
 END
 GO
+Create proc getOrderByCus @cus_id int
+as
+begin
+	select * from tbl_order
+	where cus_id = @cus_id
+end
+GO
 CREATE PROC Update_Order(@id int, @cus_id int, @or_name nvarchar(100), @status bit, @date_create datetime )
 AS
 BEGIN

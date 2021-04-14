@@ -83,12 +83,6 @@ namespace QTElectric
             MdiLoadForm(frmChild);
         }
 
-        private void đơnHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmOrder frmChild = new frmOrder();
-            MdiLoadForm(frmChild);
-        }
-
         private void btnUser_Click(object sender, EventArgs e)
         {
             tàiKhoảnToolStripMenuItem_Click(sender, e);
@@ -99,10 +93,6 @@ namespace QTElectric
             kháchHàngToolStripMenuItem_Click(sender, e);
         }
 
-        private void btnOrder_Click(object sender, EventArgs e)
-        {
-            đơnHàngToolStripMenuItem_Click(sender, e);
-        }
 
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {

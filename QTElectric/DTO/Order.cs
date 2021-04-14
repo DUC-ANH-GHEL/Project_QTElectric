@@ -10,6 +10,15 @@ namespace QTElectric.DTO
 {
     public class Order
     {
+        public int order_id { get; set; }
+        public string order_name { get; set; }
+        public int cus_id { get; set; }
+        public Boolean status { get; set; }
+        public DateTime date_create { get; set; }
+        public string status2 { get; set; }
+    }
+    public class OrderDetail
+    {
         public int or_detail_id { get; set; }
         public string order_id { get; set; }
         public int pro_id { get; set; }
@@ -18,11 +27,11 @@ namespace QTElectric.DTO
         public Boolean status { get; set; }
         public DateTime date_create { get; set; }
         public string status2 { get; set; }
-        public Order()
+        public OrderDetail()
         {
 
         }
-        public Order(int or_detail_id, string order_id, int pro_id, int amount_in, int amount_out, bool status, DateTime date_create)
+        public OrderDetail(int or_detail_id, string order_id, int pro_id, int amount_in, int amount_out, bool status, DateTime date_create)
         {
             this.or_detail_id = or_detail_id;
             this.order_id = order_id;

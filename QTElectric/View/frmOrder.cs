@@ -13,45 +13,37 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BarcodeLib;
 using Aspose.BarCode.Generation;
+using Microsoft.VisualBasic;
 
 namespace QTElectric.View
 {
     public partial class frmOrder : Form
     {
         private List<ModelOrder> listModelOrder;
-        private List<Order> listOrder;
+        private List<OrderDetail> listOrder;
         private int cat_id;
         private int type_id;
         private int val_id;
         private int diff_id;
-        private string cusname;
+        private Customer cus;
+        private int or_id;
 
         BarcodeLib.Barcode code128;
-        public frmOrder(string cusname)
+        public frmOrder(Customer cus)
         {
             InitializeComponent();
-            txtcusname.Text = cusname;
+            this.cus = cus;
             listModelOrder = new List<ModelOrder>();
-            listOrder = new List<Order>();
+            listOrder = new List<OrderDetail>();
             LoadCat();
             LoadType();
             LoadValue();
             LoadDiff();
             code128 = new Barcode();
         }
-        public frmOrder()
-        {
-            InitializeComponent();
-            listModelOrder = new List<ModelOrder>();
-            listOrder = new List<Order>();
-            LoadCat();
-            LoadType();
-            LoadValue();
-            LoadDiff();
-        }
         private void LoadOrder()
-        {
-            dvgOrder.DataSource = listModelOrder;
+        {            
+            dvgOrder.DataSource = listModelOrder.ToList();
         }
         private void LoadCat()
         {
@@ -75,16 +67,13 @@ namespace QTElectric.View
         }
         private void LoadValue()
         {
-
             if (cbxType.SelectedValue != null)
             {
-
                 int type_id = (int)cbxType.SelectedValue;
                 cbxValue.DataSource = ValueDAO.Instance.GetbyType(type_id);
                 cbxValue.DisplayMember = "val_name";
                 cbxValue.ValueMember = "val_id";
             }
-
         }
         private void LoadDiff()
         {
@@ -120,6 +109,7 @@ namespace QTElectric.View
         private void frmOrder_Load_1(object sender, EventArgs e)
         {
             txtDateNow.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            txtcusname.Text = cus.fullName;
         }
         public void GetQrCode(string qrText)
         {
@@ -127,15 +117,6 @@ namespace QTElectric.View
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrText, QRCodeGenerator.ECCLevel.Q);
             QRCode qrCode = new QRCode(qrCodeData);
             Bitmap qrCodeImage = qrCode.GetGraphic(20);
-        }
-
-        public void Insert()
-        {
-            
-        }
-        public void Update()
-        {
-
         }
 
         private void cbxCat_SelectedValueChanged(object sender, EventArgs e)
@@ -211,11 +192,19 @@ namespace QTElectric.View
             pictureBox3.Image = barcode.Draw(textqr, 50);
             Zen.Barcode.CodeQrBarcodeDraw qrcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
             pictureBox2.Image = qrcode.Draw(textqr, 50);
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (txtId.Text == "")
+            {
+                MessageBox.Show("Mời bạn nhập mã đơn hàng!");
+                return;
+            }else if (txtAmount.Text == "")
+            {
+                MessageBox.Show("Mời bạn nhập số lượng đơn hàng!");
+                return;
+            }
             ModelOrder model = new ModelOrder();
             model.order_id = txtId.Text;
             model.cat_name = cbxType.SelectedValue.ToString();
@@ -231,31 +220,59 @@ namespace QTElectric.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtOrderName.Text == "")
+            {
+                MessageBox.Show("Mời bạn nhập tên đơn hàng!");
+                return;
+            }
+            if (true)
+            {
+                InsertOrder();
+            }
             foreach (ModelOrder item in listModelOrder)
             {
-                Product p = ProductDAO.Instance.CheckProduct(int.Parse(item.cat_name), int.Parse(item.type_name), int.Parse(item.value_name), int.Parse(item.diff_name));
-                if (p == null)
+                object id_pro = ProductDAO.Instance.CheckProduct(int.Parse(item.cat_name), int.Parse(item.type_name), int.Parse(item.value_name), int.Parse(item.diff_name));
+                if (id_pro == null)
                 {
                     MessageBox.Show("null");
-                    Product pro = new Product();
-                    pro.cat_id = int.Parse(item.cat_name);
-                    pro.type_id = int.Parse(item.type_name);
-                    pro.val_id = int.Parse(item.value_name);
-                    pro.diff_id = int.Parse(item.diff_name);
-                    pro.status = true;
-                    pro.date_create = DateTime.Now;
-                    int i = ProductDAO.Instance.Insert(pro);
-                    if(i > 0)
-                    {
-                        MessageBox.Show("Thêm mới thành công!");
-                    }
+                    InsertPro(int.Parse(item.cat_name), int.Parse(item.type_name), int.Parse(item.value_name), int.Parse(item.diff_name));
                 }
                 else
                 {
-                    MessageBox.Show("Not null: " + p.pro_id);
+                    MessageBox.Show("Not null: " + id_pro.ToString());
                 }
+
             }
-            
+        }
+        private void InsertPro(int cat_id, int type_id, int val_id, int diff_id)
+        {
+            Product pro = new Product();
+            pro.cat_id = type_id;
+            pro.type_id = type_id;
+            pro.val_id = val_id;
+            pro.diff_id = diff_id;
+            pro.status = true;
+            pro.date_create = DateTime.Now;
+            int i = ProductDAO.Instance.Insert(pro);
+            if (i > 0)
+            {
+                MessageBox.Show("Thêm mới sản phấm thành công!");
+            }
+        }
+        private void InsertOrder()
+        {
+            Order o = new Order();
+            o.cus_id = cus.cus_id;
+            o.order_name = txtOrderName.Text;
+            o.status = true;
+            o.date_create = DateTime.Now;
+
+            object result = OrderDAO.Instance.InsertOrder(o);
+            if(result != null)
+            {
+                or_id = int.Parse(result.ToString());
+                MessageBox.Show("Đã tạo đơn hàng");
+            }
         }
     }
 }

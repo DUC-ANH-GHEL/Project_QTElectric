@@ -21,7 +21,6 @@ namespace QTElectric.DAO
         {
             string query = "Insert_Product @cat_id , @type_id , @val_id , @diff_id , @status , @date_create ";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { p.cat_id, p.type_id, p.val_id, p.diff_id, p.status, p.date_create });
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { p.cat_id, p.type_id, p.val_id, p.diff_id,  p.status, p.date_create });
             return result;
         }
         public DataTable Get()
@@ -30,11 +29,11 @@ namespace QTElectric.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result;
         }
-        public Product CheckProduct(int cat_id, int type_id, int val_id, int diff_id)
+        public object CheckProduct(int cat_id, int type_id, int val_id, int diff_id)
         {
             string query = "CheckProduct @cat_id , @type_id , @value_id , @diff_id ";
             object p = DataProvider.Instance.ExecuteScalarQuery(query, new object[] { cat_id, type_id, val_id, diff_id });
-            return (Product)p;
+            return p;
         }
         public int Update(Product p)
         {
