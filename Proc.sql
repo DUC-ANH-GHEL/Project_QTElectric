@@ -378,15 +378,17 @@ INNER JOIN tbl_product ON tbl_orderDetail.pro_id = tbl_product.pro_id
 INNER JOIN tbl_order ON tbl_orderDetail.order_id = tbl_order.or_id
 end
 go
+
 Create proc Select7tbl2
 as
 begin
-select tbl_category.cat_name, tbl_types.type_name, tbl_differenced.diff_name, [values].val_name, tbl_orderDetail.amount_in, tbl_orderDetail.amount_out, tbl_order.or_id, tbl_order.date_create from tbl_category, tbl_types, tbl_differenced, [values], tbl_orderDetail, tbl_order
-WHERE tbl_category.cat_id = tbl_product.cat_id AND
-tbl_types.type_id = tbl_product.type_id AND
-tbl_differenced.diff_id = tbl_product.diff_id AND
- [values].val_id = tbl_product.val_id AND
-tbl_orderDetail.pro_id = tbl_product.pro_id AND
- tbl_orderDetail.order_id = tbl_order.or_id
+select c.cat_name, t.type_name, d.diff_name, v.val_name, oDetail.*, o.date_create 
+from tbl_category as c, tbl_types as t, tbl_differenced as d, [values] as v, tbl_orderDetail as oDetail, tbl_order as o, tbl_product as p
+WHERE c.cat_id = p.cat_id AND
+	t.type_id = p.type_id AND
+	d.diff_id = p.diff_id AND
+	v.val_id = p.val_id AND
+	oDetail.pro_id = p.pro_id AND
+	oDetail.order_id = o.or_id
 end
 
