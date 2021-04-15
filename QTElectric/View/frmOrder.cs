@@ -205,6 +205,7 @@ namespace QTElectric.View
                 MessageBox.Show("Mời bạn nhập số lượng đơn hàng!");
                 return;
             }
+            // status 0: chưa đc thêm, 1: đã đc thêm, 2: chuẩn bị sửa
             ModelOrder model = new ModelOrder();
             model.order_id = txtId.Text;
             model.cat_name = cbxType.SelectedValue.ToString();
@@ -213,6 +214,7 @@ namespace QTElectric.View
             model.diff_name = cbxDiff.SelectedValue.ToString();
             model.amount_in = int.Parse(txtAmount.Text);
             model.amount_out = 0;
+            model.status = 0;
             model.date_create = DateTime.Now;
             listModelOrder.Add(model);
             LoadOrder();
@@ -227,6 +229,8 @@ namespace QTElectric.View
             }
             if (true)
             {
+                // k.tra đơn hàng tồn tại chưa
+                // nếu chưa thì thêm mới
                 InsertOrder();
             }
             foreach (ModelOrder item in listModelOrder)
@@ -234,14 +238,30 @@ namespace QTElectric.View
                 object id_pro = ProductDAO.Instance.CheckProduct(int.Parse(item.cat_name), int.Parse(item.type_name), int.Parse(item.value_name), int.Parse(item.diff_name));
                 if (id_pro == null)
                 {
-                    MessageBox.Show("null");
                     InsertPro(int.Parse(item.cat_name), int.Parse(item.type_name), int.Parse(item.value_name), int.Parse(item.diff_name));
                 }
-                else
-                {
-                    MessageBox.Show("Not null: " + id_pro.ToString());
-                }
 
+                OrderDetail oDetail = new OrderDetail();
+                oDetail.order_id = "1";
+                oDetail.or_detail_id = item.order_id;
+                oDetail.pro_id = int.Parse(id_pro.ToString());
+                oDetail.amount_in = item.amount_in;
+                oDetail.amount_out = item.amount_out;
+                oDetail.status = 0;
+                oDetail.date_create = DateTime.Now;
+                if (item.status == 0)
+                {
+                    // thêm order detail
+                    oDetail.status = 1;
+                    InsertOrderDetail(oDetail);
+                }
+                else if(item.status == 2)
+                {
+                    // sửa order detail
+                    // get id orderDetail
+                    oDetail.or_detail_id = "1";
+                    UpdatetOrderDetail(oDetail);
+                }
             }
         }
         private void InsertPro(int cat_id, int type_id, int val_id, int diff_id)
@@ -273,6 +293,18 @@ namespace QTElectric.View
                 or_id = int.Parse(result.ToString());
                 MessageBox.Show("Đã tạo đơn hàng");
             }
+        }
+        private void InsertOrderDetail(OrderDetail oDetail)
+        {
+            int result = OrderDetailDAO.Instance.InsertOrderDetail(oDetail);
+            if(result > 0)
+            {
+                MessageBox.Show("Lưu thông tin thành công");
+            }
+        }
+        private void UpdatetOrderDetail(OrderDetail oDetail)
+        {
+            int result = OrderDetailDAO.Instance.UpdateOrderDetail(oDetail);
         }
     }
 }

@@ -13,25 +13,23 @@ namespace QTElectric.DTO
         public int order_id { get; set; }
         public string order_name { get; set; }
         public int cus_id { get; set; }
-        public Boolean status { get; set; }
+        public bool status { get; set; }
         public DateTime date_create { get; set; }
-        public string status2 { get; set; }
     }
     public class OrderDetail
     {
-        public int or_detail_id { get; set; }
+        public string or_detail_id { get; set; }
         public string order_id { get; set; }
         public int pro_id { get; set; }
         public int amount_in { get; set; }
         public int amount_out { get; set; }
-        public Boolean status { get; set; }
+        public int status { get; set; }
         public DateTime date_create { get; set; }
-        public string status2 { get; set; }
         public OrderDetail()
         {
 
         }
-        public OrderDetail(int or_detail_id, string order_id, int pro_id, int amount_in, int amount_out, bool status, DateTime date_create)
+        public OrderDetail(string or_detail_id, string order_id, int pro_id, int amount_in, int amount_out, int status, DateTime date_create)
         {
             this.or_detail_id = or_detail_id;
             this.order_id = order_id;
@@ -52,6 +50,7 @@ namespace QTElectric.DTO
         public string diff_name { get; set; }
         public int amount_in { get; set; }
         public int amount_out { get; set; }
+        public int status { get; set; }
         public DateTime date_create { get; set; }
         public ModelOrder()
         {
