@@ -84,8 +84,8 @@ namespace QTElectric.View
             // 
             this.dvgCus.AllowUserToAddRows = false;
             this.dvgCus.AllowUserToDeleteRows = false;
-            this.dvgCus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dvgCus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgCus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgCus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -97,12 +97,13 @@ namespace QTElectric.View
             this.Column8,
             this.Column3,
             this.Column4});
-            this.dvgCus.Location = new System.Drawing.Point(12, 129);
+            this.dvgCus.Location = new System.Drawing.Point(16, 159);
+            this.dvgCus.Margin = new System.Windows.Forms.Padding(4);
             this.dvgCus.Name = "dvgCus";
             this.dvgCus.ReadOnly = true;
             this.dvgCus.RowHeadersWidth = 51;
             this.dvgCus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgCus.Size = new System.Drawing.Size(1009, 220);
+            this.dvgCus.Size = new System.Drawing.Size(1345, 271);
             this.dvgCus.TabIndex = 10;
             this.dvgCus.SelectionChanged += new System.EventHandler(this.dvgCus_SelectionChanged);
             this.dvgCus.DoubleClick += new System.EventHandler(this.dvgCus_DoubleClick);
@@ -187,17 +188,19 @@ namespace QTElectric.View
             this.panel9.Controls.Add(this.btnDelete);
             this.panel9.Controls.Add(this.btnSave);
             this.panel9.Controls.Add(this.btnAddNew);
-            this.panel9.Location = new System.Drawing.Point(664, 3);
+            this.panel9.Location = new System.Drawing.Point(885, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(338, 43);
+            this.panel9.Size = new System.Drawing.Size(451, 53);
             this.panel9.TabIndex = 15;
             // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(252, 13);
+            this.btnSearch.Location = new System.Drawing.Point(336, 16);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(100, 28);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -206,9 +209,10 @@ namespace QTElectric.View
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(171, 12);
+            this.btnDelete.Location = new System.Drawing.Point(228, 15);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(100, 28);
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -217,9 +221,10 @@ namespace QTElectric.View
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(90, 12);
+            this.btnSave.Location = new System.Drawing.Point(120, 15);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -228,9 +233,10 @@ namespace QTElectric.View
             // btnAddNew
             // 
             this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNew.Location = new System.Drawing.Point(9, 12);
+            this.btnAddNew.Location = new System.Drawing.Point(12, 15);
+            this.btnAddNew.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(75, 23);
+            this.btnAddNew.Size = new System.Drawing.Size(100, 28);
             this.btnAddNew.TabIndex = 7;
             this.btnAddNew.Text = "Thêm mới";
             this.btnAddNew.UseVisualStyleBackColor = true;
@@ -241,27 +247,30 @@ namespace QTElectric.View
             this.panel8.Controls.Add(this.txtCusid);
             this.panel8.Controls.Add(this.cbCusstatus);
             this.panel8.Controls.Add(this.label3);
-            this.panel8.Location = new System.Drawing.Point(907, 3);
+            this.panel8.Location = new System.Drawing.Point(1209, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(96, 43);
+            this.panel8.Size = new System.Drawing.Size(128, 53);
             this.panel8.TabIndex = 14;
             // 
             // txtCusid
             // 
             this.txtCusid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCusid.Enabled = false;
-            this.txtCusid.Location = new System.Drawing.Point(75, 12);
+            this.txtCusid.Location = new System.Drawing.Point(100, 15);
+            this.txtCusid.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusid.Name = "txtCusid";
-            this.txtCusid.Size = new System.Drawing.Size(10, 20);
+            this.txtCusid.Size = new System.Drawing.Size(12, 22);
             this.txtCusid.TabIndex = 0;
             this.txtCusid.Visible = false;
             // 
             // cbCusstatus
             // 
             this.cbCusstatus.AutoSize = true;
-            this.cbCusstatus.Location = new System.Drawing.Point(3, 20);
+            this.cbCusstatus.Location = new System.Drawing.Point(4, 25);
+            this.cbCusstatus.Margin = new System.Windows.Forms.Padding(4);
             this.cbCusstatus.Name = "cbCusstatus";
-            this.cbCusstatus.Size = new System.Drawing.Size(77, 17);
+            this.cbCusstatus.Size = new System.Drawing.Size(96, 21);
             this.cbCusstatus.TabIndex = 6;
             this.cbCusstatus.Text = "Hoạt động";
             this.cbCusstatus.UseVisualStyleBackColor = true;
@@ -269,9 +278,10 @@ namespace QTElectric.View
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 4);
+            this.label3.Location = new System.Drawing.Point(0, 5);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Trạng thái";
             // 
@@ -280,17 +290,19 @@ namespace QTElectric.View
             this.panel6.Controls.Add(this.lbleraddress);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.txtCusaddress);
-            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Location = new System.Drawing.Point(4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(597, 53);
+            this.panel6.Size = new System.Drawing.Size(796, 65);
             this.panel6.TabIndex = 12;
             // 
             // lbleraddress
             // 
             this.lbleraddress.AutoSize = true;
-            this.lbleraddress.Location = new System.Drawing.Point(3, 39);
+            this.lbleraddress.Location = new System.Drawing.Point(4, 48);
+            this.lbleraddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbleraddress.Name = "lbleraddress";
-            this.lbleraddress.Size = new System.Drawing.Size(35, 13);
+            this.lbleraddress.Size = new System.Drawing.Size(46, 17);
             this.lbleraddress.TabIndex = 3;
             this.lbleraddress.Text = "label7";
             this.lbleraddress.Visible = false;
@@ -298,39 +310,43 @@ namespace QTElectric.View
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Location = new System.Drawing.Point(4, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.Size = new System.Drawing.Size(51, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Địa chỉ";
             // 
             // txtCusaddress
             // 
-            this.txtCusaddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCusaddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCusaddress.Location = new System.Drawing.Point(3, 16);
+            this.txtCusaddress.Location = new System.Drawing.Point(4, 20);
+            this.txtCusaddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusaddress.Name = "txtCusaddress";
-            this.txtCusaddress.Size = new System.Drawing.Size(591, 20);
+            this.txtCusaddress.Size = new System.Drawing.Size(787, 22);
             this.txtCusaddress.TabIndex = 4;
             // 
             // panel5
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.lbleremail);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.txtCusemail);
-            this.panel5.Location = new System.Drawing.Point(271, 3);
+            this.panel5.Location = new System.Drawing.Point(361, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(262, 53);
+            this.panel5.Size = new System.Drawing.Size(349, 65);
             this.panel5.TabIndex = 11;
             // 
             // lbleremail
             // 
             this.lbleremail.AutoSize = true;
-            this.lbleremail.Location = new System.Drawing.Point(3, 39);
+            this.lbleremail.Location = new System.Drawing.Point(4, 48);
+            this.lbleremail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbleremail.Name = "lbleremail";
-            this.lbleremail.Size = new System.Drawing.Size(35, 13);
+            this.lbleremail.Size = new System.Drawing.Size(46, 17);
             this.lbleremail.TabIndex = 3;
             this.lbleremail.Text = "label7";
             this.lbleremail.Visible = false;
@@ -338,39 +354,43 @@ namespace QTElectric.View
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Location = new System.Drawing.Point(4, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.Size = new System.Drawing.Size(42, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Email";
             // 
             // txtCusemail
             // 
-            this.txtCusemail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCusemail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCusemail.Location = new System.Drawing.Point(0, 16);
+            this.txtCusemail.Location = new System.Drawing.Point(0, 20);
+            this.txtCusemail.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusemail.Name = "txtCusemail";
-            this.txtCusemail.Size = new System.Drawing.Size(259, 20);
+            this.txtCusemail.Size = new System.Drawing.Size(344, 22);
             this.txtCusemail.TabIndex = 2;
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.lblerfullname);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.txtCusfullname);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Location = new System.Drawing.Point(4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(262, 54);
+            this.panel3.Size = new System.Drawing.Size(349, 66);
             this.panel3.TabIndex = 9;
             // 
             // lblerfullname
             // 
             this.lblerfullname.AutoSize = true;
-            this.lblerfullname.Location = new System.Drawing.Point(3, 40);
+            this.lblerfullname.Location = new System.Drawing.Point(4, 49);
+            this.lblerfullname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblerfullname.Name = "lblerfullname";
-            this.lblerfullname.Size = new System.Drawing.Size(35, 13);
+            this.lblerfullname.Size = new System.Drawing.Size(46, 17);
             this.lblerfullname.TabIndex = 2;
             this.lblerfullname.Text = "label7";
             this.lblerfullname.Visible = false;
@@ -378,108 +398,118 @@ namespace QTElectric.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Họ và tên";
             // 
             // txtCusfullname
             // 
-            this.txtCusfullname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCusfullname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCusfullname.Location = new System.Drawing.Point(3, 17);
+            this.txtCusfullname.Location = new System.Drawing.Point(4, 21);
+            this.txtCusfullname.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusfullname.Name = "txtCusfullname";
-            this.txtCusfullname.Size = new System.Drawing.Size(256, 20);
+            this.txtCusfullname.Size = new System.Drawing.Size(340, 22);
             this.txtCusfullname.TabIndex = 1;
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.cbCusgender);
-            this.panel7.Location = new System.Drawing.Point(807, 3);
+            this.panel7.Location = new System.Drawing.Point(1075, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(94, 43);
+            this.panel7.Size = new System.Drawing.Size(125, 53);
             this.panel7.TabIndex = 13;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 0);
+            this.label2.Location = new System.Drawing.Point(5, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(60, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Giới tính";
             // 
             // cbCusgender
             // 
             this.cbCusgender.AutoSize = true;
-            this.cbCusgender.Location = new System.Drawing.Point(7, 20);
+            this.cbCusgender.Location = new System.Drawing.Point(9, 25);
+            this.cbCusgender.Margin = new System.Windows.Forms.Padding(4);
             this.cbCusgender.Name = "cbCusgender";
-            this.cbCusgender.Size = new System.Drawing.Size(48, 17);
+            this.cbCusgender.Size = new System.Drawing.Size(59, 21);
             this.cbCusgender.TabIndex = 5;
             this.cbCusgender.Text = "Nam";
             this.cbCusgender.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel2.Controls.Add(this.panel9, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel6, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(13, 71);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(17, 87);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1005, 59);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1340, 73);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // txtCusphone
             // 
-            this.txtCusphone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCusphone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCusphone.Location = new System.Drawing.Point(0, 16);
+            this.txtCusphone.Location = new System.Drawing.Point(0, 20);
+            this.txtCusphone.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusphone.Name = "txtCusphone";
-            this.txtCusphone.Size = new System.Drawing.Size(259, 20);
+            this.txtCusphone.Size = new System.Drawing.Size(344, 22);
             this.txtCusphone.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.Size = new System.Drawing.Size(91, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Số điện thoại";
             // 
             // lblerphone
             // 
             this.lblerphone.AutoSize = true;
-            this.lblerphone.Location = new System.Drawing.Point(3, 39);
+            this.lblerphone.Location = new System.Drawing.Point(4, 48);
+            this.lblerphone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblerphone.Name = "lblerphone";
-            this.lblerphone.Size = new System.Drawing.Size(35, 13);
+            this.lblerphone.Size = new System.Drawing.Size(46, 17);
             this.lblerphone.TabIndex = 3;
             this.lblerphone.Text = "label7";
             this.lblerphone.Visible = false;
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.lblerphone);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.txtCusphone);
-            this.panel4.Location = new System.Drawing.Point(539, 3);
+            this.panel4.Location = new System.Drawing.Point(718, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(262, 54);
+            this.panel4.Size = new System.Drawing.Size(349, 66);
             this.panel4.TabIndex = 10;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66733F));
@@ -492,21 +522,23 @@ namespace QTElectric.View
             this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 3, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 15);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1006, 61);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1341, 75);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
             // frmCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 361);
+            this.ClientSize = new System.Drawing.Size(1371, 444);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.dvgCus);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCustomer";
             this.Text = "Khách hàng";
             ((System.ComponentModel.ISupportInitialize)(this.dvgCus)).EndInit();

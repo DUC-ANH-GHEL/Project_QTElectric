@@ -152,7 +152,7 @@ namespace QTElectric.View
                 //}
                 //else
                 //{
-                    Insert();
+                Insert();
                 //}
             }
             else
@@ -201,13 +201,13 @@ namespace QTElectric.View
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String txtSearch = "";
-            if(txtCusfullname.Text.Length > 0)
+            if (txtCusfullname.Text.Length > 0)
             {
                 txtSearch = txtCusfullname.Text;
                 Search(txtSearch);
                 return;
             }
-            else if(txtCusemail.Text.Length > 0)
+            else if (txtCusemail.Text.Length > 0)
             {
                 txtSearch = txtCusemail.Text;
                 Search(txtSearch);
@@ -242,14 +242,32 @@ namespace QTElectric.View
         }
         private void dvgCus_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Right) {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
                 ContextMenu ctm = new ContextMenu();
-                IEnumerable<Order> listOrder = (IEnumerable<Order>)OrderDAO.Instance.GetOrderByCus(int.Parse(txtCusid.Text));
-                foreach (var item in listOrder)
+                List<Order> list = new List<Order>();
+                DataTable dtlist = OrderDAO.Instance.GetOrderByCus(int.Parse(txtCusid.Text));
+                for (int i = 0; i < dtlist.Rows.Count; i++)
+                {
+                    Order o = new Order()
+                    {
+                        order_id = (int)dtlist.Rows[i]["or_id"],
+                        cus_id = (int)dtlist.Rows[i]["cus_id"],
+                        order_name = (string)dtlist.Rows[i]["or_name"],
+                        status = (bool)dtlist.Rows[i]["status"],
+                        date_create = (DateTime)dtlist.Rows[i]["date_create"]
+                    };
+                    list.Add(o);
+
+                }
+                //IEnumerable<Order> listOrder = (IEnumerable<Order>)OrderDAO.Instance.GetOrderByCus(int.Parse(txtCusid.Text));
+                foreach (var item in list)
                 {
                     ctm.MenuItems.Add(item.order_name);
                 }
             }
         }
+
+       
     }
 }
