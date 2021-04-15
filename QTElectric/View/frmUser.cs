@@ -138,6 +138,15 @@ namespace QTElectric.View
             }
         }
 
+        private void dvgUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            //private void btnSearch_Click(object sender, EventArgs e)
+            //{
+
+            //}
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String txtSearch = "";

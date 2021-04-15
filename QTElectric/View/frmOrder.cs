@@ -42,7 +42,7 @@ namespace QTElectric.View
             code128 = new Barcode();
         }
         private void LoadOrder()
-        {            
+        {
             dvgOrder.DataSource = listModelOrder.ToList();
         }
         private void LoadCat()
@@ -132,7 +132,7 @@ namespace QTElectric.View
         }
         private void cbxType_SelectedValueChanged(object sender, EventArgs e)
         {
-            LoadType();
+            //LoadType();
             try
             {
                 type_id = int.Parse(cbxType.SelectedValue.ToString());
@@ -200,7 +200,8 @@ namespace QTElectric.View
             {
                 MessageBox.Show("Mời bạn nhập mã đơn hàng!");
                 return;
-            }else if (txtAmount.Text == "")
+            }
+            else if (txtAmount.Text == "")
             {
                 MessageBox.Show("Mời bạn nhập số lượng đơn hàng!");
                 return;
@@ -208,7 +209,7 @@ namespace QTElectric.View
             // status 0: chưa đc thêm, 1: đã đc thêm, 2: chuẩn bị sửa
             ModelOrder model = new ModelOrder();
             model.order_id = txtId.Text;
-            model.cat_name = cbxType.SelectedValue.ToString();
+            model.cat_name = cbxCat.SelectedValue.ToString();
             model.type_name = cbxType.SelectedValue.ToString();
             model.value_name = cbxValue.SelectedValue.ToString();
             model.diff_name = cbxDiff.SelectedValue.ToString();
@@ -288,7 +289,7 @@ namespace QTElectric.View
             o.date_create = DateTime.Now;
 
             object result = OrderDAO.Instance.InsertOrder(o);
-            if(result != null)
+            if (result != null)
             {
                 or_id = int.Parse(result.ToString());
                 MessageBox.Show("Đã tạo đơn hàng");

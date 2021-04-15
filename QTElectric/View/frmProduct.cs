@@ -93,7 +93,7 @@ namespace QTElectric.View
             p.cat_id = (int)cbCa.SelectedValue;
             p.type_id = (int)cbType.SelectedValue;
             p.val_id = (int)cbValue.SelectedValue;
-            p.diff_id = (int)cbDiff.SelectedValue;
+            p.diff_id = (int)cbDiff.SelectedValue; // if dbDiff.selectedValue is null , it will have able to push execption, however diff_id not allow null so i think don't need carefully 
             p.status = cbxStatus.Checked == true ? true : false;
             p.date_create = DateTime.Now;
             int result = ProductDAO.Instance.Insert(p);

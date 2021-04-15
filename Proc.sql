@@ -177,6 +177,13 @@ DELETE FROM tbl_order WHERE or_id = @id
 DELETE FROM tbl_orderDetail WHERE order_id = @id
 END
 GO
+Create proc getOrderByCus @cus_id int
+as
+begin
+	select * from tbl_order
+	where cus_id = @cus_id
+end
+GO
 --CRUD OF tbl_orderDetail
 CREATE PROC Insert_OrderDetail(@order_id varchar(max), @pro_id int, @value_id int, @amount_in int, @amount_out int, @status bit, @date_create datetime)
 AS
@@ -329,3 +336,57 @@ select * from tbl_differenced
 where diff_name like '%'+@search+'%' 
 end
 go
+Create proc GetTypeBySearch @search Nvarchar(100)
+as
+begin
+select * from tbl_types
+where type_name like '%'+@search+'%' 
+end
+go
+
+Create proc GetUserBySearch @search Nvarchar(100)
+as
+begin
+select * from tbl_user 
+where full_name like '%'+@search+'%' OR user_name like '%'+@search+'%' OR email like '%'+@search+'%' OR mobile like '%'+@search+'%'
+end
+go
+
+Create proc GetValueBySearch @search Nvarchar(100)
+as
+begin
+select * from [values]
+where val_name like '%'+@search+'%' 
+end
+go
+
+Create proc CheckProduct(@cat_id int, @type_id int, @value_id int , @diff_id int)
+as
+begin
+select * from tbl_product where cat_id = @cat_id and type_id = @type_id and val_id = @value_id and diff_id = @diff_id
+end
+go
+
+Create proc Select7tbl
+as
+begin
+select tbl_category.cat_name, tbl_types.type_name, tbl_differenced.diff_name, [values].val_name, tbl_orderDetail.amount_in, tbl_orderDetail.amount_out, tbl_order.or_id, tbl_order.date_create from tbl_category, tbl_types, tbl_differenced, [values], tbl_orderDetail, tbl_order
+INNER JOIN tbl_product ON tbl_category.cat_id =tbl_product.cat_id ON tbl_types.type_id = tbl_product.type_id
+INNER JOIN tbl_product ON tbl_differenced.diff_id = tbl_product.diff_id
+INNER JOIN tbl_product ON [values].val_id = tbl_product.val_id
+INNER JOIN tbl_product ON tbl_orderDetail.pro_id = tbl_product.pro_id
+INNER JOIN tbl_order ON tbl_orderDetail.order_id = tbl_order.or_id
+end
+go
+Create proc Select7tbl2
+as
+begin
+select tbl_category.cat_name, tbl_types.type_name, tbl_differenced.diff_name, [values].val_name, tbl_orderDetail.amount_in, tbl_orderDetail.amount_out, tbl_order.or_id, tbl_order.date_create from tbl_category, tbl_types, tbl_differenced, [values], tbl_orderDetail, tbl_order
+WHERE tbl_category.cat_id = tbl_product.cat_id AND
+tbl_types.type_id = tbl_product.type_id AND
+tbl_differenced.diff_id = tbl_product.diff_id AND
+ [values].val_id = tbl_product.val_id AND
+tbl_orderDetail.pro_id = tbl_product.pro_id AND
+ tbl_orderDetail.order_id = tbl_order.or_id
+end
+

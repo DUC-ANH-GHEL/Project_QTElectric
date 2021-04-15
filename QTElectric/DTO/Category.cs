@@ -14,4 +14,5 @@ namespace QTElectric.DTO
         public DateTime date_ceate { get; set; }
         public string status2 { get; set; }
     }
+
 }
