@@ -277,3 +277,6 @@ namespace QTElectric.View
         }
     }
 }
+
+// viết proc join từ id_pro lấy ra các trường cat.... từ bảng order_detail
+// viết 1 function load data cho dgv đầu vào là list orderDetail
