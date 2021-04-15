@@ -177,6 +177,13 @@ DELETE FROM tbl_order WHERE or_id = @id
 DELETE FROM tbl_orderDetail WHERE order_id = @id
 END
 GO
+Create proc getOrderByCus @cus_id int
+as
+begin
+	select * from tbl_order
+	where cus_id = @cus_id
+end
+GO
 --CRUD OF tbl_orderDetail
 CREATE PROC Insert_OrderDetail(@order_id varchar(max), @pro_id int, @value_id int, @amount_in int, @amount_out int, @status bit, @date_create datetime)
 AS
@@ -382,3 +389,4 @@ tbl_differenced.diff_id = tbl_product.diff_id AND
 tbl_orderDetail.pro_id = tbl_product.pro_id AND
  tbl_orderDetail.order_id = tbl_order.or_id
 end
+

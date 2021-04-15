@@ -250,6 +250,8 @@ BEGIN
 INSERT INTO tbl_product(cat_id, [type_id], val_id, diff_id, [status], date_create) VALUES (@cat_id , @type_id , @val_id , @diff_id , @status , @date_create)
 END
 GO
+select * from tbl_category
+go
 CREATE PROC Select_Product
 AS
 BEGIN

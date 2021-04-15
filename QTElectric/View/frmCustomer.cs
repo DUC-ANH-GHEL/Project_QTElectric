@@ -263,11 +263,10 @@ namespace QTElectric.View
                 //IEnumerable<Order> listOrder = (IEnumerable<Order>)OrderDAO.Instance.GetOrderByCus(int.Parse(txtCusid.Text));
                 foreach (var item in list)
                 {
-                    ctm.MenuItems.Add(item.order_name);
+                    h.Text = item.order_name;
+                    contextMenuStrip1.Show(Cursor.Position);
                 }
             }
         }
-
-       
     }
 }
