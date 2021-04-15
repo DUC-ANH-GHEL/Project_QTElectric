@@ -32,6 +32,7 @@ namespace QTElectric.View
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtOrderName = new System.Windows.Forms.TextBox();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -39,6 +40,8 @@ namespace QTElectric.View
             this.btnQr = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtcusname = new System.Windows.Forms.Label();
+            this.txtDateNow = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -57,6 +60,7 @@ namespace QTElectric.View
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dvgOrder = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,9 +68,6 @@ namespace QTElectric.View
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDateNow = new System.Windows.Forms.Label();
-            this.txtOrderName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -131,6 +132,14 @@ namespace QTElectric.View
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(678, 415);
             this.panel4.TabIndex = 3;
+            // 
+            // txtOrderName
+            // 
+            this.txtOrderName.BackColor = System.Drawing.Color.Moccasin;
+            this.txtOrderName.Location = new System.Drawing.Point(428, 56);
+            this.txtOrderName.Name = "txtOrderName";
+            this.txtOrderName.Size = new System.Drawing.Size(218, 20);
+            this.txtOrderName.TabIndex = 13;
             // 
             // txtAmount
             // 
@@ -210,6 +219,26 @@ namespace QTElectric.View
             this.txtcusname.Size = new System.Drawing.Size(118, 23);
             this.txtcusname.TabIndex = 10;
             this.txtcusname.Text = "ten khach hang";
+            // 
+            // txtDateNow
+            // 
+            this.txtDateNow.AutoSize = true;
+            this.txtDateNow.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDateNow.Location = new System.Drawing.Point(424, 89);
+            this.txtDateNow.Name = "txtDateNow";
+            this.txtDateNow.Size = new System.Drawing.Size(90, 23);
+            this.txtDateNow.TabIndex = 12;
+            this.txtDateNow.Text = "01/01/2021";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(241, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 22);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Ngày nhập";
             // 
             // label10
             // 
@@ -380,6 +409,7 @@ namespace QTElectric.View
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.Column9,
             this.Column5,
             this.Column2,
             this.Column3,
@@ -402,6 +432,13 @@ namespace QTElectric.View
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "status";
+            this.Column9.HeaderText = "Status";
+            this.Column9.Name = "Column9";
+            this.Column9.Visible = false;
             // 
             // Column5
             // 
@@ -464,34 +501,6 @@ namespace QTElectric.View
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(241, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 22);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Ngày nhập";
-            // 
-            // txtDateNow
-            // 
-            this.txtDateNow.AutoSize = true;
-            this.txtDateNow.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateNow.Location = new System.Drawing.Point(424, 89);
-            this.txtDateNow.Name = "txtDateNow";
-            this.txtDateNow.Size = new System.Drawing.Size(90, 23);
-            this.txtDateNow.TabIndex = 12;
-            this.txtDateNow.Text = "01/01/2021";
-            // 
-            // txtOrderName
-            // 
-            this.txtOrderName.BackColor = System.Drawing.Color.Moccasin;
-            this.txtOrderName.Location = new System.Drawing.Point(428, 56);
-            this.txtOrderName.Name = "txtOrderName";
-            this.txtOrderName.Size = new System.Drawing.Size(218, 20);
-            this.txtOrderName.TabIndex = 13;
-            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -546,7 +555,11 @@ namespace QTElectric.View
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtOrderName;
+        private System.Windows.Forms.Label txtDateNow;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -554,8 +567,5 @@ namespace QTElectric.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.TextBox txtOrderName;
-        private System.Windows.Forms.Label txtDateNow;
-        private System.Windows.Forms.Label label2;
     }
 }

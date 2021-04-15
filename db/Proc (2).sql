@@ -187,10 +187,10 @@ DELETE FROM tbl_orderDetail WHERE order_id = @id
 END
 GO
 --CRUD OF tbl_orderDetail
-CREATE PROC Insert_OrderDetail(@order_id varchar(max), @pro_id int, @value_id int, @amount_in int, @amount_out int, @status bit, @date_create datetime)
+CREATE PROC Insert_OrderDetail(@orderDetail_id varchar(100), @order_id varchar(max), @pro_id int,  @amount_in int, @amount_out int, @status bit, @date_create datetime)
 AS
 BEGIN
-INSERT INTO tbl_orderDetail(order_id, pro_id, amount_in, amount_out, status, date_create) VALUES (@order_id, @pro_id, @amount_in, @amount_out, @status, @date_create)
+INSERT INTO tbl_orderDetail(or_detail_id, order_id, pro_id, amount_in, amount_out, status, date_create) VALUES (@orderDetail_id, @order_id, @pro_id, @amount_in, @amount_out, @status, @date_create)
 END
 GO
 CREATE PROC Get_OrderDetail

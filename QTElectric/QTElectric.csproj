@@ -99,6 +99,7 @@
     <Compile Include="DAO\DifferencedDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\OrderDAO.cs" />
+    <Compile Include="DAO\OrderDetailDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="DAO\TypeDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
