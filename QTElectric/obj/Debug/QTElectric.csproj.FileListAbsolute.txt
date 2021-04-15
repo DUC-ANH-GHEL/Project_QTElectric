@@ -66,3 +66,25 @@ D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.Threading.Tasks.Extensio
 D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\System.ValueTuple.xml
 D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\Aspose.BarCode.dll
 D:\C#\WF\Project_QTElectric\QTElectric\bin\Debug\Aspose.BarCode.xml
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\Aspose.BarCode.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\BarcodeStandard.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Buffers.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Drawing.Common.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Memory.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Numerics.Vectors.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Text.Encodings.Web.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Text.Json.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.ValueTuple.dll
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\Aspose.BarCode.xml
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Buffers.xml
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Memory.xml
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Numerics.Vectors.xml
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Text.Encodings.Web.xml
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Text.Json.xml
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.ValueTuple.xml
