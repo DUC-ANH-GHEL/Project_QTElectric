@@ -236,8 +236,8 @@ namespace QTElectric.View
             c.gender = cbCusgender.Checked ? true : false;
             c.status = cbCusstatus.Checked ? true : false;
             frmOrder frmOrder = new frmOrder(c);
-            frmOrder.ShowDialog();
             frmOrder.WindowState = FormWindowState.Maximized;
+            frmOrder.ShowDialog();
 
         }
         private void dvgCus_MouseClick(object sender, MouseEventArgs e)
