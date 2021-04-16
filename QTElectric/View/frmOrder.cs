@@ -14,6 +14,8 @@ using System.Windows.Forms;
 using BarcodeLib;
 using Aspose.BarCode.Generation;
 using Microsoft.VisualBasic;
+using System.IO;
+using System.Drawing.Printing;
 
 namespace QTElectric.View
 {
@@ -233,6 +235,31 @@ namespace QTElectric.View
             pictureBox3.Image = barcode.Draw(textqr, 50);
             Zen.Barcode.CodeQrBarcodeDraw qrcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
             pictureBox2.Image = qrcode.Draw(textqr, 50);
+
+        }
+
+        private void printBarcode()
+        {
+            PrintDialog pd = new PrintDialog();
+            PrintDocument doc = new PrintDocument();
+            doc.PrintPage += Doc_PrintPage;
+            pd.Document = doc;
+            if (pd.ShowDialog() == DialogResult.OK)
+            {
+                doc.Print();
+            }
+        }
+
+        private void Doc_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(pictureBox3.Width, pictureBox3.Height);
+            pictureBox3.DrawToBitmap(bm, new Rectangle(0, 0, pictureBox3.Width, pictureBox3.Height));
+            e.Graphics.DrawImage(bm, 300, 100);
+            Bitmap bm1 = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+            pictureBox2.DrawToBitmap(bm1, new Rectangle(0, 0, pictureBox2.Width, pictureBox2.Height));
+            e.Graphics.DrawImage(bm1, 300, 400);
+            bm1.Dispose();
+            bm.Dispose();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -347,6 +374,12 @@ namespace QTElectric.View
         private void UpdatetOrderDetail(OrderDetail oDetail)
         {
             int result = OrderDetailDAO.Instance.UpdateOrderDetail(oDetail);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            printBarcode();
+
         }
     }
 }
