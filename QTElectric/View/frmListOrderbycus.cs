@@ -29,27 +29,16 @@ namespace QTElectric.View
 
         private void dvgListOrDetail_Click(object sender, EventArgs e)
         {
-            Orderbycus orderbycus = new Orderbycus()
+            Order orderbycus = new Order()
             {
-                or_id = (int)dvgListOrDetail.SelectedCells[0].Value,
-                or_name = dvgListOrDetail.SelectedCells[1].Value.ToString(),
+                order_id = (int)dvgListOrDetail.SelectedCells[0].Value,
+                order_name = dvgListOrDetail.SelectedCells[1].Value.ToString(),
                 cus_id = (int)dvgListOrDetail.SelectedCells[2].Value,
                 status = (bool)(dvgListOrDetail.SelectedCells[3].Value),
                 date_create = (DateTime)dvgListOrDetail.SelectedCells[4].Value
 
             };
-            DataTable result = OrderDetailbyIdDAO.Instance.getOrderDetailbyId((int)dvgListOrDetail.SelectedCells[0].Value);
-            OrderDetailbyId orderDetailbyId = new OrderDetailbyId()
-            {
-                fullName = (string)result.Rows[0]["fullName"],
-                cat_name = (string)result.Rows[0]["cat_name"],
-                type_name = (string)result.Rows[0]["type_name"],
-                diff_name = (string)result.Rows[0]["diff_name"],
-                val_name = (string)result.Rows[0]["val_name"],
-                amount_in = (int)result.Rows[0]["amount_in"],
-                date_create = (DateTime)result.Rows[0]["date_create"]
-            };
-            frmOrder order = new frmOrder(orderDetailbyId);
+            frmOrder order = new frmOrder(orderbycus);
             order.ShowDialog();
         }
     }

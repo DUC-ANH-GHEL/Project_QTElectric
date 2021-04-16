@@ -25,15 +25,15 @@ namespace QTElectric.View
         private int type_id;
         private int val_id;
         private int diff_id;
-        private OrderDetailbyId orderDetailbyId;
+        private Order orderbyId;
         private Customer cus;
         private int or_id;
 
         BarcodeLib.Barcode code128;
-        public frmOrder(OrderDetailbyId orderDetailbyId)
+        public frmOrder(Order order)
         {
             InitializeComponent();
-            this.orderDetailbyId = orderDetailbyId;
+            loadData(order);
             listModelOrder = new List<ModelOrder>();
             listOrder = new List<OrderDetail>();
             LoadCat();
@@ -41,8 +41,32 @@ namespace QTElectric.View
             LoadValue();
             LoadDiff();
             code128 = new Barcode();
-            txtcusname.Text = orderDetailbyId.fullName;
 
+        }
+        private void loadData(Order order)
+        {
+            this.orderbyId = order;
+            DataTable result = OrderDetailbyIdDAO.Instance.getOrderDetailbyId(order.order_id);
+            List<OrderDetailbyId> list = new List<OrderDetailbyId>();
+            OrderDetailbyId orderDetailbyId = null;
+            for (int i = 0; i < result.Rows.Count; i++)
+            {
+                orderDetailbyId = new OrderDetailbyId()
+                {
+                    cus_id = (int)result.Rows[i]["cus_id"],
+                    fullName = (string)result.Rows[i]["fullName"],
+                    cat_name = (string)result.Rows[i]["cat_name"],
+                    type_name = (string)result.Rows[i]["type_name"],
+                    diff_name = (string)result.Rows[i]["diff_name"],
+                    val_name = (string)result.Rows[i]["val_name"],
+                    amount_in = (int)result.Rows[i]["amount_in"],
+                    //date_create = (DateTime)result.Rows[0]["date_create"]
+
+                };
+                txtcusname.Text = orderDetailbyId.fullName;
+                list.Add(orderDetailbyId);
+            }
+            dvgOrder.DataSource = list;
         }
         public frmOrder(Customer cus)
         {

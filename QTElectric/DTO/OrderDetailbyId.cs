@@ -8,6 +8,7 @@ namespace QTElectric.DTO
 {
     public class OrderDetailbyId
     {
+        public int cus_id { get; set; }
         public string fullName { get; set; }
         public string cat_name { get; set; }
         public string type_name { get; set; }
