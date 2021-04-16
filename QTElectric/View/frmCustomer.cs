@@ -263,10 +263,30 @@ namespace QTElectric.View
                 //IEnumerable<Order> listOrder = (IEnumerable<Order>)OrderDAO.Instance.GetOrderByCus(int.Parse(txtCusid.Text));
                 foreach (var item in list)
                 {
-                    h.Text = item.order_name;
                     contextMenuStrip1.Show(Cursor.Position);
                 }
             }
+        }
+
+        private void h_Click(object sender, EventArgs e)
+        {
+            List<Order> list = new List<Order>();
+            DataTable dtlist = OrderDAO.Instance.GetOrderByCus(int.Parse(txtCusid.Text));
+            for (int i = 0; i < dtlist.Rows.Count; i++)
+            {
+                Order o = new Order()
+                {
+                    order_id = (int)dtlist.Rows[i]["or_id"],
+                    cus_id = (int)dtlist.Rows[i]["cus_id"],
+                    order_name = (string)dtlist.Rows[i]["or_name"],
+                    status = (bool)dtlist.Rows[i]["status"],
+                    date_create = (DateTime)dtlist.Rows[i]["date_create"]
+                };
+                list.Add(o);
+
+            }
+            frmListOrderbycus frmListOrderbycus = new frmListOrderbycus(list);
+            frmListOrderbycus.ShowDialog();
         }
     }
 }

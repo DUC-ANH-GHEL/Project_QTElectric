@@ -88,3 +88,4 @@ E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\Sy
 E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Text.Json.xml
 E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\SemIII\SourceCode\Windows Forms C#\Project_QTElectric\QTElectric\bin\Debug\System.ValueTuple.xml
+D:\C#\WF\Project_QTElectric\QTElectric\obj\Debug\QTElectric.View.frmListOrderbycus.resources

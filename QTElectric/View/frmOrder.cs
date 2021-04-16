@@ -25,13 +25,29 @@ namespace QTElectric.View
         private int type_id;
         private int val_id;
         private int diff_id;
+        private OrderDetailbyId orderDetailbyId;
         private Customer cus;
         private int or_id;
 
         BarcodeLib.Barcode code128;
+        public frmOrder(OrderDetailbyId orderDetailbyId)
+        {
+            InitializeComponent();
+            this.orderDetailbyId = orderDetailbyId;
+            listModelOrder = new List<ModelOrder>();
+            listOrder = new List<OrderDetail>();
+            LoadCat();
+            LoadType();
+            LoadValue();
+            LoadDiff();
+            code128 = new Barcode();
+            txtcusname.Text = orderDetailbyId.fullName;
+
+        }
         public frmOrder(Customer cus)
         {
             InitializeComponent();
+            this.cus = cus;
             this.cus = cus;
             listModelOrder = new List<ModelOrder>();
             listOrder = new List<OrderDetail>();
@@ -40,6 +56,8 @@ namespace QTElectric.View
             LoadValue();
             LoadDiff();
             code128 = new Barcode();
+            txtcusname.Text = cus.fullName;
+
         }
         private void LoadOrder()
         {
@@ -109,7 +127,6 @@ namespace QTElectric.View
         private void frmOrder_Load_1(object sender, EventArgs e)
         {
             txtDateNow.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            txtcusname.Text = cus.fullName;
         }
         public void GetQrCode(string qrText)
         {
@@ -256,7 +273,7 @@ namespace QTElectric.View
                     oDetail.status = 1;
                     InsertOrderDetail(oDetail);
                 }
-                else if(item.status == 2)
+                else if (item.status == 2)
                 {
                     // sửa order detail
                     // get id orderDetail
@@ -298,7 +315,7 @@ namespace QTElectric.View
         private void InsertOrderDetail(OrderDetail oDetail)
         {
             int result = OrderDetailDAO.Instance.InsertOrderDetail(oDetail);
-            if(result > 0)
+            if (result > 0)
             {
                 MessageBox.Show("Lưu thông tin thành công");
             }
