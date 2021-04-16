@@ -185,12 +185,13 @@ begin
 end
 GO
 --CRUD OF tbl_orderDetail
-CREATE PROC Insert_OrderDetail(@order_id varchar(max), @pro_id int, @value_id int, @amount_in int, @amount_out int, @status bit, @date_create datetime)
+CREATE PROC Insert_OrderDetail(@orderDetail_id varchar(100), @order_id varchar(max), @pro_id int,  @amount_in int, @amount_out int, @status bit, @date_create datetime)
 AS
 BEGIN
-INSERT INTO tbl_orderDetail(order_id, pro_id, amount_in, amount_out, status, date_create) VALUES (@order_id, @pro_id, @amount_in, @amount_out, @status, @date_create)
+INSERT INTO tbl_orderDetail(or_detail_id, order_id, pro_id, amount_in, amount_out, status, date_create) VALUES (@orderDetail_id, @order_id, @pro_id, @amount_in, @amount_out, @status, @date_create)
 END
 GO
+
 CREATE PROC Get_OrderDetail
 AS
 BEGIN
@@ -379,16 +380,28 @@ INNER JOIN tbl_order ON tbl_orderDetail.order_id = tbl_order.or_id
 end
 go
 
-Create proc Select7tbl2
+Create proc GetOrderDetailbyorid(@or_id int)
 as
 begin
-select c.cat_name, t.type_name, d.diff_name, v.val_name, oDetail.*, o.date_create 
-from tbl_category as c, tbl_types as t, tbl_differenced as d, [values] as v, tbl_orderDetail as oDetail, tbl_order as o, tbl_product as p
-WHERE c.cat_id = p.cat_id AND
-	t.type_id = p.type_id AND
-	d.diff_id = p.diff_id AND
-	v.val_id = p.val_id AND
-	oDetail.pro_id = p.pro_id AND
-	oDetail.order_id = o.or_id
+select c.cat_name, t.type_name, d.diff_name, v.val_name, 
+	oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out, oDetail.pro_id, oDetail.status
+from tbl_orderDetail as oDetail 
+	join tbl_order as o on oDetail.order_id = @or_id
+	join tbl_product as p on oDetail.pro_id = p.pro_id
+	join tbl_category as c on p.cat_id = c.cat_id
+	join tbl_types as t on p.type_id = t.type_id
+	join tbl_differenced as d on p.diff_id = d.diff_id
+	join [values] as v on p.val_id = v.val_id 
+	join tbl_customer as cus on o.cus_id = cus.cus_id 
+	group by oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out , oDetail.pro_id, oDetail.status, c.cat_name, t.type_name, d.diff_name, v.val_name
 end
+go
+
+Create proc GetOrderbyId(@id int)
+as
+begin
+select * from tbl_order where or_id = @id
+end
+go
+
 

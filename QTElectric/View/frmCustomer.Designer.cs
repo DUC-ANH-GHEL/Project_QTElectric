@@ -70,8 +70,7 @@ namespace QTElectric.View
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.h = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.History = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dvgCus)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -89,8 +88,8 @@ namespace QTElectric.View
             // 
             this.dvgCus.AllowUserToAddRows = false;
             this.dvgCus.AllowUserToDeleteRows = false;
-            this.dvgCus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dvgCus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgCus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgCus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -324,7 +323,7 @@ namespace QTElectric.View
             // 
             // txtCusaddress
             // 
-            this.txtCusaddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCusaddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCusaddress.Location = new System.Drawing.Point(4, 20);
             this.txtCusaddress.Margin = new System.Windows.Forms.Padding(4);
@@ -334,7 +333,7 @@ namespace QTElectric.View
             // 
             // panel5
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.lbleremail);
             this.panel5.Controls.Add(this.label4);
@@ -368,7 +367,7 @@ namespace QTElectric.View
             // 
             // txtCusemail
             // 
-            this.txtCusemail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCusemail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCusemail.Location = new System.Drawing.Point(0, 20);
             this.txtCusemail.Margin = new System.Windows.Forms.Padding(4);
@@ -378,7 +377,7 @@ namespace QTElectric.View
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.lblerfullname);
             this.panel3.Controls.Add(this.label1);
@@ -412,7 +411,7 @@ namespace QTElectric.View
             // 
             // txtCusfullname
             // 
-            this.txtCusfullname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCusfullname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCusfullname.Location = new System.Drawing.Point(4, 21);
             this.txtCusfullname.Margin = new System.Windows.Forms.Padding(4);
@@ -453,7 +452,7 @@ namespace QTElectric.View
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
@@ -470,7 +469,7 @@ namespace QTElectric.View
             // 
             // txtCusphone
             // 
-            this.txtCusphone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCusphone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCusphone.Location = new System.Drawing.Point(0, 20);
             this.txtCusphone.Margin = new System.Windows.Forms.Padding(4);
@@ -501,7 +500,7 @@ namespace QTElectric.View
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.lblerphone);
             this.panel4.Controls.Add(this.label5);
@@ -514,7 +513,7 @@ namespace QTElectric.View
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66733F));
@@ -539,22 +538,16 @@ namespace QTElectric.View
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.h,
-            this.toolStripTextBox1});
+            this.History});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 57);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(124, 28);
             // 
-            // h
+            // History
             // 
-            this.h.Name = "h";
-            this.h.Size = new System.Drawing.Size(160, 24);
-            this.h.Text = "h";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
+            this.History.Name = "History";
+            this.History.Size = new System.Drawing.Size(123, 24);
+            this.History.Text = "Lịch sử";
+            this.History.Click += new System.EventHandler(this.h_Click);
             // 
             // frmCustomer
             // 
@@ -584,7 +577,6 @@ namespace QTElectric.View
             this.panel4.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
-            this.contextMenuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -630,7 +622,6 @@ namespace QTElectric.View
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem h;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem History;
     }
 }
