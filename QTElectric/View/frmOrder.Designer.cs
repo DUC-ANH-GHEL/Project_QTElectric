@@ -95,7 +95,7 @@ namespace QTElectric.View
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(579, 11);
+            this.label1.Location = new System.Drawing.Point(571, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(258, 24);
             this.label1.TabIndex = 0;
@@ -545,7 +545,6 @@ namespace QTElectric.View
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmOrder";
             this.Text = "NHẬP - KIỂM LINH KIỆN";
-            this.Load += new System.EventHandler(this.frmOrder_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
