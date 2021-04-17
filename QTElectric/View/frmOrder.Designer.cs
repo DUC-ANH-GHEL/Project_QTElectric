@@ -59,17 +59,16 @@ namespace QTElectric.View
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dvgOrder = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -77,7 +76,6 @@ namespace QTElectric.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgOrder)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,9 +85,9 @@ namespace QTElectric.View
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2565, 69);
+            this.panel1.Size = new System.Drawing.Size(2266, 56);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -97,10 +95,9 @@ namespace QTElectric.View
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(972, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(579, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(339, 31);
+            this.label1.Size = new System.Drawing.Size(258, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "NHẬP - KIỂM LINH KIỆN";
             // 
@@ -133,35 +130,35 @@ namespace QTElectric.View
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.panel4.Location = new System.Drawing.Point(0, 71);
-            this.panel4.Margin = new System.Windows.Forms.Padding(5);
+            this.panel4.Location = new System.Drawing.Point(0, 58);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(904, 511);
+            this.panel4.Size = new System.Drawing.Size(678, 415);
             this.panel4.TabIndex = 3;
             // 
             // txtOrderName
             // 
             this.txtOrderName.BackColor = System.Drawing.Color.Moccasin;
-            this.txtOrderName.Location = new System.Drawing.Point(571, 69);
-            this.txtOrderName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtOrderName.Location = new System.Drawing.Point(428, 56);
+            this.txtOrderName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtOrderName.Name = "txtOrderName";
-            this.txtOrderName.Size = new System.Drawing.Size(289, 22);
+            this.txtOrderName.Size = new System.Drawing.Size(218, 20);
             this.txtOrderName.TabIndex = 13;
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(700, 302);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(5);
+            this.txtAmount.Location = new System.Drawing.Point(525, 245);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(160, 22);
+            this.txtAmount.Size = new System.Drawing.Size(121, 20);
             this.txtAmount.TabIndex = 5;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(52, 224);
-            this.txtId.Margin = new System.Windows.Forms.Padding(5);
+            this.txtId.Location = new System.Drawing.Point(39, 182);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(160, 22);
+            this.txtId.Size = new System.Drawing.Size(121, 20);
             this.txtId.TabIndex = 1;
             // 
             // btnSave
@@ -170,10 +167,10 @@ namespace QTElectric.View
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(635, 441);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSave.Location = new System.Drawing.Point(476, 358);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 44);
+            this.btnSave.Size = new System.Drawing.Size(75, 36);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "LƯU";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -185,10 +182,10 @@ namespace QTElectric.View
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(479, 441);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(5);
+            this.btnPrint.Location = new System.Drawing.Point(359, 358);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(100, 44);
+            this.btnPrint.Size = new System.Drawing.Size(75, 36);
             this.btnPrint.TabIndex = 9;
             this.btnPrint.Text = "IN";
             this.btnPrint.UseVisualStyleBackColor = false;
@@ -200,10 +197,10 @@ namespace QTElectric.View
             this.btnQr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQr.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQr.ForeColor = System.Drawing.Color.White;
-            this.btnQr.Location = new System.Drawing.Point(323, 441);
-            this.btnQr.Margin = new System.Windows.Forms.Padding(5);
+            this.btnQr.Location = new System.Drawing.Point(242, 358);
+            this.btnQr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnQr.Name = "btnQr";
-            this.btnQr.Size = new System.Drawing.Size(100, 44);
+            this.btnQr.Size = new System.Drawing.Size(75, 36);
             this.btnQr.TabIndex = 8;
             this.btnQr.Text = "QR";
             this.btnQr.UseVisualStyleBackColor = false;
@@ -215,10 +212,10 @@ namespace QTElectric.View
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(167, 441);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAdd.Location = new System.Drawing.Point(125, 358);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 44);
+            this.btnAdd.Size = new System.Drawing.Size(75, 36);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "THÊM";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -228,10 +225,9 @@ namespace QTElectric.View
             // 
             this.txtcusname.AutoSize = true;
             this.txtcusname.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcusname.Location = new System.Drawing.Point(565, 28);
-            this.txtcusname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtcusname.Location = new System.Drawing.Point(424, 23);
             this.txtcusname.Name = "txtcusname";
-            this.txtcusname.Size = new System.Drawing.Size(147, 29);
+            this.txtcusname.Size = new System.Drawing.Size(118, 23);
             this.txtcusname.TabIndex = 10;
             this.txtcusname.Text = "ten khach hang";
             // 
@@ -239,10 +235,9 @@ namespace QTElectric.View
             // 
             this.txtDateNow.AutoSize = true;
             this.txtDateNow.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateNow.Location = new System.Drawing.Point(565, 110);
-            this.txtDateNow.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtDateNow.Location = new System.Drawing.Point(424, 89);
             this.txtDateNow.Name = "txtDateNow";
-            this.txtDateNow.Size = new System.Drawing.Size(111, 29);
+            this.txtDateNow.Size = new System.Drawing.Size(90, 23);
             this.txtDateNow.TabIndex = 12;
             this.txtDateNow.Text = "01/01/2021";
             // 
@@ -250,10 +245,9 @@ namespace QTElectric.View
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(321, 110);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(241, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 27);
+            this.label2.Size = new System.Drawing.Size(99, 22);
             this.label2.TabIndex = 11;
             this.label2.Text = "Ngày nhập";
             // 
@@ -261,10 +255,9 @@ namespace QTElectric.View
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(321, 69);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(241, 56);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(165, 27);
+            this.label10.Size = new System.Drawing.Size(127, 22);
             this.label10.TabIndex = 11;
             this.label10.Text = "Tên đơn hàng";
             // 
@@ -272,10 +265,9 @@ namespace QTElectric.View
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(321, 28);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(241, 23);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(187, 27);
+            this.label9.Size = new System.Drawing.Size(143, 22);
             this.label9.TabIndex = 11;
             this.label9.Text = "Tên khách hàng";
             // 
@@ -286,28 +278,28 @@ namespace QTElectric.View
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.pictureBox3);
             this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Location = new System.Drawing.Point(48, 283);
-            this.panel5.Margin = new System.Windows.Forms.Padding(5);
+            this.panel5.Location = new System.Drawing.Point(36, 230);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(595, 123);
+            this.panel5.Size = new System.Drawing.Size(447, 100);
             this.panel5.TabIndex = 4;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(275, 14);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(206, 11);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(316, 79);
+            this.pictureBox3.Size = new System.Drawing.Size(237, 64);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(3, 14);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(2, 11);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(180, 92);
+            this.pictureBox2.Size = new System.Drawing.Size(135, 75);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -315,20 +307,20 @@ namespace QTElectric.View
             // cbxDiff
             // 
             this.cbxDiff.FormattingEnabled = true;
-            this.cbxDiff.Location = new System.Drawing.Point(700, 379);
-            this.cbxDiff.Margin = new System.Windows.Forms.Padding(5);
+            this.cbxDiff.Location = new System.Drawing.Point(525, 308);
+            this.cbxDiff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxDiff.Name = "cbxDiff";
-            this.cbxDiff.Size = new System.Drawing.Size(160, 24);
+            this.cbxDiff.Size = new System.Drawing.Size(121, 21);
             this.cbxDiff.TabIndex = 6;
             this.cbxDiff.SelectedValueChanged += new System.EventHandler(this.cbxDiff_SelectedValueChanged);
             // 
             // cbxValue
             // 
             this.cbxValue.FormattingEnabled = true;
-            this.cbxValue.Location = new System.Drawing.Point(700, 224);
-            this.cbxValue.Margin = new System.Windows.Forms.Padding(5);
+            this.cbxValue.Location = new System.Drawing.Point(525, 182);
+            this.cbxValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxValue.Name = "cbxValue";
-            this.cbxValue.Size = new System.Drawing.Size(160, 24);
+            this.cbxValue.Size = new System.Drawing.Size(121, 21);
             this.cbxValue.TabIndex = 4;
             this.cbxValue.SelectedIndexChanged += new System.EventHandler(this.cbxValue_SelectedIndexChanged);
             this.cbxValue.SelectedValueChanged += new System.EventHandler(this.cbxValue_SelectedValueChanged);
@@ -336,10 +328,10 @@ namespace QTElectric.View
             // cbxType
             // 
             this.cbxType.FormattingEnabled = true;
-            this.cbxType.Location = new System.Drawing.Point(483, 224);
-            this.cbxType.Margin = new System.Windows.Forms.Padding(5);
+            this.cbxType.Location = new System.Drawing.Point(362, 182);
+            this.cbxType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxType.Name = "cbxType";
-            this.cbxType.Size = new System.Drawing.Size(160, 24);
+            this.cbxType.Size = new System.Drawing.Size(121, 21);
             this.cbxType.TabIndex = 3;
             this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged);
             this.cbxType.SelectedValueChanged += new System.EventHandler(this.cbxType_SelectedValueChanged);
@@ -347,10 +339,10 @@ namespace QTElectric.View
             // cbxCat
             // 
             this.cbxCat.FormattingEnabled = true;
-            this.cbxCat.Location = new System.Drawing.Point(265, 224);
-            this.cbxCat.Margin = new System.Windows.Forms.Padding(5);
+            this.cbxCat.Location = new System.Drawing.Point(199, 182);
+            this.cbxCat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxCat.Name = "cbxCat";
-            this.cbxCat.Size = new System.Drawing.Size(160, 24);
+            this.cbxCat.Size = new System.Drawing.Size(121, 21);
             this.cbxCat.TabIndex = 2;
             this.cbxCat.SelectedIndexChanged += new System.EventHandler(this.cbxCat_SelectedIndexChanged);
             this.cbxCat.SelectedValueChanged += new System.EventHandler(this.cbxCat_SelectedValueChanged);
@@ -359,10 +351,9 @@ namespace QTElectric.View
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(725, 350);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(544, 284);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 27);
+            this.label8.Size = new System.Drawing.Size(77, 21);
             this.label8.TabIndex = 2;
             this.label8.Text = "Sai số %";
             // 
@@ -370,10 +361,9 @@ namespace QTElectric.View
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(725, 272);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(544, 221);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 27);
+            this.label7.Size = new System.Drawing.Size(78, 21);
             this.label7.TabIndex = 2;
             this.label7.Text = "Số lượng";
             // 
@@ -381,10 +371,9 @@ namespace QTElectric.View
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(724, 194);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(543, 158);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 27);
+            this.label6.Size = new System.Drawing.Size(95, 21);
             this.label6.TabIndex = 2;
             this.label6.Text = "Tên/ Giá trị";
             // 
@@ -392,10 +381,9 @@ namespace QTElectric.View
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(507, 194);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(380, 158);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 27);
+            this.label5.Size = new System.Drawing.Size(84, 21);
             this.label5.TabIndex = 2;
             this.label5.Text = "Kiểu chân";
             // 
@@ -403,10 +391,9 @@ namespace QTElectric.View
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(273, 194);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(205, 158);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 27);
+            this.label4.Size = new System.Drawing.Size(109, 21);
             this.label4.TabIndex = 2;
             this.label4.Text = "Loại linh kiện";
             // 
@@ -414,26 +401,28 @@ namespace QTElectric.View
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(72, 194);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(54, 158);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 27);
+            this.label3.Size = new System.Drawing.Size(86, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "STT Bom";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QTElectric.Properties.Resources.logo_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(48, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(224, 158);
+            this.pictureBox1.Size = new System.Drawing.Size(168, 128);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // dvgOrder
             // 
             this.dvgOrder.AllowUserToAddRows = false;
+            this.dvgOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgOrder.ColumnHeadersHeight = 29;
             this.dvgOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -446,106 +435,13 @@ namespace QTElectric.View
             this.Column7,
             this.Column8,
             this.Column4});
-            this.dvgOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dvgOrder.Location = new System.Drawing.Point(0, 0);
-            this.dvgOrder.Margin = new System.Windows.Forms.Padding(5);
+            this.dvgOrder.Location = new System.Drawing.Point(686, 58);
+            this.dvgOrder.Margin = new System.Windows.Forms.Padding(4);
             this.dvgOrder.Name = "dvgOrder";
             this.dvgOrder.RowHeadersWidth = 51;
             this.dvgOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgOrder.Size = new System.Drawing.Size(902, 506);
+            this.dvgOrder.Size = new System.Drawing.Size(671, 415);
             this.dvgOrder.TabIndex = 10;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.dvgOrder);
-            this.panel2.Location = new System.Drawing.Point(913, 76);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(902, 506);
-            this.panel2.TabIndex = 11;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "or_detail_id";
-            this.Column1.HeaderText = "STT Bom";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "status";
-            this.Column9.HeaderText = "Status";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Visible = false;
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "pro_id";
-            this.Column10.HeaderText = "pro_id";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Visible = false;
-            this.Column10.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "cat_name";
-            this.Column5.HeaderText = "Loại linh kiện";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "type_name";
-            this.Column2.HeaderText = "Kiểu chân";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "val_name";
-            this.Column3.HeaderText = "Tên/ Giá trị";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column6.DataPropertyName = "diff_name";
-            this.Column6.HeaderText = "Sai số";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column7.DataPropertyName = "amount_in";
-            this.Column7.HeaderText = "Số lượng ban đầu";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column8.DataPropertyName = "amount_out";
-            this.Column8.HeaderText = "Số lượng thực tế";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
             // 
             // Column4
             // 
@@ -556,16 +452,97 @@ namespace QTElectric.View
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column8.DataPropertyName = "amount_out";
+            this.Column8.HeaderText = "Số lượng thực tế";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.DataPropertyName = "amount_in";
+            this.Column7.HeaderText = "Số lượng ban đầu";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.DataPropertyName = "diff_name";
+            this.Column6.HeaderText = "Sai số";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "val_name";
+            this.Column3.HeaderText = "Tên/ Giá trị";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "type_name";
+            this.Column2.HeaderText = "Kiểu chân";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "cat_name";
+            this.Column5.HeaderText = "Loại linh kiện";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "pro_id";
+            this.Column10.HeaderText = "pro_id";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Visible = false;
+            this.Column10.Width = 125;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "status";
+            this.Column9.HeaderText = "Status";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Visible = false;
+            this.Column9.Width = 125;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "or_detail_id";
+            this.Column1.HeaderText = "STT Bom";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // frmOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1827, 597);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1370, 485);
+            this.Controls.Add(this.dvgOrder);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmOrder";
             this.Text = "NHẬP - KIỂM LINH KIỆN";
             this.Load += new System.EventHandler(this.frmOrder_Load_1);
@@ -578,7 +555,6 @@ namespace QTElectric.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgOrder)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -602,7 +578,6 @@ namespace QTElectric.View
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.DataGridView dvgOrder;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label txtcusname;
@@ -615,6 +590,7 @@ namespace QTElectric.View
         private System.Windows.Forms.TextBox txtOrderName;
         private System.Windows.Forms.Label txtDateNow;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dvgOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
@@ -625,6 +601,5 @@ namespace QTElectric.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Panel panel2;
     }
 }
