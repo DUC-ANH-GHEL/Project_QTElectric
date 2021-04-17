@@ -59,7 +59,7 @@ namespace QTElectric.View
                 {
                     or_detail_id = (int)orderDetail.Rows[i]["or_detail_id"],
                     pro_id = (int)orderDetail.Rows[i]["pro_id"],
-                    cat_name = (string)orderDetail.Rows[i]["cat_name"],
+                    cat_name = (string)orderDetail.Rows[i]["cat_name"].ToString(),
                     type_name = (string)orderDetail.Rows[i]["type_name"],
                     diff_name = (string)orderDetail.Rows[i]["diff_name"],
                     val_name = (string)orderDetail.Rows[i]["val_name"],
@@ -67,22 +67,20 @@ namespace QTElectric.View
                     amount_out = (int)orderDetail.Rows[i]["amount_out"],
                     status = (int)orderDetail.Rows[i]["status"],
                     date_create = (DateTime)orderDetail.Rows[i]["date_create"]
-
                 };
                 list.Add(orderDetailbyId);
             }
             LoadOrder(list);
-
-            DataTable infoOrder = OrderDetailbyIdDAO.Instance.getInfobyId(orderbyId.order_id);
-            for (int i = 0; i < orderDetail.Rows.Count; i++)
-            {
-                cus_id = (int)infoOrder.Rows[i]["or_detail_id"];
-                fullName = (string)orderDetail.Rows[i]["fullName"];
-                or_name = (string)orderDetail.Rows[i]["or_name"];
-                date_Order = (DateTime)orderDetail.Rows[i]["date_create"];
-            }
-            txtDateNow.Text = date_Order.ToString("dd/MM/yyyy");
-            txtOrderName.Text = or_name;
+            //DataTable infoOrder = OrderDetailbyIdDAO.Instance.getInfobyId(orderbyId.order_id);
+            //for (int i = 0; i < orderDetail.Rows.Count; i++)
+            //{
+            //    cus_id = (int)infoOrder.Rows[i]["or_detail_id"];
+            //    fullName = (string)orderDetail.Rows[i]["fullName"];
+            //    or_name = (string)orderDetail.Rows[i]["or_name"];
+            //    date_Order = (DateTime)orderDetail.Rows[i]["date_create"];
+            //}
+            //txtDateNow.Text = date_Order.ToString("dd/MM/yyyy");
+            //txtOrderName.Text = or_name;
         }
         private void LoadOrder(List<OrderDetailbyId> list)
         {
