@@ -38,15 +38,14 @@ namespace QTElectric.View
         public frmOrder(Order order)
         {
             InitializeComponent();
-            loadData(order);
+            loadDataOrder(order);
             LoadCat();
             LoadType();
             LoadValue();
             LoadDiff();
             code128 = new Barcode();
-
         }
-        private void loadData(Order order)
+        private void loadDataOrder(Order order)
         {
             this.orderbyId = order;
             DataTable orderDetail = OrderDetailbyIdDAO.Instance.getOrderDetailbyId(orderbyId.order_id);
@@ -71,16 +70,16 @@ namespace QTElectric.View
             LoadOrder(listModelOrderDetail);
 
             DataTable infoOrder = OrderDetailbyIdDAO.Instance.getInfobyId(orderbyId.order_id);
-            for (int i = 0; i < orderDetail.Rows.Count; i++)
+            for (int i = 0; i < infoOrder.Rows.Count; i++)
             {
-                cus_id = (int)infoOrder.Rows[i]["or_detail_id"];
-                fullName = (string)orderDetail.Rows[i]["fullName"];
-                or_name = (string)orderDetail.Rows[i]["or_name"];
-                date_Order = (DateTime)orderDetail.Rows[i]["date_create"];
+                cus_id = (int)infoOrder.Rows[i]["cus_id"];
+                fullName = (string)infoOrder.Rows[i]["fullName"];
+                or_name = (string)infoOrder.Rows[i]["or_name"];
+                date_Order = (DateTime)infoOrder.Rows[i]["date_create"];
             }
             txtDateNow.Text = date_Order.ToString("dd/MM/yyyy");
             txtOrderName.Text = or_name;
-            LoadOrder(list);
+            txtcusname.Text = fullName;
         }
         private void LoadOrder(List<OrderDetailbyId> list)
         {
@@ -150,7 +149,6 @@ namespace QTElectric.View
         private void frmOrder_Load_1(object sender, EventArgs e)
         {
             txtDateNow.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            txtcusname.Text = fullName;
         }
         public void GetQrCode(string qrText)
         {

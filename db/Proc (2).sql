@@ -389,6 +389,18 @@ from tbl_orderDetail as oDetail
 end
 go
 
+Create proc GetInfobyorid(@or_id int)
+as
+begin
+select o.or_name, o.date_create, cus.cus_id, cus.fullName
+	from tbl_orderDetail as oDetail 
+	join tbl_order as o on oDetail.order_id = o.or_id
+	join tbl_customer as cus on o.cus_id = cus.cus_id
+where oDetail.order_id = @or_id
+group by o.or_name, o.date_create, cus.cus_id, cus.fullName
+end
+go
+
 Create proc GetOrderbyId(@id int)
 as
 begin
