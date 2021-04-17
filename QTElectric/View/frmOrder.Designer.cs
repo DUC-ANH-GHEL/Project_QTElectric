@@ -84,6 +84,7 @@ namespace QTElectric.View
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, -2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1924, 56);
             this.panel1.TabIndex = 0;
@@ -128,6 +129,8 @@ namespace QTElectric.View
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.panel4.Location = new System.Drawing.Point(0, 71);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Location = new System.Drawing.Point(0, 58);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(678, 415);
@@ -136,6 +139,8 @@ namespace QTElectric.View
             // txtOrderName
             // 
             this.txtOrderName.BackColor = System.Drawing.Color.Moccasin;
+            this.txtOrderName.Location = new System.Drawing.Point(571, 69);
+            this.txtOrderName.Margin = new System.Windows.Forms.Padding(4);
             this.txtOrderName.Location = new System.Drawing.Point(428, 56);
             this.txtOrderName.Name = "txtOrderName";
             this.txtOrderName.Size = new System.Drawing.Size(218, 20);
@@ -143,6 +148,8 @@ namespace QTElectric.View
             // 
             // txtAmount
             // 
+            this.txtAmount.Location = new System.Drawing.Point(700, 302);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtAmount.Location = new System.Drawing.Point(525, 245);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(121, 20);
@@ -150,6 +157,8 @@ namespace QTElectric.View
             // 
             // txtId
             // 
+            this.txtId.Location = new System.Drawing.Point(52, 224);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.Location = new System.Drawing.Point(39, 182);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(121, 20);
@@ -161,6 +170,8 @@ namespace QTElectric.View
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(635, 441);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Location = new System.Drawing.Point(476, 358);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 36);
@@ -175,12 +186,15 @@ namespace QTElectric.View
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(479, 441);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Location = new System.Drawing.Point(359, 358);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 36);
             this.btnPrint.TabIndex = 9;
             this.btnPrint.Text = "IN";
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnQr
             // 
@@ -188,6 +202,8 @@ namespace QTElectric.View
             this.btnQr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQr.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQr.ForeColor = System.Drawing.Color.White;
+            this.btnQr.Location = new System.Drawing.Point(323, 441);
+            this.btnQr.Margin = new System.Windows.Forms.Padding(4);
             this.btnQr.Location = new System.Drawing.Point(242, 358);
             this.btnQr.Name = "btnQr";
             this.btnQr.Size = new System.Drawing.Size(75, 36);
@@ -202,6 +218,8 @@ namespace QTElectric.View
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(167, 441);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Location = new System.Drawing.Point(125, 358);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 36);
@@ -267,6 +285,8 @@ namespace QTElectric.View
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.pictureBox3);
             this.panel5.Controls.Add(this.pictureBox2);
+            this.panel5.Location = new System.Drawing.Point(48, 283);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Location = new System.Drawing.Point(36, 230);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(447, 100);
@@ -295,6 +315,8 @@ namespace QTElectric.View
             // cbxDiff
             // 
             this.cbxDiff.FormattingEnabled = true;
+            this.cbxDiff.Location = new System.Drawing.Point(700, 379);
+            this.cbxDiff.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDiff.Location = new System.Drawing.Point(525, 308);
             this.cbxDiff.Name = "cbxDiff";
             this.cbxDiff.Size = new System.Drawing.Size(121, 21);
@@ -305,6 +327,8 @@ namespace QTElectric.View
             // cbxValue
             // 
             this.cbxValue.FormattingEnabled = true;
+            this.cbxValue.Location = new System.Drawing.Point(700, 224);
+            this.cbxValue.Margin = new System.Windows.Forms.Padding(4);
             this.cbxValue.Location = new System.Drawing.Point(525, 182);
             this.cbxValue.Name = "cbxValue";
             this.cbxValue.Size = new System.Drawing.Size(121, 21);
@@ -315,6 +339,8 @@ namespace QTElectric.View
             // cbxType
             // 
             this.cbxType.FormattingEnabled = true;
+            this.cbxType.Location = new System.Drawing.Point(483, 224);
+            this.cbxType.Margin = new System.Windows.Forms.Padding(4);
             this.cbxType.Location = new System.Drawing.Point(362, 182);
             this.cbxType.Name = "cbxType";
             this.cbxType.Size = new System.Drawing.Size(121, 21);
@@ -325,6 +351,8 @@ namespace QTElectric.View
             // cbxCat
             // 
             this.cbxCat.FormattingEnabled = true;
+            this.cbxCat.Location = new System.Drawing.Point(265, 224);
+            this.cbxCat.Margin = new System.Windows.Forms.Padding(4);
             this.cbxCat.Location = new System.Drawing.Point(199, 182);
             this.cbxCat.Name = "cbxCat";
             this.cbxCat.Size = new System.Drawing.Size(121, 21);
@@ -395,6 +423,8 @@ namespace QTElectric.View
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QTElectric.Properties.Resources.logo_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(48, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Location = new System.Drawing.Point(36, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(168, 128);
@@ -418,6 +448,8 @@ namespace QTElectric.View
             this.Column7,
             this.Column8,
             this.Column4});
+            this.dvgOrder.Location = new System.Drawing.Point(912, 71);
+            this.dvgOrder.Margin = new System.Windows.Forms.Padding(4);
             this.dvgOrder.Location = new System.Drawing.Point(684, 58);
             this.dvgOrder.Name = "dvgOrder";
             this.dvgOrder.RowHeadersWidth = 51;
@@ -515,6 +547,7 @@ namespace QTElectric.View
             this.Controls.Add(this.dvgOrder);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmOrder";
             this.Text = "NHẬP - KIỂM LINH KIỆN";
             this.Load += new System.EventHandler(this.frmOrder_Load_1);
