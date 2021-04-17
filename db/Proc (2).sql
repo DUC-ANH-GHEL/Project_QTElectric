@@ -375,8 +375,8 @@ go
 Create proc GetOrderDetailbyorid(@or_id int)
 as
 begin
-select c.cat_name, t.type_name, d.diff_name, v.val_name, 
-	oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out, oDetail.pro_id, oDetail.status
+select c.cat_name, t.type_name, d.diff_name, v.val_name, cus.cus_id, cus.fullName,
+	oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out, oDetail.pro_id, oDetail.status, oDetail.date_create
 from tbl_orderDetail as oDetail 
 	join tbl_order as o on oDetail.order_id = @or_id
 	join tbl_product as p on oDetail.pro_id = p.pro_id
@@ -385,15 +385,14 @@ from tbl_orderDetail as oDetail
 	join tbl_differenced as d on p.diff_id = d.diff_id
 	join [values] as v on p.val_id = v.val_id 
 	join tbl_customer as cus on o.cus_id = cus.cus_id 
-	group by oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out , oDetail.pro_id, oDetail.status, c.cat_name, t.type_name, d.diff_name, v.val_name
+	group by oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out , oDetail.pro_id, oDetail.status, oDetail.date_create,
+	c.cat_name, t.type_name, d.diff_name, v.val_name, cus.cus_id, cus.fullName
 end
 go
-exec GetOrderDetailbyorid 1
-go
+
 Create proc GetOrderbyId(@id int)
 as
 begin
 select * from tbl_order where or_id = @id
 end
 go
-
