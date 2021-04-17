@@ -187,7 +187,7 @@ DELETE FROM tbl_orderDetail WHERE order_id = @id
 END
 GO
 --CRUD OF tbl_orderDetail
-CREATE PROC Insert_OrderDetail( @order_id varchar(max), @pro_id int,  @amount_in int, @amount_out int, @status bit, @date_create datetime)
+create PROC Insert_OrderDetail( @order_id int, @pro_id int,  @amount_in int, @amount_out int, @status bit, @date_create datetime)
 AS
 BEGIN
 INSERT INTO tbl_orderDetail( order_id, pro_id, amount_in, amount_out, status, date_create) VALUES ( @order_id, @pro_id, @amount_in, @amount_out, @status, @date_create)
@@ -385,6 +385,7 @@ from tbl_orderDetail as oDetail
 	join tbl_differenced as d on p.diff_id = d.diff_id
 	join [values] as v on p.val_id = v.val_id 
 	join tbl_customer as cus on o.cus_id = cus.cus_id 
+	where oDetail.order_id = @or_id
 	group by oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out , oDetail.pro_id, oDetail.status, oDetail.date_create,
 	c.cat_name, t.type_name, d.diff_name, v.val_name, cus.cus_id, cus.fullName
 end

@@ -58,6 +58,7 @@ namespace QTElectric.View
                 OrderDetailbyId orderDetailbyId = new OrderDetailbyId()
                 {
                     or_detail_id = (int)orderDetail.Rows[i]["or_detail_id"],
+                    pro_id = (int)orderDetail.Rows[i]["pro_id"],
                     cat_name = (string)orderDetail.Rows[i]["cat_name"],
                     type_name = (string)orderDetail.Rows[i]["type_name"],
                     diff_name = (string)orderDetail.Rows[i]["diff_name"],
