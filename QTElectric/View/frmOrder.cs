@@ -357,5 +357,18 @@ namespace QTElectric.View
         {
             printBarcode();
         }
+
+        private void dvgOrder_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dvgOrder.SelectedRows.Count > 0)
+            {
+                txtId.Text = dvgOrder.SelectedCells[0].Value.ToString();
+                cbxCat.Text = dvgOrder.SelectedCells[2].Value.ToString();
+                cbxType.Text = dvgOrder.SelectedCells[3].Value.ToString();
+                cbxValue.Text = dvgOrder.SelectedCells[5].Value.ToString();
+                txtAmount.Text = dvgOrder.SelectedCells[6].Value.ToString();
+                cbxDiff.Text = dvgOrder.SelectedCells[4].Value.ToString();
+            }
+        }
     }
 }
