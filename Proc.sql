@@ -391,7 +391,7 @@ from tbl_orderDetail as oDetail
 	join tbl_types as t on p.type_id = t.type_id
 	join tbl_differenced as d on p.diff_id = d.diff_id
 	join [values] as v on p.val_id = v.val_id 
-	where oDetail.order_id = @or_id 
+	where oDetail.order_id = @or_id
 	group by oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out , oDetail.status, oDetail.date_create,
 	c.cat_name, t.type_name, d.diff_name, v.val_name, oDetail.pro_id
 end
