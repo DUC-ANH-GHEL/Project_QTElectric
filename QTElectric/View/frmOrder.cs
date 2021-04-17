@@ -39,11 +39,25 @@ namespace QTElectric.View
         {
             InitializeComponent();
             loadDataOrder(order);
+            Load();
+        }
+        public frmOrder(Customer cus)
+        {
+            InitializeComponent();
+            fullName = cus.fullName;
+            cus_id = cus.cus_id;
+            date_Order = DateTime.Now;
+            Load();
+        }
+        private void Load()
+        {
             LoadCat();
             LoadType();
             LoadValue();
             LoadDiff();
             code128 = new Barcode();
+            txtcusname.Text = fullName;
+            txtDateNow.Text = date_Order.ToString("dd/MM/yyyy");
         }
         private void loadDataOrder(Order order)
         {
@@ -67,7 +81,7 @@ namespace QTElectric.View
                 };
                 listModelOrderDetail.Add(orderDetailbyId);
             }
-            LoadOrder(listModelOrderDetail);
+            LoadDGVOrder(listModelOrderDetail);
 
             DataTable infoOrder = OrderDetailbyIdDAO.Instance.getInfobyId(orderbyId.order_id);
             for (int i = 0; i < infoOrder.Rows.Count; i++)
@@ -77,11 +91,9 @@ namespace QTElectric.View
                 or_name = (string)infoOrder.Rows[i]["or_name"];
                 date_Order = (DateTime)infoOrder.Rows[i]["date_create"];
             }
-            txtDateNow.Text = date_Order.ToString("dd/MM/yyyy");
             txtOrderName.Text = or_name;
-            txtcusname.Text = fullName;
         }
-        private void LoadOrder(List<OrderDetailbyId> list)
+        private void LoadDGVOrder(List<OrderDetailbyId> list)
         {
             dvgOrder.DataSource = list;
         }
@@ -126,26 +138,6 @@ namespace QTElectric.View
                 cbxDiff.ValueMember = "diff_id";
             }
         }
-        //public List<T> ConvertToList<T>(DataTable dt)
-        //{
-        //    var columnNames = dt.Columns.Cast<DataColumn>()
-        //            .Select(c => c.ColumnName)
-        //            .ToList();
-        //    var properties = typeof(T).GetProperties();
-        //    return dt.AsEnumerable().Select(row =>
-        //    {
-        //        var objT = Activator.CreateInstance<T>();
-        //        foreach (var pro in properties)
-        //        {
-        //            if (columnNames.Contains(pro.Name))
-        //            {
-        //                PropertyInfo pI = objT.GetType().GetProperty(pro.Name);
-        //                pro.SetValue(objT, row[pro.Name] == DBNull.Value ? null : Convert.ChangeType(row[pro.Name], pI.PropertyType));
-        //            }
-        //        }
-        //        return objT;
-        //    }).ToList();
-        //}
         private void frmOrder_Load_1(object sender, EventArgs e)
         {
             txtDateNow.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -253,12 +245,7 @@ namespace QTElectric.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == "")
-            {
-                MessageBox.Show("Mời bạn nhập mã đơn hàng!");
-                return;
-            }
-            else if (txtAmount.Text == "")
+            if (txtAmount.Text == "")
             {
                 MessageBox.Show("Mời bạn nhập số lượng đơn hàng!");
                 return;
