@@ -9,6 +9,7 @@ namespace QTElectric.DTO
     public class OrderDetailbyId
     {
         public int or_detail_id { get; set; }
+        public int pro_id { get; set; }
         public string cat_name { get; set; }
         public string type_name { get; set; }
         public string diff_name { get; set; }

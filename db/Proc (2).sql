@@ -187,7 +187,7 @@ DELETE FROM tbl_orderDetail WHERE order_id = @id
 END
 GO
 --CRUD OF tbl_orderDetail
-CREATE PROC Insert_OrderDetail( @order_id int, @pro_id int,  @amount_in int, @amount_out int, @status bit, @date_create datetime)
+create PROC Insert_OrderDetail( @order_id int, @pro_id int,  @amount_in int, @amount_out int, @status bit, @date_create datetime)
 AS
 BEGIN
 INSERT INTO tbl_orderDetail( order_id, pro_id, amount_in, amount_out, status, date_create) VALUES ( @order_id, @pro_id, @amount_in, @amount_out, @status, @date_create)
@@ -375,27 +375,19 @@ go
 Create proc GetOrderDetailbyorid(@or_id int)
 as
 begin
-select c.cat_name, t.type_name, d.diff_name, v.val_name, 
-	oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out, oDetail.status, oDetail.date_create
+select c.cat_name, t.type_name, d.diff_name, v.val_name, cus.cus_id, cus.fullName,
+	oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out, oDetail.pro_id, oDetail.status, oDetail.date_create
 from tbl_orderDetail as oDetail 
+	join tbl_order as o on oDetail.order_id = @or_id
 	join tbl_product as p on oDetail.pro_id = p.pro_id
 	join tbl_category as c on p.cat_id = c.cat_id
 	join tbl_types as t on p.type_id = t.type_id
 	join tbl_differenced as d on p.diff_id = d.diff_id
 	join [values] as v on p.val_id = v.val_id 
-	group by oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out , oDetail.status, oDetail.date_create,
-	c.cat_name, t.type_name, d.diff_name, v.val_name
-end
-go
-Create proc GetInfobyorid(@or_id int)
-as
-begin
-select o.or_name, o.date_create, cus.cus_id, cus.fullName
-	from tbl_orderDetail as oDetail 
-	join tbl_order as o on oDetail.order_id = o.or_id
-	join tbl_customer as cus on o.cus_id = cus.cus_id
-where oDetail.order_id = @or_id
-group by o.or_name, o.date_create, cus.cus_id, cus.fullName
+	join tbl_customer as cus on o.cus_id = cus.cus_id 
+	where oDetail.order_id = @or_id
+	group by oDetail.or_detail_id, oDetail.amount_in, oDetail.amount_out , oDetail.pro_id, oDetail.status, oDetail.date_create,
+	c.cat_name, t.type_name, d.diff_name, v.val_name, cus.cus_id, cus.fullName
 end
 go
 
