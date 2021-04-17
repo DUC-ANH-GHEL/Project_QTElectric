@@ -235,7 +235,7 @@ namespace QTElectric.View
             c.mobile = txtCusphone.Text;
             c.gender = cbCusgender.Checked ? true : false;
             c.status = cbCusstatus.Checked ? true : false;
-            frmOrder frmOrder = new frmOrder(c);
+            frmOrder frmOrder = new frmOrder(null);
             frmOrder.WindowState = FormWindowState.Maximized;
             frmOrder.ShowDialog();
 

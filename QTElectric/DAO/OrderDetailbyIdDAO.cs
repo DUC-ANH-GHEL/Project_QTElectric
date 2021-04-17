@@ -22,5 +22,11 @@ namespace QTElectric.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { id });
             return result;
         }
+        public DataTable getInfobyId(int id)
+        {
+            string query = "GetInfobyorid @or_id";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+            return result;
+        }
     }
 }
