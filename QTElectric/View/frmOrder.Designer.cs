@@ -59,6 +59,7 @@ namespace QTElectric.View
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dvgOrder = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +77,7 @@ namespace QTElectric.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgOrder)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -432,9 +434,6 @@ namespace QTElectric.View
             // dvgOrder
             // 
             this.dvgOrder.AllowUserToAddRows = false;
-            this.dvgOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgOrder.ColumnHeadersHeight = 29;
             this.dvgOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -447,13 +446,25 @@ namespace QTElectric.View
             this.Column7,
             this.Column8,
             this.Column4});
-            this.dvgOrder.Location = new System.Drawing.Point(912, 71);
+            this.dvgOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dvgOrder.Location = new System.Drawing.Point(0, 0);
             this.dvgOrder.Margin = new System.Windows.Forms.Padding(5);
             this.dvgOrder.Name = "dvgOrder";
             this.dvgOrder.RowHeadersWidth = 51;
             this.dvgOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgOrder.Size = new System.Drawing.Size(905, 511);
+            this.dvgOrder.Size = new System.Drawing.Size(902, 506);
             this.dvgOrder.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.dvgOrder);
+            this.panel2.Location = new System.Drawing.Point(913, 76);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(902, 506);
+            this.panel2.TabIndex = 11;
             // 
             // Column1
             // 
@@ -551,7 +562,7 @@ namespace QTElectric.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1827, 597);
-            this.Controls.Add(this.dvgOrder);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -567,6 +578,7 @@ namespace QTElectric.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgOrder)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -613,5 +625,6 @@ namespace QTElectric.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Panel panel2;
     }
 }

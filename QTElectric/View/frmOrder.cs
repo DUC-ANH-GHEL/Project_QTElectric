@@ -57,7 +57,7 @@ namespace QTElectric.View
                 {
                     or_detail_id = (int)orderDetail.Rows[i]["or_detail_id"],
                     pro_id = (int)orderDetail.Rows[i]["pro_id"],
-                    cat_name = (string)orderDetail.Rows[i]["cat_name"],
+                    cat_name = (string)orderDetail.Rows[i]["cat_name"].ToString(),
                     type_name = (string)orderDetail.Rows[i]["type_name"],
                     diff_name = (string)orderDetail.Rows[i]["diff_name"],
                     val_name = (string)orderDetail.Rows[i]["val_name"],
@@ -65,7 +65,6 @@ namespace QTElectric.View
                     amount_out = (int)orderDetail.Rows[i]["amount_out"],
                     status = (int)orderDetail.Rows[i]["status"],
                     date_create = (DateTime)orderDetail.Rows[i]["date_create"]
-
                 };
                 listModelOrderDetail.Add(orderDetailbyId);
             }
@@ -81,6 +80,7 @@ namespace QTElectric.View
             }
             txtDateNow.Text = date_Order.ToString("dd/MM/yyyy");
             txtOrderName.Text = or_name;
+            LoadOrder(list);
         }
         private void LoadOrder(List<OrderDetailbyId> list)
         {
