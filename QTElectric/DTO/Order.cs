@@ -18,8 +18,8 @@ namespace QTElectric.DTO
     }
     public class OrderDetail
     {
-        public string or_detail_id { get; set; }
-        public string order_id { get; set; }
+        public int or_detail_id { get; set; }
+        public int order_id { get; set; }
         public int pro_id { get; set; }
         public int amount_in { get; set; }
         public int amount_out { get; set; }
@@ -29,7 +29,7 @@ namespace QTElectric.DTO
         {
 
         }
-        public OrderDetail(string or_detail_id, string order_id, int pro_id, int amount_in, int amount_out, int status, DateTime date_create)
+        public OrderDetail(int or_detail_id, int order_id, int pro_id, int amount_in, int amount_out, int status, DateTime date_create)
         {
             this.or_detail_id = or_detail_id;
             this.order_id = order_id;
@@ -43,7 +43,7 @@ namespace QTElectric.DTO
 
     public class ModelOrder
     {
-        public string order_id { get; set; }
+        public int order_id { get; set; }
         public string cat_name { get; set; }
         public string type_name { get; set; }
         public string value_name { get; set; }
@@ -56,7 +56,7 @@ namespace QTElectric.DTO
         {
 
         }
-        public ModelOrder(string order_id, string cat_name, string type_name, string value_name, string diff_name, int amount_in, int amount_out, DateTime date_create)
+        public ModelOrder(int order_id, string cat_name, string type_name, string value_name, string diff_name, int amount_in, int amount_out, DateTime date_create)
         {
             this.order_id = order_id;
             this.cat_name = cat_name;

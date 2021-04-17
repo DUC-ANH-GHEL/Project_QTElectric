@@ -28,8 +28,11 @@ namespace QTElectric.View
         private int val_id;
         private int diff_id;
         private Order orderbyId;
-        private Customer cus;
         private int or_id;
+        private int cus_id;
+        private string fullName;
+        private string or_name;
+        private DateTime date_Order;
 
         BarcodeLib.Barcode code128;
         public frmOrder(Order order)
@@ -48,46 +51,41 @@ namespace QTElectric.View
         private void loadData(Order order)
         {
             this.orderbyId = order;
-            DataTable result = OrderDetailbyIdDAO.Instance.getOrderDetailbyId(order.order_id);
+            DataTable orderDetail = OrderDetailbyIdDAO.Instance.getOrderDetailbyId(orderbyId.order_id);
             List<OrderDetailbyId> list = new List<OrderDetailbyId>();
-            OrderDetailbyId orderDetailbyId = null;
-            for (int i = 0; i < result.Rows.Count; i++)
+            for (int i = 0; i < orderDetail.Rows.Count; i++)
             {
-                orderDetailbyId = new OrderDetailbyId()
+                OrderDetailbyId orderDetailbyId = new OrderDetailbyId()
                 {
-                    cus_id = (int)result.Rows[i]["cus_id"],
-                    fullName = (string)result.Rows[i]["fullName"],
-                    cat_name = (string)result.Rows[i]["cat_name"],
-                    type_name = (string)result.Rows[i]["type_name"],
-                    diff_name = (string)result.Rows[i]["diff_name"],
-                    val_name = (string)result.Rows[i]["val_name"],
-                    amount_in = (int)result.Rows[i]["amount_in"],
-                    //date_create = (DateTime)result.Rows[0]["date_create"]
+                    or_detail_id = (int)orderDetail.Rows[i]["or_detail_id"],
+                    cat_name = (string)orderDetail.Rows[i]["cat_name"],
+                    type_name = (string)orderDetail.Rows[i]["type_name"],
+                    diff_name = (string)orderDetail.Rows[i]["diff_name"],
+                    val_name = (string)orderDetail.Rows[i]["val_name"],
+                    amount_in = (int)orderDetail.Rows[i]["amount_in"],
+                    amount_out = (int)orderDetail.Rows[i]["amount_out"],
+                    status = (int)orderDetail.Rows[i]["status"],
+                    date_create = (DateTime)orderDetail.Rows[i]["date_create"]
 
                 };
-                txtcusname.Text = orderDetailbyId.fullName;
                 list.Add(orderDetailbyId);
             }
-            dvgOrder.DataSource = list;
-        }
-        public frmOrder(Customer cus)
-        {
-            InitializeComponent();
-            this.cus = cus;
-            this.cus = cus;
-            listModelOrder = new List<ModelOrder>();
-            listOrder = new List<OrderDetail>();
-            LoadCat();
-            LoadType();
-            LoadValue();
-            LoadDiff();
-            code128 = new Barcode();
-            txtcusname.Text = cus.fullName;
+            LoadOrder(list);
 
+            DataTable infoOrder = OrderDetailbyIdDAO.Instance.getInfobyId(orderbyId.order_id);
+            for (int i = 0; i < orderDetail.Rows.Count; i++)
+            {
+                cus_id = (int)infoOrder.Rows[i]["or_detail_id"];
+                fullName = (string)orderDetail.Rows[i]["fullName"];
+                or_name = (string)orderDetail.Rows[i]["or_name"];
+                date_Order = (DateTime)orderDetail.Rows[i]["date_create"];
+            }
+            txtDateNow.Text = date_Order.ToString("dd/MM/yyyy");
+            txtOrderName.Text = or_name;
         }
-        private void LoadOrder()
+        private void LoadOrder(List<OrderDetailbyId> list)
         {
-            dvgOrder.DataSource = listModelOrder.ToList();
+            dvgOrder.DataSource = list;
         }
         private void LoadCat()
         {
@@ -153,6 +151,7 @@ namespace QTElectric.View
         private void frmOrder_Load_1(object sender, EventArgs e)
         {
             txtDateNow.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            txtcusname.Text = fullName;
         }
         public void GetQrCode(string qrText)
         {
@@ -175,7 +174,6 @@ namespace QTElectric.View
         }
         private void cbxType_SelectedValueChanged(object sender, EventArgs e)
         {
-            //LoadType();
             try
             {
                 type_id = int.Parse(cbxType.SelectedValue.ToString());
@@ -223,10 +221,6 @@ namespace QTElectric.View
             LoadDiff();
         }
 
-        private void cbxDiff_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         string textqr;
         private void btnQr_Click(object sender, EventArgs e)
         {
@@ -237,7 +231,6 @@ namespace QTElectric.View
             pictureBox2.Image = qrcode.Draw(textqr, 50);
 
         }
-
         private void printBarcode()
         {
             PrintDialog pd = new PrintDialog();
@@ -249,7 +242,6 @@ namespace QTElectric.View
                 doc.Print();
             }
         }
-
         private void Doc_PrintPage(object sender, PrintPageEventArgs e)
         {
             Bitmap bm = new Bitmap(pictureBox3.Width, pictureBox3.Height);
@@ -276,7 +268,7 @@ namespace QTElectric.View
             }
             // status 0: chưa đc thêm, 1: đã đc thêm, 2: chuẩn bị sửa
             ModelOrder model = new ModelOrder();
-            model.order_id = txtId.Text;
+            model.order_id = int.Parse(txtId.Text);
             model.cat_name = cbxCat.SelectedValue.ToString();
             model.type_name = cbxType.SelectedValue.ToString();
             model.value_name = cbxValue.SelectedValue.ToString();
@@ -286,7 +278,6 @@ namespace QTElectric.View
             model.status = 0;
             model.date_create = DateTime.Now;
             listModelOrder.Add(model);
-            LoadOrder();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -311,7 +302,7 @@ namespace QTElectric.View
                 }
 
                 OrderDetail oDetail = new OrderDetail();
-                oDetail.order_id = "1";
+                //oDetail.order_id = "1";
                 oDetail.or_detail_id = item.order_id;
                 oDetail.pro_id = int.Parse(id_pro.ToString());
                 oDetail.amount_in = item.amount_in;
@@ -328,7 +319,7 @@ namespace QTElectric.View
                 {
                     // sửa order detail
                     // get id orderDetail
-                    oDetail.or_detail_id = "1";
+                    oDetail.or_detail_id = 1;
                     UpdatetOrderDetail(oDetail);
                 }
             }
@@ -351,7 +342,7 @@ namespace QTElectric.View
         private void InsertOrder()
         {
             Order o = new Order();
-            o.cus_id = cus.cus_id;
+            o.cus_id = cus_id;
             o.order_name = txtOrderName.Text;
             o.status = true;
             o.date_create = DateTime.Now;
@@ -379,10 +370,6 @@ namespace QTElectric.View
         private void btnPrint_Click(object sender, EventArgs e)
         {
             printBarcode();
-
         }
     }
 }
-
-// viết proc join từ id_pro lấy ra các trường cat.... từ bảng order_detail
-// viết 1 function load data cho dgv đầu vào là list orderDetail
