@@ -31,8 +31,8 @@ namespace QTElectric.DAO
         }
         public int UpdateOrderDetail(OrderDetail o)
         {
-            string query = "Update_OrderDetail @id , @order_id , @pro_id ,   @amount_in , @amount_out , @status , @date_create";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { o.or_detail_id, o.order_id, o.pro_id, o.amount_in, o.amount_out, o.status, o.date_create });
+            string query = "Update_OrderDetail @id , @pro_id ,   @amount_in , @amount_out , @status , @date_create";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { o.or_detail_id, o.pro_id, o.amount_in, o.amount_out, o.status, o.date_create });
             return result;
         }
         public int DeleteOrderDetail(int id)

@@ -155,7 +155,7 @@ GO
 CREATE PROC Insert_Order(@cus_id int, @or_name nvarchar(100), @status bit, @date_create datetime )
 AS
 BEGIN
-INSERT INTO tbl_order(cus_id, or_name, status, date_create) VALUES (@cus_id, @or_name, @status, @date_create)
+INSERT INTO tbl_order(cus_id, or_name, status, date_create) output INSERTED.or_id VALUES (@cus_id, @or_name, @status, @date_create)
 END
 GO
 CREATE PROC Get_Order
@@ -199,11 +199,11 @@ BEGIN
 SELECT * FROM tbl_orderDetail
 END
 GO
-CREATE PROC Update_OrderDetail(@id int, @order_id int, @pro_id int,   @amount_in int, @amount_out int, @status bit, @date_create datetime)
+CREATE PROC Update_OrderDetail(@id int, @pro_id int, @amount_in int, @amount_out int, @status bit, @date_create datetime)
 AS
 BEGIN
 UPDATE tbl_orderDetail
-SET order_id = @order_id, pro_id = @pro_id,  amount_in = @amount_in, amount_out = @amount_out, status = @status, date_create = @date_create
+SET pro_id = @pro_id,  amount_in = @amount_in, amount_out = @amount_out, status = @status, date_create = @date_create
 WHERE or_detail_id = @id
 END
 GO
@@ -247,10 +247,9 @@ GO
 CREATE PROC Insert_Product(@cat_id int, @type_id int, @val_id int, @diff_id int, @status bit, @date_create datetime)
 AS
 BEGIN
-INSERT INTO tbl_product(cat_id, [type_id], val_id, diff_id, [status], date_create) VALUES (@cat_id , @type_id , @val_id , @diff_id , @status , @date_create)
+INSERT INTO tbl_product(cat_id, [type_id], val_id, diff_id, [status], date_create) output INSERTED.pro_id VALUES (@cat_id , @type_id , @val_id , @diff_id , @status , @date_create)
 END
 GO
-select * from tbl_category
 go
 CREATE PROC Select_Product
 AS
@@ -407,3 +406,6 @@ begin
 select * from tbl_order where or_id = @id
 end
 go
+select * from tbl_product
+delete from tbl_product where pro_id = 11
+select * from tbl_order
