@@ -59,28 +59,32 @@ namespace QTElectric.View
             txtcusname.Text = fullName;
             txtDateNow.Text = date_Order.ToString("dd/MM/yyyy");
         }
+        public List<T> ConvertToList<T>(DataTable dt)
+        {
+            var columnNames = dt.Columns.Cast<DataColumn>()
+                    .Select(c => c.ColumnName)
+                    .ToList();
+            var properties = typeof(T).GetProperties();
+            return dt.AsEnumerable().Select(row =>
+            {
+                var objT = Activator.CreateInstance<T>();
+                foreach (var pro in properties)
+                {
+                    if (columnNames.Contains(pro.Name))
+                    {
+                        PropertyInfo pI = objT.GetType().GetProperty(pro.Name);
+                        pro.SetValue(objT, row[pro.Name] == DBNull.Value ? null : Convert.ChangeType(row[pro.Name], pI.PropertyType));
+                    }
+                }
+                return objT;
+            }).ToList();
+        }
         private void loadDataOrder(Order order)
         {
             this.orderbyId = order;
             or_id = orderbyId.order_id;
-            DataTable orderDetail = OrderDetailbyIdDAO.Instance.getOrderDetailbyId(orderbyId.order_id);
-            for (int i = 0; i < orderDetail.Rows.Count; i++)
-            {
-                OrderDetailbyId orderDetailbyId = new OrderDetailbyId()
-                {
-                    or_detail_id = (int)orderDetail.Rows[i]["or_detail_id"],
-                    pro_id = (int)orderDetail.Rows[i]["pro_id"],
-                    cat_name = (string)orderDetail.Rows[i]["cat_name"].ToString(),
-                    type_name = (string)orderDetail.Rows[i]["type_name"],
-                    diff_name = (string)orderDetail.Rows[i]["diff_name"],
-                    val_name = (string)orderDetail.Rows[i]["val_name"],
-                    amount_in = (int)orderDetail.Rows[i]["amount_in"],
-                    amount_out = (int)orderDetail.Rows[i]["amount_out"],
-                    status = (int)orderDetail.Rows[i]["status"],
-                    date_create = (DateTime)orderDetail.Rows[i]["date_create"]
-                };
-                listModelOrderDetail.Add(orderDetailbyId);
-            }
+            DataTable orderDetail = OrderDetailbyIdDAO.Instance.getOrderDetailbyId(or_id);
+            listModelOrderDetail = ConvertToList<OrderDetailbyId>(orderDetail);
             LoadDGVOrder(listModelOrderDetail);
 
             DataTable infoOrder = OrderDetailbyIdDAO.Instance.getInfobyId(orderbyId.order_id);
@@ -333,6 +337,7 @@ namespace QTElectric.View
                     UpdatetOrderDetail(oDetail);
                 }
             }
+            LoadDGVOrder(listModelOrderDetail);
         }
         private int InsertPro(int cat_id, int type_id, int val_id, int diff_id)
         {
@@ -368,10 +373,6 @@ namespace QTElectric.View
         private void InsertOrderDetail(OrderDetail oDetail)
         {
             int result = OrderDetailDAO.Instance.InsertOrderDetail(oDetail);
-            if (result > 0)
-            {
-                MessageBox.Show("Lưu thông tin thành công");
-            }
         }
         private void UpdatetOrderDetail(OrderDetail oDetail)
         {
@@ -381,12 +382,10 @@ namespace QTElectric.View
                 MessageBox.Show("Lưu thông tin thành công");
             }
         }
-
         private void btnPrint_Click(object sender, EventArgs e)
         {
             printBarcode();
         }
-
         private void dvgOrder_SelectionChanged(object sender, EventArgs e)
         {
             if (dvgOrder.SelectedRows.Count > 0)
@@ -401,7 +400,6 @@ namespace QTElectric.View
                 btnAdd.Text = "Sửa";
             }
         }
-
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             edit = false;

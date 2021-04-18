@@ -7,8 +7,7 @@ BEGIN
 INSERT INTO tbl_user(user_name, password, mobile, email, gender, full_name, status, date_create) VALUES (@user_name ,	@password ,	@mobile ,@email ,@gender ,@full_name ,@status ,@date_create )
 END
 GO
-
-exec Insert_User @user_name = 'd',	@password = '3' ,	@mobile = 99 ,@email = 9 ,@gender = 0 ,@full_name = 'd' ,@status = 1 ,@date_create = '2020-01-12'
+exec Insert_User @user_name = 'admin',	@password = '827ccb0eea8a706c4c34a16891f84e7b' ,@mobile = 99 ,@email = 9 ,@gender = 0 ,@full_name = 'Admin' ,@status = 1 ,@date_create = '2020-01-12'
 GO
 CREATE PROC Get_User
 AS
@@ -23,8 +22,6 @@ UPDATE tbl_user
 SET [user_name] = @user_name, [password] = @password, mobile = @mobile, email = @email, gender = @gender, full_name = @full_name, [status] = @status, date_create = @date_create
 WHERE u_id = @id;
 END
-GO
-exec Update_User @id = 6, @user_name = 'k', @password = 'k', @mobile = jjj, @email = 'jj', @gender = true, @full_name = 'kk', @status = true, @date_create = '2000-2-2'
 GO
 CREATE PROC Delete_User(@id int)
 AS
@@ -280,11 +277,6 @@ SELECT val_id, val_name FROM [values]
 END
 GO
 
-drop proc GetByValues
-SELECT  *  From [values]  INNER JOIN tbl_types  ON [values].type_id = tbl_types.type_id
-select * from [values]
-select * from tbl_types
-GO
 CREATE PROC GetByCat(@cat_id int)
 AS
 BEGIN
@@ -311,8 +303,6 @@ AS
 BEGIN
 SELECT * FROM tbl_user WHERE user_name = @user_name AND password = @password
 END
-GO
-exec CheckPass @user_name = 'duc',  @password = '827ccb0eea8a706c4c34a16891f84e7b'
 GO
 
 -- Check Product
@@ -387,7 +377,6 @@ from tbl_orderDetail as oDetail
 	c.cat_name, t.type_name, d.diff_name, v.val_name, oDetail.pro_id
 end
 go
-
 Create proc GetInfobyorid(@or_id int)
 as
 begin
@@ -406,6 +395,5 @@ begin
 select * from tbl_order where or_id = @id
 end
 go
-select * from tbl_product
-delete from tbl_product where pro_id = 11
-select * from tbl_order
+
+

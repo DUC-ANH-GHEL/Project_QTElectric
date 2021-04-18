@@ -61,7 +61,7 @@ namespace QTElectric
             }
             else
             {
-                MessageBox.Show("err");
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!\nVui lòng nhập lại!");
             }
         }
         public void startFrom()
